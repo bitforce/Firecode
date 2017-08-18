@@ -1,0 +1,10 @@
+LinkedList
+----------
+I : A --> B --> C --> NULL
+O : B -- C --> NULL
+---
+I : A --> NULL
+O : NULL
+---
+I : NULL
+O : NULL
