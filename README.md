@@ -9,8 +9,10 @@ Usage
 ---
 When in a problem-folder; containing .java files, you can follow these steps to 
 compile and execute the code:
-`javac FileName.java`
-`java FileName [args]`
+```
+javac FileName.java
+java FileName [args]
+```
 Where _args_ may possibly be optional; however, if unsure be sure to look at the 
 documentation within the source file or the README.
 
