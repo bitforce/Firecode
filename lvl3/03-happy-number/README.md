@@ -12,7 +12,11 @@ Usage
 
 Note
 ---
-N/A
+For some reason, isHappyNumber() did not pass test case, value 28, for 
+Firecode.io solution engine; however, running it here gave me the 
+correct answer. Not sure why, too tired to look into that rn. My 
+original solution returns all the same booleans as method 
+isHappyNumber2.
 
 Examples
 ---
@@ -21,3 +25,4 @@ Examples
 
 Explanation
 ---
+N/A
