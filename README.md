@@ -8,12 +8,7 @@ resources I used to assist me.
 Usage
 ---
 When in a problem-folder; containing .java files, you can follow these steps to 
-compile and execute the code:
-```
-make
-make args=T
-```
-or...
+compile and execute the code: `make`, `mark args=T`, or 
 ```
 javac FileName.java
 java FileName [args]

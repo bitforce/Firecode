@@ -31,8 +31,25 @@ class HappyNumber {
         }
         return isHappyNumber2(m);
     }
+    private static boolean isHappyNumber3(int n) {  // CLEVER SOLUTION
+        if (n == 1) return true;
+        Set<Integer> set = new HashSet<>();
+        int sum = 0;
+        while (n != 1) {
+            if (set.contains(n)) return false;
+            set.add(n);
+            while (n > 0) {
+                sum += Math.pow(n % 10, 2);
+                n /= 10;
+            }
+            n = sum;
+            sum = 0;
+        }
+        return true;
+    }
     public static void main(String[] args) {
         System.out.println(isHappyNumber(Integer.parseInt(args[0])));
         System.out.println(isHappyNumber2(Integer.parseInt(args[0])));
+        System.out.println(isHappyNumber3(Integer.parseInt(args[0])));
     }
 }
