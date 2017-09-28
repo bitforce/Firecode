@@ -2,8 +2,7 @@
 MAKEFLAGS += --silent
 run:
 	javac $(wildcard *.java)
-	java BinaryTree $(args)
-	java BST $(args)
+	java Source $(args)
 clean: 
-	$(RM) *.class
+	$(RM) *.class templates/node/*.class templates/list/*.class templates/tree/*.class
 #==============================================================================
