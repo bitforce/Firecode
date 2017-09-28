@@ -30,7 +30,7 @@ class BinaryTree {
         print(root.right, level+1);
         if(level != 0) {
             for(int i = 0; i < level-1; i++)
-                System.out.print("|\t");
+                System.out.print("| ");
             System.out.println("|----"+root.data);
         } else System.out.println(root.data);
         print(root.left, level+1);
