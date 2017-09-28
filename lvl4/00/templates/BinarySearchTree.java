@@ -2,7 +2,7 @@ package templates;
 import templates.TreeNode;
 import templates.TreePrinter;
 /**
- * This is yuor standard binary search tree which utilizes a ordering-insertion 
+ * This is your standard binary search tree which utilizes a ordering-insertion 
  * method to make sure that the tree's strucutre follows the the BST design 
  * principles--if you would like to have a basic, but balanced, insertion 
  * of values, check out BinaryTree.java instead.

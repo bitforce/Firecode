@@ -22,16 +22,6 @@ class Test {
         cll.append(9);
         cll.print();
 
-        BinarySearchTree bst = new BinarySearchTree();
-        bst.add(4);
-        bst.add(6);
-        bst.add(5);
-        bst.add(2);
-        bst.add(3);
-        bst.add(1);
-        bst.add(7);
-        bst.print();
-
         BinaryTree bt = new BinaryTree();
         bt.add(4);
         bt.add(6);
@@ -41,7 +31,15 @@ class Test {
         bt.add(1);
         bt.add(7);
         bt.print();
-        bt.balance();
-        bt.print();
+
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.add(4);
+        bst.add(6);
+        bst.add(5);
+        bst.add(2);
+        bst.add(3);
+        bst.add(1);
+        bst.add(7);
+        bst.print();
     }
 }
