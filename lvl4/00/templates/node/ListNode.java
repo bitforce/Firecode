@@ -1,6 +1,6 @@
-package templates;
+package templates.node;
 public class ListNode {
     public int data;
     public ListNode next;        
-    ListNode(int data) { this.data = data; }
+    public ListNode(int data) { this.data = data; }
  }

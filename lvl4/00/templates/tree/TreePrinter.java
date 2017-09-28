@@ -1,5 +1,6 @@
-package templates;
+package templates.tree;
 import java.util.*;
+import templates.node.TreeNode;
 public class TreePrinter {
     public static void print(TreeNode root) {
         int max = TreePrinter.max(root);

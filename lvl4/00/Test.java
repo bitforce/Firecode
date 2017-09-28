@@ -1,4 +1,5 @@
-import templates.*;
+import templates.list.*;
+import templates.tree.*;
 class Test {
     /* ********************************************************************* */
     // TEST METHODS

@@ -1,6 +1,6 @@
-package templates;
-import templates.TreeNode;
-import templates.TreePrinter;
+package templates.tree;
+import templates.node.TreeNode;
+import templates.tree.TreePrinter;
 /**
  * This is your standard binary search tree which utilizes a ordering-insertion 
  * method to make sure that the tree's strucutre follows the the BST design 

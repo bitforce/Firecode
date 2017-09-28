@@ -1,5 +1,5 @@
-package templates;
-import templates.ListNode;
+package templates.list;
+import templates.node.ListNode;
 public class SinglyLinkedList {
     public ListNode head;
     public void clear() {head = null;}
