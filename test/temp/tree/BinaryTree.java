@@ -1,13 +1,12 @@
-package templates.tree;
+package temp.tree;
+import temp.tree.TreePrinter;
+import temp.node.TreeNode;
 import java.util.*;
-import templates.node.TreeNode;
-import templates.tree.TreePrinter;
 /**
  * This version of the binary tree implements a self-balancing insertion method 
  * which attempts to make sure the tree is as balanced as possible, but that 
  * the values need not fit a BST design.
  */
-
 public class BinaryTree {
     public TreeNode root;
     public BinaryTree() {root = null;}

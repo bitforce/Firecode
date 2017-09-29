@@ -1,9 +1,7 @@
-package templates.tree;
-
-import templates.tree.TreePrinter;
-import templates.node.TreeNode;
+package temp.tree;
+import temp.tree.TreePrinter;
+import temp.node.TreeNode;
 import java.util.*;
-
 /**
  * This version of the binary tree implements a self-balancing insertion method 
  * which attempts to make sure the tree is as balanced as possible, but that 

@@ -1,9 +1,7 @@
-import templates.list.*;
-import templates.tree.*;
+import temp.list.*;
+import temp.tree.*;
+import temp.trie.*;
 class Test {
-    /* ********************************************************************* */
-    // TEST METHODS
-    /* ********************************************************************* */
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.append(1);
@@ -42,5 +40,7 @@ class Test {
         bst.add(1);
         bst.add(7);
         bst.print();
+
+        Trie trie = new Trie();
     }
 }

@@ -1,6 +1,5 @@
-import templates.node.*;
-import templates.list.*;
-import templates.tree.*;
+import templates.tree.BinaryTree;
+import templates.node.TreeNode;
 import java.util.*;
 
 class Source extends BinaryTree {

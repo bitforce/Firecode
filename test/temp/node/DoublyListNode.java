@@ -1,4 +1,4 @@
-package templates.node;
+package temp.node;
 public class DoublyListNode {
     public int data;
     public DoublyListNode next;  

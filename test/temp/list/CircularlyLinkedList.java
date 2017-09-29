@@ -1,5 +1,5 @@
-package templates.list;
-import templates.node.ListNode;
+package temp.list;
+import temp.node.ListNode;
 public class CircularlyLinkedList {
     public ListNode head;
     public void clear() {head = null;}

@@ -1,4 +1,4 @@
-package templates.node;
+package temp.node;
 public class TreeNode {
     public int data;
     public TreeNode left;

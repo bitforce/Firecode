@@ -1,5 +1,5 @@
-package templates.list;
-import templates.node.DoublyListNode;
+package temp.list;
+import temp.node.DoublyListNode;
 public class DoublyLinkedList {
     public DoublyListNode head;
     public void clear() {head = null;}
