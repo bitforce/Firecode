@@ -16,7 +16,12 @@ N/A
 
 Example
 ---
-N/A
+```
+make args='3 3 a b c d e f h i j'
+make args='3 2 a b c d e f'
+make args='2 3 a b c d e f'
+make args='2 2 a b c d'
+```
 
 Usage
 ---
