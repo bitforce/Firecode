@@ -1,5 +1,6 @@
-import temp.list.*;
-import temp.tree.*;
+package source.test;
+import source.temp.list.*;
+import source.temp.tree.*;
 class Test {
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
@@ -41,5 +42,10 @@ class Test {
         bst.print();
 
         Trie trie = new Trie();
+        trie.add("Hello");
+        trie.add("World");
+        System.out.println(trie.word("Hello"));
+        System.out.println(trie.prefix("Wo"));
+        trie.print(); 
     }
 }
