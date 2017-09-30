@@ -1,6 +1,5 @@
 import temp.list.*;
 import temp.tree.*;
-import temp.trie.*;
 class Test {
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();

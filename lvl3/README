@@ -1,7 +1,18 @@
+===============================================================================
 PROBLEM IDENTIFIER
 ------------------
-01 N/A
-02 N/A
-03 N/A
-...
+01 Fill in the Ancestors of the Node in a Binary Tree
+02 Print a Binary Tree Level By Level
+03 Find the Number that Appears Once
+04 Find the Kth Largest Node in a BST
+05 Insert a Node at a Specified Position in a Linked List
+06 Generate Combinations of Parentheses
+07 Are These Binary Trees Identical?
+08 Insert a Head in a Doubly Linked List
+09 Find the Nth Node from the End - Linked List
+10 Snake
+11 Iterative Inorder Traversal
 12 Iterative BST Validation
+13 Print Paths
+14 Introduction to Tries
+===============================================================================
