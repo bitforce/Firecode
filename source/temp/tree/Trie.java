@@ -3,11 +3,11 @@ import source.temp.node.TrieNode;
 import java.util.HashMap;
 public class Trie {
     public TrieNode root;
-    public Trie() {root = new TrieNode();}
+    public Trie() {this.root = new TrieNode();}
     public void clear() {root = null;}
     public void add(String word) {
         if(word == null) return;
-        HashMap<Character, TrieNode> map = new HashMap<>();
+        HashMap<Character, TrieNode> map = root.children;
         for(int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
             TrieNode node;

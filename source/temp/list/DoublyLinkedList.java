@@ -16,6 +16,7 @@ public class DoublyLinkedList {
             head = node;
         }
     }
+    @Override
     public String toString() {
         String s = "";
         if(head != null) {

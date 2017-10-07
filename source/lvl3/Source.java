@@ -1,8 +1,5 @@
-import templates.node.*;
-import templates.list.*;
-import templates.tree.*;
+package source.lvl3.p;
 import java.util.*;
-
 class Source {
     /* ********************************************************************* */
     /* ********************************************************************* */

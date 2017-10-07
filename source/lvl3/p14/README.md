@@ -19,14 +19,20 @@ N/A
 
 Example
 ---
-N/A
+```
+A='bob al alice bob' => true, true
+A='bob bo alice' => false, false
+A='bob al bobi' => false, false
+A='bob bo bob' => true, true
+```
 
 Usage
 ---
-`make`
+`make L=3 P=14 A='W P T'`
 
 Note
 ---
-This "problem" also includes designing a constructor for the Trie; however, 
-that is avoided since we are not the Trie class and cannot create 
-constructors outside of the respective current class.
+Where _T_ is a string of words, _P_ is a prefix, and _W_ is the word to be searched.
+
+Since we are focusing solely on the methods of the classes, there is one constructor 
+to be used for all instantiation.
