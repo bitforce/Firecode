@@ -21,4 +21,18 @@ PROBLEM IDENTIFIER
 18 Number of Half Nodes in a Binary Tree
 19 Convert a Binary Tree to its Mirror Image
 20 Iteratively, find the Max Element in a Give Binary Tree
+21 Number of Full Nodes in a Binary Tree
+22 Insert a Node at the Specified Position in Doubly Linked List 
+23 Find the Diameter of a BST
+24 Find the Maximum BST Node
+25 Minimum Depth of a Tree
+26 The Deepest Node
+27 Delete the Node at the Specific Position in a Doubly Linked List
+28 Maximum Sum Path
+29 Is this List a Palindrome?
+30 Remove the "Nth from the end" Node from a Singly-Linked List
+31 Find the Maximum Number of Repetitions
+32 Looping Lists : Space complexity O(n)
+33 Rotate Linear Array
+34 Rotate a Square Image Counterclockwise
 ===============================================================================
