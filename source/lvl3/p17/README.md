@@ -19,8 +19,8 @@ N/A
 
 Usage
 ---
-N/A
+`make L=3 P=17 A='T S'`
 
 Note
 ---
-N/A
+Where _T_ is the array/matrix and _S_ equal to square root of _T_'s size.

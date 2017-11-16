@@ -1,5 +1,7 @@
+package source.lvl3.p03;
 import java.util.*;
-class HappyNumber {
+class Source {
+    /* ********************************************************************* */
     private static ArrayList<Integer> track = new ArrayList<>();
     private static boolean isHappyNumber(int n) {
         if (n == 1 || n % 10 == 1) return true;
@@ -17,7 +19,7 @@ class HappyNumber {
                 return false;
         return isHappyNumber(num);
     }
-
+    /* ********************************************************************* */
     private static HashSet<Integer> set = new HashSet<>();
     private static boolean isHappyNumber2(int n) {  // BEST SOLUTION
         if (n == 1 || n % 10 == 1) return true;
@@ -31,6 +33,7 @@ class HappyNumber {
         }
         return isHappyNumber2(m);
     }
+    /* ********************************************************************* */
     private static boolean isHappyNumber3(int n) {  // CLEVER SOLUTION
         if (n == 1) return true;
         Set<Integer> set = new HashSet<>();
@@ -47,6 +50,7 @@ class HappyNumber {
         }
         return true;
     }
+    /* ********************************************************************* */
     public static void main(String[] args) {
         System.out.println(isHappyNumber(Integer.parseInt(args[0])));
         System.out.println(isHappyNumber2(Integer.parseInt(args[0])));

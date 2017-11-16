@@ -35,4 +35,17 @@ PROBLEM IDENTIFIER
 32 Looping Lists : Space complexity O(n)
 33 Rotate Linear Array
 34 Rotate a Square Image Counterclockwise
+35 Distance of a node from the root
+36 Find the kth Smallest Node in a BST
+37 Insert a Node at the Tail of a Circular Linked List
+38 Find the Nth Node from the end without using extra memory - Linked List
+39 Levelorder Traversal
+40 Find the Minimum BST Nodea
+41 Mobile Game Range Module - Merging Ranges
+42 Find the Sum of all Elements in a Binary Tree Iteratively
+43 Jam into a BST
+44 Print all Nodes in the Range a .. b in a given BST
+45 Stock Market Oracle
+46 Full Tree Decompression
+47 Count Paths on a Game Board
 ===============================================================================

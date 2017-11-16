@@ -36,9 +36,9 @@ class Source {
     /* ********************************************************************* */
     public static void main(String[] args) {
         int[] array = new int[args.length];
-        for(int i = 1; i < array.length; i++) 
+        for(int i = 0; i < array.length; i++) 
             array[i] = Integer.parseInt(args[i]);
-        int length = Integer.parseInt(args[0]);
+        int length = Integer.parseInt(args[array.length-1]);
         int[][] matrix = new int[length][length];
         for(int r = 0; r < length; r++)
             for(int c = 0; c < length; c++)

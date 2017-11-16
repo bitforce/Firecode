@@ -19,7 +19,3 @@ N/A
 Note
 ---
 N/A
-
-Note
----
-N/A

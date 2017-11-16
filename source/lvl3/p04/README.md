@@ -8,8 +8,7 @@ right side traversal).
 
 Usage
 ---
-`java HappyNumber K T`, where _T_ is an array of integers and _K_ is the kth 
-largest element.
+N/A
 
 Note
 ---
