@@ -1,5 +1,0 @@
-For some reason, all the solutions except deleteAtHead3() appear to work on
-Firecode.io; however, fail to work when run here. I can't tell if it's 
-because of the print() method that I am missing something or it the 
-code for deleting the head is actually wrong. All the other code 
-submitted, including my own, achieved success on the site.
