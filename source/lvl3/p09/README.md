@@ -1,9 +1,9 @@
-# Are These Binary Trees Identical
+# Find the Nth Node from the End - Linked List
 
 Overview
 ---
-Given two binary trees, determine if they are identical. If they are, return 
-true otherwise return false.
+Given a singly-linked list, implement the method that returns Nth node from the 
+end of the list. You are allowed to use extra memory for this implementation.
 
 Analysis
 ---
