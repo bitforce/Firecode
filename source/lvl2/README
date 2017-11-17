@@ -1,9 +1,37 @@
-
+================================================================================
+PROBLEM IDENTIFIER
+------------------
+01 Iterative Preorder Traversal
+02 Find the Max Element in a Binary Tree Recursively
+03 Recursive Preorder Traversal
+04 Binary Representation
+05 Find the size of the Binary Tree
+06 Find the Sum of all Elements in a Binary Tree
+07 Height of a Binary Tree
+08 Reverse an Integer
 09 Delete the Head Node of a Circular Linked List
 -> CAUTION
-
+10 Remove Duplicates from a List of Words
+11 Is this Integer a Palindrome?
 12 Selection Sort
 -> CAUTION
-
+13 Max Gain
+14 String Compression
+15 Insert Stars
+16 Isomorphic Strings
+17 POW!
 18 BST Validation
 -> CAUTION
+19 Find the Transpose of a Square Matrix
+20 Power of 2
+21 Anagrams
+22 Merge Two Sorted Arrays
+23 Better Fiboncci
+24 Permutations!
+25 Find a Node in a Binary Tree Without Using Recursion
+26 Delete the Node at a Particular Position in a Linked List
+27 Even or Odd
+28 Couple Sum
+39 Count the Leaves
+30 Delete a Circular Linked List's Tail Node
+================================================================================
