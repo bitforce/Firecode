@@ -4,9 +4,12 @@ auto:
 	javac $(PATH).java
 	java $(PATH) $(A)
 	rm $(PATH).class
-test:
-	javac source/test/Test.java
-	java source/test/Test
+test-temp:
+	javac source/test/TestTemplates.java
+	java source/test/TestTemplates
+test-lvls:
+	javac source/test/TestLevels.java
+	java source/test/TestLevels $(L)
 clean-problem:
 	find source/lvl$(L)/p$(P)/ -type f -name '*.class' -delete
 clean-level:
