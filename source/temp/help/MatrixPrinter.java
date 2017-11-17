@@ -14,4 +14,11 @@ public class MatrixPrinter {
            System.out.println();  
         }
     }
+    public static void print(char[][] matrix) {
+        for(char[] a : matrix) {
+            for(char c : a)
+                System.out.print(c + " ");
+           System.out.println();  
+        }
+    }
 }
