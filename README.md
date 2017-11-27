@@ -9,7 +9,19 @@ complete each level. I've also included folders containing datastructure
 templates and test files which you can run. Everything can be compiled 
 and ran from the root directory using `make`. For information on 
 which problem-numbers correspond to which problems, you can see
-the README contained in each level-folder.
+the README contained in each level-folder. When possible, I 
+[co-]code (either I come up with them or I find online)
+alternative solutions to the same problem, just to give 
+some perspective to how to go about solving it; a prime 
+example being iterative & recursive solutions to the 
+same problem. The exceptions are when the problem is 
+either extremely difficult and I don't have the 
+mental capacity to figure one out or the 
+problem is so easy, there's not much 
+need for other insight.
+
+Currently, there are +130 solved coding challenges in the project; all come with 
+documentation. I add more as I solve more; however, only specific to this site.
 
 Setup
 ---
