@@ -3,19 +3,43 @@
 Overview
 ---
 These are all the problems I have completed on Firecode.io along with notes and 
-resources I used to assist me.
+resources I used to assist me. There are 5 levels to master and under _source_ 
+are each of those levels with the respective code challenges required to 
+complete each level. I've also included folders containing datastructure 
+templates and test files which you can run. Everything can be compiled 
+and ran from the root directory using `make`. For information on 
+which problem-numbers correspond to which problems, you can see
+the README contained in each level-folder.
+
+Setup
+---
+`git clone https://github.com/bitforce/Firecode`
 
 Usage
 ---
-When in a problem-folder; containing .java files, you can follow these steps to 
-compile and execute the code: `make`, `mark args=T`, or 
-```
-javac FileName.java
-java FileName [args]
-```
-Where for the latter compilation instructions, _args_ may possibly be optional; 
-however, in the former, you write out _args_ and _T_ is a required, unless it 
-simply required __make__ on its own to run. 
+_N_ corresponds to an integer [1,5] representing the level-folder.
+_M_ corresponds to an integer representing a problem-folder.
+_O_ represents the _potential_ argument needed to run.
 
-When done messing around with code and creating countless class files, be sure 
-to use `./.clean.sh` to get rid of those--note: it is a hidden file.
+You'll most likely use: `make L=N P=M A=O` to compile and run 
+specific problems.
+
+_Generic testing of levels and template files_.
+```
+make test-temp
+make test-levels N
+```
+
+_For cleaning directories of all those nasty class files_.
+The follow commands will remove class files from the root, the level-folder, a 
+specific problem directory, or even the template folder.
+```
+make clean problem L=N P=M
+make clean-level L=N
+make clean-temp
+make clean-root
+```
+
+Note
+---
+N/A
