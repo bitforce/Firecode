@@ -36,6 +36,14 @@ _O_ represents the _potential_ argument needed to run.
 You'll most likely use: `make L=N P=M A=O` to compile and run 
 specific problems.
 
+###### example
+In the below example, I'm compiling and running problem 22 from level 3; using the 
+following arguments: data (4), position in list (2), and the list (5 3 2 1 ). 
+The objective of the code is to put the data in a certain position of a 
+doubly-linkedlist. 
+
+`make L=3 P=22 A='4 2 5 3 2 1'`
+
 _Generic testing of levels and template files_.
 ```
 make test-temp
