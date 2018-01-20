@@ -10,7 +10,6 @@ PROBLEM IDENTIFIER
 07 Find the First Non Duplicate Character in a String
 08 Palindrome Tester
 09 Repeated Elements in an Array
--> CAUTION
 10 Horizontal Flip
 11 Unique Chars in a String
 12 Binary Search on Array of Integers
@@ -20,3 +19,7 @@ PROBLEM IDENTIFIER
 16 Delete a List's Head Node
 17 Find the Number that Appears Once
 ================================================================================
+
+WARNING
+*******
+09

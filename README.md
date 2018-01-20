@@ -44,6 +44,8 @@ doubly-linkedlist.
 
 `make L=3 P=22 A='4 2 5 3 2 1'`
 
+The second line of output should be: 5 4 3 2 1
+
 _Generic testing of levels and template files_.
 ```
 make test-temp
