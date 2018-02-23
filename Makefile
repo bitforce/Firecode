@@ -12,6 +12,9 @@ edit:
 info:
 	less $(DIR)README.md
 
+list:
+	less source/lvl$(L)/README
+
 clean:
 	find source/ -type f -name '*.class' -delete
 #==============================================================================
