@@ -13,7 +13,7 @@ public class BinarySearchTree {
     public void clear() {root = null;}
     public void add(int data) {root = add(data, root);}
     public TreeNode add(int data, TreeNode root) {
-        if(root == null) return new TreeNode(data, null, null);
+        if(root == null) return new TreeNode(data);
         if(data <= root.data) root.left = add(data, root.left);
         if(data > root.data) root.right = add(data, root.right);
         return root;

@@ -22,12 +22,12 @@ public class BinaryTree {
                     queue.add(node.left);
                     queue.add(node.right);
                 } else {
-                    if(node.left == null) node.left = new TreeNode(data, null, null);
-                    else node.right = new TreeNode(data, null, null);
+                    if(node.left == null) node.left = new TreeNode(data);
+                    else node.right = new TreeNode(data);
                     break;
                 }
             }
-        } else this.root = new TreeNode(data, null, null);
+        } else this.root = new TreeNode(data);
     }
     public void print() {TreePrinter.print(root);}
 }

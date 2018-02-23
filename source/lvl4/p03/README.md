@@ -21,4 +21,5 @@ N/A
 
 Note
 ---
-N/A
+Apparently, first solution is not completely correct; however, according to 
+GeeksForGeeks, it should work fine.

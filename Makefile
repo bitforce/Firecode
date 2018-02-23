@@ -1,23 +1,17 @@
 #==============================================================================
-PATH=source/lvl$(L)/p$(P)/Source
+DIR=source/lvl$(L)/p$(P)/
+
 auto:
-	javac $(PATH).java
-	java $(PATH) $(A)
-	rm $(PATH).class
-test-temp:
-	javac source/test/TestTemplates.java
-	java source/test/TestTemplates
-test-lvls:
-	javac source/test/TestLevels.java
-	java source/test/TestLevels $(L)
-clean-problem:
-	find source/lvl$(L)/p$(P)/ -type f -name '*.class' -delete
-clean-level:
-	find source/lvl$(L)/ -type f -name '*.class' -delete
-clean-temp:
-	find source/temp/ -type f -name '*.class' -delete	
-clean-test:
-	find source/test/ -type f -name '*.class' -delete
-clean-root:
+	javac $(DIR)Source.java
+	java $(DIR)Source $(A)
+	rm $(DIR)Source.class
+
+edit:
+	vim $(DIR)Source.java
+
+info:
+	less $(DIR)README.md
+
+clean:
 	find source/ -type f -name '*.class' -delete
 #==============================================================================
