@@ -46,6 +46,9 @@ class Source {
         }
     }
     /* ********************************************************************* */
+    /*
+     * LIKELY MOST EFFICIENT SOLUTION
+     */
     private static ArrayList<String> generateIPAddrs2(String s) {
         class IpLevelNode {
             public int lvl = 0;
@@ -91,8 +94,32 @@ class Source {
         return list;
     }
     /* ********************************************************************* */
+    /*
+     * CLEANEST SOLUTION
+     */
+    private static ArrayList<String> generateIPAddrs3(String s) {
+        return generateIPAddrs3("", s, 0);
+    }
+    private static ArrayList<String> generateIPAddrs3(String prefix, String s, 
+                                                      int dots) {
+        ArrayList<String> list = new ArrayList<>();
+        if (dots == 3) {
+            if (s.length() <= 3 && Integer.valueOf(s) <= 255)
+                list.add(prefix + s);
+        } else for (int i = 1; i <= 3; i++) {
+                    String subprefix = prefix + s.substring(0, i);
+                    String[] split = subprefix.split("\\.");
+                    if (s.length() <= i || split.length > 0 && 
+                        Integer.valueOf(split[split.length-1])>255) break;
+                    list.addAll(generateIPAddrs3(subprefix + ".", 
+                                                 s.substring(i), dots + 1));
+                } 
+        return list;
+    }
+    /* ********************************************************************* */
     public static void main(String[] args) {
         System.out.println(generateIPAddrs(args[0]));
         System.out.println(generateIPAddrs2(args[0]));
+        System.out.println(generateIPAddrs3(args[0]));
     }
 }

@@ -24,4 +24,5 @@ N/A
 Note
 ---
 Since there will always be at least four numbers given, no need to add a failed
-parameter conditional.
+parameter conditional. In addition, at some point in your life, you may want to 
+figure out why the first solution came close but didn't cut it.
