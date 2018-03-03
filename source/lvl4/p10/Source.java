@@ -2,23 +2,19 @@ package source.lvl4.p10;
 import java.util.*;
 class Source {
     /* ********************************************************************* */
-    // 19.216.82.040,192.16.82.040,192.168.2.040,192.168.20.40,192.168.204.0
+    // 
     //1921682040 => doesn't work correctly for this
+    /*
+     * FAILED SOLUTION
+     *
+     * expected output: 1921682040
+     * 19.216.82.040,
+     * 192.16.82.040,
+     * 192.168.2.040,
+     * 192.168.20.40,
+     * 192.168.204.0
+     */
     private static ArrayList<String> generateIPAddrs(String s) {
-        if(s.equals("1921682040")) {
-            // 19.216.82.040,
-            // 192.16.82.040,
-            // 192.168.2.040,
-            // 192.168.20.40,
-            // 192.168.204.0
-            ArrayList<String> l = new ArrayList<>();
-            l.add("19.216.82.040");
-            l.add("192.16.82.040");
-            l.add("192.168.2.040");
-            l.add("192.168.20.40");
-            l.add("192.168.204.0");
-            return l;
-        }
         ArrayList<ArrayList<String>> llist = new ArrayList<>();
         ArrayList<String> addrs = new ArrayList<>(); 
         dfs(llist, new ArrayList<String>(), s, 0);
@@ -50,7 +46,53 @@ class Source {
         }
     }
     /* ********************************************************************* */
+    private static ArrayList<String> generateIPAddrs2(String s) {
+        class IpLevelNode {
+            public int lvl = 0;
+            public String pred;
+            public String succ;
+            public IpLevelNode(int lvl, String ip, String pred, String succ) {
+              this.lvl = lvl;
+              this.succ = succ;
+              if(lvl == 0) this.pred = ip;
+              else this.pred = pred + "." + ip;
+            }
+        }
+        ArrayList<String> list = new ArrayList<>();
+        Deque<IpLevelNode> stack = new LinkedList<>();
+        stack.addFirst(new IpLevelNode(0, s.substring(0,1), "", 
+                                       s.substring(1)));
+        stack.addFirst(new IpLevelNode(0, s.substring(0,2), "", 
+                                       s.substring(2)));
+        stack.addFirst(new IpLevelNode(0, s.substring(0,3), "", 
+                                       s.substring(3)));
+        while(!stack.isEmpty()) {
+            IpLevelNode node = stack.removeFirst();
+            int curLvl = node.lvl;
+            String pred = node.pred;
+            String remaining = node.succ;
+            if(curLvl == 3 && remaining.length() == 0){
+                list.add(node.pred);
+                continue;
+            }
+            int i = 1;
+            while(i <= 3){
+                if(remaining.length() < i) break;
+                String ip = remaining.substring(0,i);
+                String succ = remaining.substring(i);
+                if(ip.length() > 0) {
+                    int num = Integer.parseInt(ip);
+                    if(num <= 255)
+                        stack.addFirst(new IpLevelNode(curLvl+1,ip,pred,succ));
+                }
+                i++;
+            }
+        }
+        return list;
+    }
+    /* ********************************************************************* */
     public static void main(String[] args) {
         System.out.println(generateIPAddrs(args[0]));
+        System.out.println(generateIPAddrs2(args[0]));
     }
 }
