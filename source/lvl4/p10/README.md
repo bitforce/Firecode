@@ -23,4 +23,5 @@ N/A
 
 Note
 ---
-N/A
+Since there will always be at least four numbers given, no need to add a failed
+parameter conditional.
