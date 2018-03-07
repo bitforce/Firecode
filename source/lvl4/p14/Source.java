@@ -32,36 +32,50 @@ class Source {
         return max == 0 ? -1 : lvl;
     }
     /* ********************************************************************* */
+    // BEST SOLUTION
     private int findMaxSumLevel2(TreeNode root) {                    
         if(root == null) return -1;
-        int currSum = 0, maxSum = 0;
-        int currLvl = 0, maxLvl = 0;
-        TreeNode curr = null;
+        int sum = 0, maxSum = 0;
+        int lvl = 0, maxLvl = 0;
+        TreeNode node = null;
         Queue<TreeNode> q = new LinkedList<TreeNode>();
         q.add(root);
-        q.add(null); //end of first level indicator
+        q.add(null);
         while(!q.isEmpty()) {
-            curr = q.remove();
-            // If at the end of current level, compare sum and process result
-            if(curr == null) {
-                if(currSum > maxSum) {
-                    maxSum = currSum;
-                    maxLvl = currLvl;
+            node = q.remove();
+            if(node == null) {
+                if(sum > maxSum) {
+                    maxSum = sum;
+                    maxLvl = lvl;
                 }
-                currSum = 0; //reset
-                if(!q.isEmpty())
-                    q.add(null); //end of level indicator
-                currLvl++; //begin next level
+                sum = 0;
+                if(!q.isEmpty()) q.add(null);
+                lvl++;
             } else {
-                currSum += curr.data;
-                if(curr.left != null)
-                    q.add(curr.left);
-                if(curr.right != null)
-                    q.add(curr.right);
-                    
+                sum += node.data;
+                if(node.left != null) q.add(node.left);
+                if(node.right != null) q.add(node.right);
             }
         }
         return maxLvl;
+    }
+    /* ********************************************************************* */
+    public int findMaxSumLevel3(TreeNode root) { 
+        ArrayList<Integer> sums = new ArrayList<Integer>();
+        findMaxSumLevel3(root, 0, sums);
+        if (sums.size() == 0) return -1;
+        int max = 0;
+        for (int level = 0; level < sums.size(); level++)
+            max = sums.get(level) > sums.get(max) ? level : max;
+        return max;
+    }
+    private void findMaxSumLevel3(TreeNode root, int level, 
+                                  ArrayList<Integer> sums) {
+        if (root == null) return;
+        if (level == sums.size()) sums.add(0);
+        sums.set(level, sums.get(level) + root.data);
+        findMaxSumLevel3(root.left, level + 1, sums);
+        findMaxSumLevel3(root.right, level + 1, sums);
     }
     /* ********************************************************************* */
     public static void main(String[] args) {
@@ -71,5 +85,6 @@ class Source {
         tree.print();
         System.out.println(new Source().findMaxSumLevel(tree.root));
         System.out.println(new Source().findMaxSumLevel2(tree.root));
+        System.out.println(new Source().findMaxSumLevel3(tree.root));
     }
 }
