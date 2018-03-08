@@ -24,7 +24,6 @@ class Source {
                 matrix[c][r] = temp;
             }
     }
-
    /* ********************************************************************** */ 
     public static void main(String[] args) {
         int[] arr = new int[args.length];
