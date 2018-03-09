@@ -17,20 +17,31 @@ class Source {
          */
         ArrayList<ArrayList<Integer>> alist = new ArrayList<>();
         ArrayList<Integer> blist = new ArrayList<>();
-        int k = 0;
-        int m = 1;
+        int shift = args.length - 1;
+        int j;
+        int k;
+        int m;
         for(int i = 0; i < args.length; i++) {
-            if(i + m > args.length) break;
-            for(int j = i; j < i+m; j++) {
-                System.out.println(j);
-                blist.add(Integer.parseInt(args[j]));
-                k++;
+            k = i;
+            m = j
+            for(j = i; j < args.length-shift; j++) {
+                k = j;
+                if(i > 1) k+=m;
+                blist.add(Integer.parseInt(args[k]));
             }
-            System.out.println();
+            System.out.println(blist.toString());
+            /*
+             * Because you are adding an object (addr) and not the vals alone, 
+             * you can't simply just add 'blist', because each new iteration 
+             * will change the vals and update all previous enters; thus, 
+             * making the ArrayList uniform in element vals. So, we 
+             * create a new ArrayList object everytime with the 
+             * current vals of 'blist'.
+             */
             alist.add(new ArrayList<Integer>(blist));
+            shift-=2;
+            if(shift < 0) break;
             blist.clear();
-            i = k-1;
-            m++;
         }
         System.out.println(alist.toString());
         System.out.println(minTriangleDepth(alist));
