@@ -36,3 +36,5 @@ and update all previous enters; thus, making the ArrayList uniform in
 element vals. So, we create a new ArrayList object everytime with the 
 current vals of 'blist'.
 
+Input must form triangle of values: [1, 2, 3], [1, 2, 3, 4, 5, 6], etc.
+=> [[1], [2,3]], [[1], [2,3], [4,5,6]].
