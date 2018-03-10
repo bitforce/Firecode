@@ -25,6 +25,17 @@ class Source {
         return matrix[level][index];
     }
     /* ********************************************************************* */
+    private static int minTriangleDepth2(ArrayList<ArrayList<Integer>> input) {
+        int[] total = new int[input.size()];
+        int l = input.size() - 1;
+        for (int i = 0; i < input.get(l).size(); i++)
+            total[i] = input.get(l).get(i);
+        for (int i = input.size()-2; i >= 0; i--)
+            for (int j = 0; j < input.get(i+1).size()-1; j++)
+                total[j] = input.get(i).get(j) + Math.min(total[j], total[j+1]);
+        return total[0];
+    }
+    /* ********************************************************************* */
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> alist = new ArrayList<>();
         ArrayList<Integer> blist = new ArrayList<>();
@@ -42,5 +53,6 @@ class Source {
         }
         System.out.println(alist.toString());
         System.out.println(minTriangleDepth(alist));
+        System.out.println(minTriangleDepth2(alist));
     }
 }
