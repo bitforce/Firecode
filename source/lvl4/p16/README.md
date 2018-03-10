@@ -22,9 +22,11 @@ N/A
 
 Note
 ---
+```
     1
    2 3
   4 5 6
+```
 
 You can only traverse through adjacent nodes while moving up or down the 
 triangle. An adjacent node is defined as a node that is reached by 
