@@ -1,0 +1,739 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BinarySearchTree	source/temp/tree/BinarySearchTree.java	/^    public BinarySearchTree() {root = null;}$/;"	m	class:BinarySearchTree
+BinarySearchTree	source/temp/tree/BinarySearchTree.java	/^public class BinarySearchTree {$/;"	c
+BinaryTree	source/temp/tree/BinaryTree.java	/^    public BinaryTree() {root = null;}$/;"	m	class:BinaryTree
+BinaryTree	source/temp/tree/BinaryTree.java	/^public class BinaryTree {$/;"	c
+CircularlyLinkedList	source/temp/list/CircularlyLinkedList.java	/^public class CircularlyLinkedList {$/;"	c
+DIR	Makefile	/^DIR=source\/lvl$l\/p$p\/$/;"	m
+DoublyLinkedList	source/temp/list/DoublyLinkedList.java	/^public class DoublyLinkedList {$/;"	c
+DoublyListNode	source/temp/node/DoublyListNode.java	/^    public DoublyListNode(int data) {this.data = data;}$/;"	m	class:DoublyListNode
+DoublyListNode	source/temp/node/DoublyListNode.java	/^public class DoublyListNode {$/;"	c
+Interval	source/lvl3/p41/Source.java	/^        Interval(int start, int end) {$/;"	m	class:Source.Interval
+Interval	source/lvl3/p41/Source.java	/^    private static class Interval {$/;"	c	class:Source
+ListNode	source/temp/node/ListNode.java	/^    public ListNode(int data) {this.data = data;}$/;"	m	class:ListNode
+ListNode	source/temp/node/ListNode.java	/^public class ListNode {$/;"	c
+MatrixPrinter	source/temp/help/MatrixPrinter.java	/^public class MatrixPrinter {$/;"	c
+SinglyLinkedList	source/temp/list/SinglyLinkedList.java	/^public class SinglyLinkedList {$/;"	c
+Source	source/lvl1/p01/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p02/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p03/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p04/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p05/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p06/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p07/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p08/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p09/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p10/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p11/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p12/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p13/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p14/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p15/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p16/Source.java	/^class Source {$/;"	c
+Source	source/lvl1/p17/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p01/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p02/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p03/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p04/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p05/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p06/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p07/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p08/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p09/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p10/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p11/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p12/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p13/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p14/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p15/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p16/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p17/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p18/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p19/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p20/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p21/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p22/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p23/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p24/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p25/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p26/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p27/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p28/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p29/Source.java	/^class Source {$/;"	c
+Source	source/lvl2/p30/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p01/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p02/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p03/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p04/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p05/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p06/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p07/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p08/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p09/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p10/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p11/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p12/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p13/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p14/Source.java	/^    private Source() {this.root = new TrieNode();}$/;"	m	class:Source	file:
+Source	source/lvl3/p14/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p15/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p16/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p17/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p18/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p19/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p20/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p21/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p22/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p23/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p24/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p25/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p26/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p27/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p28/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p29/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p30/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p31/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p32/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p33/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p34/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p35/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p36/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p37/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p38/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p39/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p40/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p41/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p42/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p43/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p44/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p45/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p46/Source.java	/^class Source {$/;"	c
+Source	source/lvl3/p47/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p01/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p02/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p03/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p04/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p05/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p06/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p07/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p08/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p09/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p10/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p11/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p12/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p13/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p14/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p15/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p16/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p17/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p18/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p19/Source.java	/^class Source {$/;"	c
+Test	source/test/TestTemplates.java	/^class Test {$/;"	c
+TestLevels	source/test/TestLevels.java	/^class TestLevels {$/;"	c
+TreeNode	source/temp/node/TreeNode.java	/^    public TreeNode(int data) {$/;"	m	class:TreeNode
+TreeNode	source/temp/node/TreeNode.java	/^    public TreeNode(int data, TreeNode left, TreeNode right) {$/;"	m	class:TreeNode
+TreeNode	source/temp/node/TreeNode.java	/^public class TreeNode {$/;"	c
+TreePrinter	source/temp/help/TreePrinter.java	/^public class TreePrinter {$/;"	c
+Trie	source/temp/tree/Trie.java	/^    public Trie() {root = new TrieNode();}$/;"	m	class:Trie
+Trie	source/temp/tree/Trie.java	/^public class Trie {$/;"	c
+TrieNode	source/temp/node/TrieNode.java	/^    public TrieNode() {}$/;"	m	class:TrieNode
+TrieNode	source/temp/node/TrieNode.java	/^    public TrieNode(Character c) {this.c = c;}$/;"	m	class:TrieNode
+TrieNode	source/temp/node/TrieNode.java	/^public class TrieNode {$/;"	c
+TriePrinter	source/temp/help/TriePrinter.java	/^public class TriePrinter {$/;"	c
+add	source/temp/tree/BinarySearchTree.java	/^    public TreeNode add(int data, TreeNode root) {$/;"	m	class:BinarySearchTree
+add	source/temp/tree/BinarySearchTree.java	/^    public void add(int data) {root = add(data, root);}$/;"	m	class:BinarySearchTree
+add	source/temp/tree/BinaryTree.java	/^    public void add(int data) {add(data, root);}$/;"	m	class:BinaryTree
+add	source/temp/tree/BinaryTree.java	/^    public void add(int data, TreeNode root) {$/;"	m	class:BinaryTree
+add	source/temp/tree/Trie.java	/^    public void add(String word) {$/;"	m	class:Trie
+ancestorsList	source/lvl3/p01/Source.java	/^    private ArrayList<Integer> ancestorsList = new ArrayList<>();$/;"	f	class:Source	file:
+ancestorsList2	source/lvl3/p01/Source.java	/^    private ArrayList<Integer> ancestorsList2 = new ArrayList<>();$/;"	f	class:Source	file:
+append	source/temp/list/CircularlyLinkedList.java	/^    public void append(int data) {$/;"	m	class:CircularlyLinkedList
+append	source/temp/list/DoublyLinkedList.java	/^    public void append(int data) {$/;"	m	class:DoublyLinkedList
+append	source/temp/list/SinglyLinkedList.java	/^    public void append(int data) {$/;"	m	class:SinglyLinkedList
+areAllCharactersUnique	source/lvl1/p11/Source.java	/^    private static boolean areAllCharactersUnique(String str) {$/;"	m	class:Source	file:
+areAllCharactersUnique2	source/lvl1/p11/Source.java	/^    private static boolean areAllCharactersUnique2(String str) {$/;"	m	class:Source	file:
+assist	source/lvl4/p09/Source.java	/^    private static void assist(ArrayList<Character> temp, String digits, $/;"	m	class:Source	file:
+assist	source/lvl4/p11/Source.java	/^    private void assist(Queue<TreeNode> q) {$/;"	m	class:Source	file:
+assist	source/lvl4/p12/Source.java	/^    private int assist(TreeNode root, int n1, int n2) {$/;"	m	class:Source	file:
+assist	source/lvl4/p12/Source.java	/^    private int[] assist(TreeNode root, int n1, int n2, int level) {$/;"	m	class:Source	file:
+assist	source/lvl4/p16/Source.java	/^    private static int assist(ArrayList<ArrayList<Integer>> input, int level,$/;"	m	class:Source	file:
+betterFibonacci	source/lvl2/p23/Source.java	/^    private static int betterFibonacci(int n) {$/;"	m	class:Source	file:
+betterFibonacci2	source/lvl2/p23/Source.java	/^    private static int betterFibonacci2(int n) {$/;"	m	class:Source	file:
+binarySearch	source/lvl1/p12/Source.java	/^    private static boolean binarySearch(int[] arr, int n) {$/;"	m	class:Source	file:
+binarySearch2	source/lvl1/p12/Source.java	/^    private static boolean binarySearch2(int[] arr, int n) {$/;"	m	class:Source	file:
+bitSwapRequired	source/lvl4/p08/Source.java	/^    private int bitSwapRequired(int a, int b) {$/;"	m	class:Source	file:
+bitSwapRequired2	source/lvl4/p08/Source.java	/^    private int bitSwapRequired2(int a, int b) {$/;"	m	class:Source	file:
+bitSwapRequired3	source/lvl4/p08/Source.java	/^    private int bitSwapRequired3(int a, int b) {$/;"	m	class:Source	file:
+boggleSearchWithDict	source/lvl4/p17/Source.java	/^    private ArrayList<String> boggleSearchWithDict(char[][] board, Trie dict) {$/;"	m	class:Source	file:
+boggleSearchWithDict2	source/lvl4/p17/Source.java	/^    private ArrayList<String> boggleSearchWithDict2(char[][] board, Trie dictionary){$/;"	m	class:Source	file:
+boggleSearchWithDict3	source/lvl4/p17/Source.java	/^    private ArrayList<String> boggleSearchWithDict3(char[][] board, Trie dictionary){$/;"	m	class:Source	file:
+bubbleSortArray	source/lvl1/p01/Source.java	/^    private static int[] bubbleSortArray(int[] arr) {$/;"	m	class:Source	file:
+build	source/lvl4/p17/Source.java	/^    private void build(char[][] board, Trie dict, TreeSet<String> ts, String prefix, int r, int c) {$/;"	m	class:Source	file:
+build2	source/lvl4/p17/Source.java	/^    private void build2(char[][] board, Trie dictionary, int row, int col, String str, $/;"	m	class:Source	file:
+build3	source/lvl4/p17/Source.java	/^    private void build3(char[][] board, Trie dictionary, int r, int c, String word, Set<String> output) {$/;"	m	class:Source	file:
+c	source/temp/node/TrieNode.java	/^    public char c;$/;"	f	class:TrieNode
+children	source/temp/node/TrieNode.java	/^    public HashMap<Character, TrieNode> children = new HashMap<>();$/;"	f	class:TrieNode
+clear	source/temp/list/CircularlyLinkedList.java	/^    public void clear() {head = null;}$/;"	m	class:CircularlyLinkedList
+clear	source/temp/list/DoublyLinkedList.java	/^    public void clear() {head = null;}$/;"	m	class:DoublyLinkedList
+clear	source/temp/list/SinglyLinkedList.java	/^    public void clear() {head = null;}$/;"	m	class:SinglyLinkedList
+clear	source/temp/tree/BinarySearchTree.java	/^    public void clear() {root = null;}$/;"	m	class:BinarySearchTree
+clear	source/temp/tree/BinaryTree.java	/^    public void clear() {root = null;}$/;"	m	class:BinaryTree
+clear	source/temp/tree/Trie.java	/^    public void clear() {root = null;}$/;"	m	class:Trie
+combParenthesis	source/lvl3/p06/Source.java	/^    private static ArrayList<String> combParenthesis(int pairs) {$/;"	m	class:Source	file:
+compressString	source/lvl2/p14/Source.java	/^    private static String compressString(String text) {$/;"	m	class:Source	file:
+compressString2	source/lvl2/p14/Source.java	/^    private static String compressString2(String text) {$/;"	m	class:Source	file:
+compressString3	source/lvl2/p14/Source.java	/^    private static String compressString3(String text) {$/;"	m	class:Source	file:
+computeBinary	source/lvl2/p04/Source.java	/^    private static String computeBinary(int val) {$/;"	m	class:Source	file:
+computeBinary2	source/lvl2/p04/Source.java	/^    private static String computeBinary2(int val) {$/;"	m	class:Source	file:
+computeBinary3	source/lvl2/p04/Source.java	/^    private static String computeBinary3(int val) {$/;"	m	class:Source	file:
+computeBinary4	source/lvl2/p04/Source.java	/^    private static String computeBinary4(int val) {$/;"	m	class:Source	file:
+count	source/lvl3/p36/Source.java	/^    int count = 0;$/;"	f	class:Source
+countPaths	source/lvl3/p47/Source.java	/^    private int countPaths(int m, int n) {$/;"	m	class:Source	file:
+countPaths2	source/lvl3/p47/Source.java	/^    private int countPaths2(int m, int n) {$/;"	m	class:Source	file:
+countPaths3	source/lvl3/p47/Source.java	/^    public int countPaths3(int m, int n){$/;"	m	class:Source
+counter	source/lvl3/p04/Source.java	/^    private int counter;$/;"	f	class:Source	file:
+coupleSum	source/lvl2/p28/Source.java	/^    public static int[] coupleSum(int[] numbers, int target) {$/;"	m	class:Source
+data	source/temp/node/DoublyListNode.java	/^    public int data;$/;"	f	class:DoublyListNode
+data	source/temp/node/ListNode.java	/^    public int data;$/;"	f	class:ListNode
+data	source/temp/node/TreeNode.java	/^    public int data;$/;"	f	class:TreeNode
+decompressTree	source/lvl3/p46/Source.java	/^    private TreeNode decompressTree(String str) {$/;"	m	class:Source	file:
+decompressTree2	source/lvl3/p46/Source.java	/^    private TreeNode decompressTree2(String str){$/;"	m	class:Source	file:
+decompressTree3	source/lvl3/p46/Source.java	/^    private TreeNode decompressTree3(String str) {return decompressTree3(str.split(","),0);}$/;"	m	class:Source	file:
+decompressTree3	source/lvl3/p46/Source.java	/^    private TreeNode decompressTree3(String[] nodes, int index){$/;"	m	class:Source	file:
+deleteAtHead	source/lvl1/p16/Source.java	/^    private ListNode deleteAtHead(ListNode head) {$/;"	m	class:Source	file:
+deleteAtHead	source/lvl2/p09/Source.java	/^    private ListNode deleteAtHead(ListNode head) {$/;"	m	class:Source	file:
+deleteAtHead2	source/lvl1/p16/Source.java	/^    private ListNode deleteAtHead2(ListNode head) {$/;"	m	class:Source	file:
+deleteAtHead2	source/lvl2/p09/Source.java	/^    private ListNode deleteAtHead2(ListNode head) {$/;"	m	class:Source	file:
+deleteAtHead3	source/lvl2/p09/Source.java	/^    private ListNode deleteAtHead3(ListNode head) {$/;"	m	class:Source	file:
+deleteAtHead4	source/lvl2/p09/Source.java	/^    private ListNode deleteAtHead4(ListNode head) {$/;"	m	class:Source	file:
+deleteAtMiddle	source/lvl2/p26/Source.java	/^    private ListNode deleteAtMiddle(ListNode head, int position) {  \/\/ N.1$/;"	m	class:Source	file:
+deleteAtMiddle2	source/lvl2/p26/Source.java	/^    private ListNode deleteAtMiddle2(ListNode head, int position) { \/\/ N.2$/;"	m	class:Source	file:
+deleteAtMiddle3	source/lvl2/p26/Source.java	/^    private ListNode deleteAtMiddle3(ListNode head, int position) { \/\/ N.3$/;"	m	class:Source	file:
+deleteAtPos	source/lvl3/p27/Source.java	/^    private DoublyListNode deleteAtPos(DoublyListNode head, int pos) {$/;"	m	class:Source	file:
+deleteAtPos2	source/lvl3/p27/Source.java	/^    private DoublyListNode deleteAtPos2(DoublyListNode head, int pos) {$/;"	m	class:Source	file:
+deleteAtTail	source/lvl1/p03/Source.java	/^    private ListNode deleteAtTail(ListNode head) {$/;"	m	class:Source	file:
+deleteAtTail	source/lvl2/p30/Source.java	/^    private ListNode deleteAtTail(ListNode head) {$/;"	m	class:Source	file:
+dfs	source/lvl4/p10/Source.java	/^    private static void dfs(ArrayList<ArrayList<String>> ll,$/;"	m	class:Source	file:
+diameter	source/lvl3/p23/Source.java	/^    private int diameter(TreeNode root) {$/;"	m	class:Source	file:
+diameter2	source/lvl3/p23/Source.java	/^    private int diameter2(TreeNode root) {return height2(root)[0];}$/;"	m	class:Source	file:
+duplicate	source/lvl1/p09/Source.java	/^    private static String duplicate(int[] numbers) {$/;"	m	class:Source	file:
+duplicate2	source/lvl1/p09/Source.java	/^    private static String duplicate2(int[] numbers) {$/;"	m	class:Source	file:
+duplicate3	source/lvl1/p09/Source.java	/^    private static String duplicate3(int[] numbers) {$/;"	m	class:Source	file:
+editDistance	source/lvl4/p06/Source.java	/^    private int editDistance(String a, String b) {$/;"	m	class:Source	file:
+end	source/lvl3/p41/Source.java	/^        int end;$/;"	f	class:Source.Interval
+fib	source/lvl1/p13/Source.java	/^    public static int fib(int n) {$/;"	m	class:Source
+fib2	source/lvl1/p13/Source.java	/^    public static int fib2(int n) {$/;"	m	class:Source
+fib3	source/lvl1/p13/Source.java	/^    public static int fib3(int n) {$/;"	m	class:Source
+findDeepest	source/lvl3/p26/Source.java	/^    private TreeNode findDeepest(TreeNode root) {$/;"	m	class:Source	file:
+findFirstNonRepeatedCharacter	source/lvl1/p07/Source.java	/^    private static Character findFirstNonRepeatedCharacter(String str) {$/;"	m	class:Source	file:
+findFirstNonRepeatedCharacter2	source/lvl1/p07/Source.java	/^    private static Character findFirstNonRepeatedCharacter2(String str) {$/;"	m	class:Source	file:
+findHeight	source/lvl2/p07/Source.java	/^    private int findHeight(TreeNode root) {$/;"	m	class:Source	file:
+findKthLargest	source/lvl3/p04/Source.java	/^    private TreeNode findKthLargest(TreeNode root, int k) {$/;"	m	class:Source	file:
+findKthLargest2	source/lvl3/p04/Source.java	/^    private TreeNode findKthLargest2(TreeNode root, int k) {$/;"	m	class:Source	file:
+findKthSmallest	source/lvl3/p36/Source.java	/^    private TreeNode findKthSmallest(TreeNode root, int k) {$/;"	m	class:Source	file:
+findKthSmallest2	source/lvl3/p36/Source.java	/^    private TreeNode findKthSmallest2(TreeNode root, int k) {$/;"	m	class:Source	file:
+findLCA	source/lvl4/p05/Source.java	/^    private TreeNode findLCA(TreeNode root, TreeNode a, TreeNode b) {$/;"	m	class:Source	file:
+findLCA2	source/lvl4/p05/Source.java	/^    private TreeNode findLCA2(TreeNode root, TreeNode a, TreeNode b) {$/;"	m	class:Source	file:
+findLCA3	source/lvl4/p05/Source.java	/^    private TreeNode findLCA3(TreeNode root, TreeNode a, TreeNode b) {$/;"	m	class:Source	file:
+findMax	source/lvl2/p02/Source.java	/^    private int findMax(TreeNode root) {$/;"	m	class:Source	file:
+findMax	source/lvl3/p24/Source.java	/^    private TreeNode findMax(TreeNode root) {$/;"	m	class:Source	file:
+findMax2	source/lvl2/p02/Source.java	/^    private int findMax2(TreeNode root) {$/;"	m	class:Source	file:
+findMax2	source/lvl3/p24/Source.java	/^    private TreeNode findMax2(TreeNode root) {$/;"	m	class:Source	file:
+findMax3	source/lvl2/p02/Source.java	/^    private int findMax3(TreeNode root) {$/;"	m	class:Source	file:
+findMax3	source/lvl3/p24/Source.java	/^    private TreeNode findMax3(TreeNode root) {$/;"	m	class:Source	file:
+findMax4	source/lvl2/p02/Source.java	/^    private int findMax4(TreeNode root) {$/;"	m	class:Source	file:
+findMaxItr	source/lvl3/p20/Source.java	/^    private int findMaxItr(TreeNode root) {$/;"	m	class:Source	file:
+findMaxItr2	source/lvl3/p20/Source.java	/^    private int findMaxItr2(TreeNode root) {                         $/;"	m	class:Source	file:
+findMaxItr3	source/lvl3/p20/Source.java	/^    private int findMaxItr3(TreeNode root) {$/;"	m	class:Source	file:
+findMaxSumLevel	source/lvl4/p14/Source.java	/^    private int findMaxSumLevel(TreeNode root) {$/;"	m	class:Source	file:
+findMaxSumLevel2	source/lvl4/p14/Source.java	/^    private int findMaxSumLevel2(TreeNode root) {                    $/;"	m	class:Source	file:
+findMaxSumLevel3	source/lvl4/p14/Source.java	/^    private void findMaxSumLevel3(TreeNode root, int level, $/;"	m	class:Source	file:
+findMaxSumLevel3	source/lvl4/p14/Source.java	/^    public int findMaxSumLevel3(TreeNode root) { $/;"	m	class:Source
+findMiddleNode	source/lvl1/p05/Source.java	/^    private ListNode findMiddleNode(ListNode head) {$/;"	m	class:Source	file:
+findMiddleNode2	source/lvl1/p05/Source.java	/^    private ListNode findMiddleNode2(ListNode head) {$/;"	m	class:Source	file:
+findMin	source/lvl3/p40/Source.java	/^    private TreeNode findMin(TreeNode root) {$/;"	m	class:Source	file:
+findMin2	source/lvl3/p40/Source.java	/^    private TreeNode findMin2(TreeNode root) {$/;"	m	class:Source	file:
+findMin3	source/lvl3/p40/Source.java	/^    private TreeNode findMin3(TreeNode root) {$/;"	m	class:Source	file:
+findMissingNumber	source/lvl1/p06/Source.java	/^    public static int findMissingNumber(int[] arr) {$/;"	m	class:Source
+findNode	source/lvl2/p25/Source.java	/^    private TreeNode findNode(TreeNode root, int val) {$/;"	m	class:Source	file:
+findNode2	source/lvl2/p25/Source.java	/^    private TreeNode findNode2(TreeNode root, int val) {$/;"	m	class:Source	file:
+findNode3	source/lvl2/p25/Source.java	/^    private TreeNode findNode3(TreeNode root, int val) {$/;"	m	class:Source	file:
+findNthNodeFromEnd	source/lvl3/p09/Source.java	/^    private ListNode findNthNodeFromEnd(ListNode head, int n) {$/;"	m	class:Source	file:
+findNthNodeFromEnd	source/lvl3/p38/Source.java	/^    private ListNode findNthNodeFromEnd(ListNode head, int n) {$/;"	m	class:Source	file:
+findNthNodeFromEnd2	source/lvl3/p38/Source.java	/^    private ListNode findNthNodeFromEnd2(ListNode head, int n) {$/;"	m	class:Source	file:
+findNthNodeFromEnd3	source/lvl3/p38/Source.java	/^    private ListNode findNthNodeFromEnd3(ListNode head, int n) {$/;"	m	class:Source	file:
+findSpiral	source/lvl3/p10/Source.java	/^    private static ArrayList<Integer> findSpiral(int[][] arr) {$/;"	m	class:Source	file:
+flip	source/lvl3/p34/Source.java	/^    private static void flip(int[][] matrix) {$/;"	m	class:Source	file:
+flipHorizontalAxis	source/lvl1/p10/Source.java	/^    private static void flipHorizontalAxis(int[][] matrix) {$/;"	m	class:Source	file:
+flipItVerticalAxis	source/lvl1/p02/Source.java	/^    private static void flipItVerticalAxis(int[][] matrix) {$/;"	m	class:Source	file:
+generateIPAddrs	source/lvl4/p10/Source.java	/^    private static ArrayList<String> generateIPAddrs(String s) {$/;"	m	class:Source	file:
+generateIPAddrs2	source/lvl4/p10/Source.java	/^    private static ArrayList<String> generateIPAddrs2(String s) {$/;"	m	class:Source	file:
+generateIPAddrs3	source/lvl4/p10/Source.java	/^    private static ArrayList<String> generateIPAddrs3(String prefix, String s, $/;"	m	class:Source	file:
+generateIPAddrs3	source/lvl4/p10/Source.java	/^    private static ArrayList<String> generateIPAddrs3(String s) {$/;"	m	class:Source	file:
+getMaximumRepetition	source/lvl3/p31/Source.java	/^    private static int getMaximumRepetition(int[] a) {$/;"	m	class:Source	file:
+getNodeDistance	source/lvl4/p12/Source.java	/^    private int getNodeDistance(TreeNode root, int n1, int n2) { $/;"	m	class:Source	file:
+getNodeDistance2	source/lvl4/p12/Source.java	/^    private int getNodeDistance2(TreeNode root, int n1, int n2) {$/;"	m	class:Source	file:
+getNodeDistance3	source/lvl4/p12/Source.java	/^    private int getNodeDistance3(TreeNode root, int n1, int n2) {$/;"	m	class:Source	file:
+getStringsFromNums	source/lvl4/p09/Source.java	/^    private static ArrayList<String> getStringsFromNums(String digits) {$/;"	m	class:Source	file:
+getStringsFromNums2	source/lvl4/p09/Source.java	/^    public static ArrayList<String> getStringsFromNums2(String digits) {$/;"	m	class:Source
+groupSum	source/lvl4/p18/Source.java	/^    private static boolean groupSum(int[] arr, int len, int target) {$/;"	m	class:Source	file:
+groupSum	source/lvl4/p18/Source.java	/^    private static boolean groupSum(int[] arr, int target) {return groupSum(arr, arr.length, target);}$/;"	m	class:Source	file:
+groupSum2	source/lvl4/p18/Source.java	/^    private static boolean groupSum2(int start, int[] arr, int target) {$/;"	m	class:Source	file:
+groupSum2	source/lvl4/p18/Source.java	/^    private static boolean groupSum2(int[] arr, int target) {return groupSum2(0, arr, target);}$/;"	m	class:Source	file:
+groupSum3	source/lvl4/p18/Source.java	/^    private static boolean groupSum3(int[] arr, int target) {$/;"	m	class:Source	file:
+head	source/temp/list/CircularlyLinkedList.java	/^    public ListNode head;$/;"	f	class:CircularlyLinkedList
+head	source/temp/list/DoublyLinkedList.java	/^    public DoublyListNode head;$/;"	f	class:DoublyLinkedList
+head	source/temp/list/SinglyLinkedList.java	/^    public ListNode head;$/;"	f	class:SinglyLinkedList
+height	source/lvl3/p23/Source.java	/^    private int height(TreeNode root) {$/;"	m	class:Source	file:
+height2	source/lvl3/p23/Source.java	/^    private int[] height2(TreeNode root) {$/;"	m	class:Source	file:
+inOrderItr	source/lvl3/p11/Source.java	/^    private ArrayList<Integer> inOrderItr(TreeNode root) {$/;"	m	class:Source	file:
+insert	source/lvl3/p43/Source.java	/^    private TreeNode insert(TreeNode root, int data) {$/;"	m	class:Source	file:
+insert2	source/lvl3/p43/Source.java	/^    private TreeNode insert2(TreeNode root, int data) {$/;"	m	class:Source	file:
+insertAtHead	source/lvl1/p15/Source.java	/^    private ListNode insertAtHead(ListNode head, int data) {$/;"	m	class:Source	file:
+insertAtHead	source/lvl3/p08/Source.java	/^    private DoublyListNode insertAtHead(DoublyListNode head, int data) {$/;"	m	class:Source	file:
+insertAtHead2	source/lvl1/p15/Source.java	/^    private ListNode insertAtHead2(ListNode head, int data) {$/;"	m	class:Source	file:
+insertAtPos	source/lvl3/p22/Source.java	/^    private DoublyListNode insertAtPos(DoublyListNode head, int data, int pos) {$/;"	m	class:Source	file:
+insertAtPos2	source/lvl3/p22/Source.java	/^    private DoublyListNode insertAtPos2(DoublyListNode head, int data, int pos) {$/;"	m	class:Source	file:
+insertAtPos3	source/lvl3/p22/Source.java	/^    private DoublyListNode insertAtPos3(DoublyListNode head, int data, int pos) {$/;"	m	class:Source	file:
+insertAtPosition	source/lvl3/p05/Source.java	/^    private ListNode insertAtPosition(ListNode head, int data, int pos) {$/;"	m	class:Source	file:
+insertAtPosition2	source/lvl3/p05/Source.java	/^    private ListNode insertAtPosition2(ListNode head, int data, int pos) {$/;"	m	class:Source	file:
+insertAtTail	source/lvl3/p37/Source.java	/^    private ListNode insertAtTail(ListNode head, int data) {$/;"	m	class:Source	file:
+insertAtTail2	source/lvl3/p37/Source.java	/^    private ListNode insertAtTail2(ListNode head, int data) {$/;"	m	class:Source	file:
+insertPairStar	source/lvl2/p15/Source.java	/^    private static String insertPairStar(String s) {$/;"	m	class:Source	file:
+insertPairStar2	source/lvl2/p15/Source.java	/^    private static String insertPairStar2(String s) {$/;"	m	class:Source	file:
+insertWord	source/lvl3/p14/Source.java	/^    private void insertWord(String word) {$/;"	m	class:Source	file:
+insertWord2	source/lvl3/p14/Source.java	/^    public void insertWord2(String word) {$/;"	m	class:Source
+insertWord3	source/lvl3/p14/Source.java	/^    private void insertWord3(TrieNode currentNode, String word, int index) {$/;"	m	class:Source	file:
+insertWord3	source/lvl3/p14/Source.java	/^    public void insertWord3(String word) {$/;"	m	class:Source
+internal	source/temp/help/TreePrinter.java	/^    private static void internal(List<TreeNode> nodes, int level, int max) {$/;"	m	class:TreePrinter	file:
+isAnagram	source/lvl2/p21/Source.java	/^    private static boolean isAnagram(String a, String b) {$/;"	m	class:Source	file:
+isBST	source/lvl2/p18/Source.java	/^    private static boolean isBST(TreeNode root, int high, int low) {$/;"	m	class:Source	file:
+isBST2	source/lvl2/p18/Source.java	/^    private static boolean isBST2(TreeNode root, int high, int low) {$/;"	m	class:Source	file:
+isCyclic	source/lvl3/p32/Source.java	/^    private boolean isCyclic(ListNode head) {$/;"	m	class:Source	file:
+isCyclic2	source/lvl3/p32/Source.java	/^    private boolean isCyclic2(ListNode head) {$/;"	m	class:Source	file:
+isCyclic3	source/lvl3/p32/Source.java	/^    private boolean isCyclic3(ListNode head) {$/;"	m	class:Source	file:
+isHappyNumber	source/lvl3/p03/Source.java	/^    private static boolean isHappyNumber(int n) {$/;"	m	class:Source	file:
+isHappyNumber2	source/lvl3/p03/Source.java	/^    private static boolean isHappyNumber2(int n) {  \/\/ BEST SOLUTION$/;"	m	class:Source	file:
+isHappyNumber3	source/lvl3/p03/Source.java	/^    private static boolean isHappyNumber3(int n) {  \/\/ CLEVER SOLUTION$/;"	m	class:Source	file:
+isIdentical	source/lvl3/p07/Source.java	/^    private boolean isIdentical(TreeNode root1, TreeNode root2) {$/;"	m	class:Source	file:
+isIdentical2	source/lvl3/p07/Source.java	/^    private boolean isIdentical2(TreeNode root1, TreeNode root2) {$/;"	m	class:Source	file:
+isIntPalindrome	source/lvl2/p11/Source.java	/^    private static boolean isIntPalindrome(int x) {$/;"	m	class:Source	file:
+isIntPalindrome2	source/lvl2/p11/Source.java	/^    private static boolean isIntPalindrome2(int x) {$/;"	m	class:Source	file:
+isIsomorphic	source/lvl2/p16/Source.java	/^    private static boolean isIsomorphic(String input1, String input2) {$/;"	m	class:Source	file:
+isIsomorphic2	source/lvl2/p16/Source.java	/^    private static boolean isIsomorphic2(String input1, String input2) {$/;"	m	class:Source	file:
+isLeaf	source/temp/node/TrieNode.java	/^    public Boolean isLeaf = false;$/;"	f	class:TrieNode
+isListEven	source/lvl2/p27/Source.java	/^    private boolean isListEven(ListNode head) {$/;"	m	class:Source	file:
+isListEven2	source/lvl2/p27/Source.java	/^    private boolean isListEven2(ListNode head) {$/;"	m	class:Source	file:
+isListPalindrome	source/lvl3/p29/Source.java	/^    private boolean isListPalindrome(ListNode head) {$/;"	m	class:Source	file:
+isListPalindrome2	source/lvl3/p29/Source.java	/^    private boolean isListPalindrome2(ListNode head) {$/;"	m	class:Source	file:
+isListPalindrome3	source/lvl3/p29/Source.java	/^    private boolean isListPalindrome3(ListNode head) {$/;"	m	class:Source	file:
+isMirror	source/lvl4/p07/Source.java	/^    private boolean isMirror(TreeNode root1, TreeNode root2) {$/;"	m	class:Source	file:
+isPowerOfTwo	source/lvl2/p20/Source.java	/^    private static boolean isPowerOfTwo(int num) {$/;"	m	class:Source	file:
+isPowerOfTwo2	source/lvl2/p20/Source.java	/^    private static boolean isPowerOfTwo2(int num) {$/;"	m	class:Source	file:
+isStringPalindrome	source/lvl1/p08/Source.java	/^    private static boolean isStringPalindrome(String str) {$/;"	m	class:Source	file:
+isStringPalindrome2	source/lvl1/p08/Source.java	/^    private static boolean isStringPalindrome2(String str) {$/;"	m	class:Source	file:
+lca	source/lvl4/p12/Source.java	/^    private TreeNode lca(TreeNode root, int n1, int n2) {$/;"	m	class:Source	file:
+leafless	source/temp/help/TreePrinter.java	/^    private static boolean leafless(List<TreeNode> list) {$/;"	m	class:TreePrinter	file:
+left	source/temp/node/TreeNode.java	/^    public TreeNode left;$/;"	f	class:TreeNode
+length	source/lvl4/p12/Source.java	/^    private int length(TreeNode root, int n) {$/;"	m	class:Source	file:
+levelorder	source/lvl3/p39/Source.java	/^    private ArrayList<Integer> levelorder(TreeNode root) {$/;"	m	class:Source	file:
+levelorder2	source/lvl3/p39/Source.java	/^    private ArrayList<Integer> levelorder2(TreeNode root) {$/;"	m	class:Source	file:
+levelorderRev	source/lvl4/p11/Source.java	/^    private ArrayList<Integer> levelorderRev(TreeNode root) {$/;"	m	class:Source	file:
+levelorderRev2	source/lvl4/p11/Source.java	/^    private ArrayList<Integer> levelorderRev2(TreeNode root) {$/;"	m	class:Source	file:
+levelorderRev3	source/lvl4/p11/Source.java	/^    private ArrayList<Integer> levelorderRev3(TreeNode root) {$/;"	m	class:Source	file:
+list	source/lvl3/p39/Source.java	/^    ArrayList<Integer> list = new ArrayList<>();$/;"	f	class:Source
+longestNRSubstringLen	source/lvl4/p03/Source.java	/^    private static int longestNRSubstringLen(String input) {$/;"	m	class:Source	file:
+longestNRSubstringLen2	source/lvl4/p03/Source.java	/^    private static int longestNRSubstringLen2(String input) {$/;"	m	class:Source	file:
+longestNRSubstringLen3	source/lvl4/p03/Source.java	/^    public static int longestNRSubstringLen3(String input) {$/;"	m	class:Source
+main	source/lvl1/p01/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p02/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p03/Source.java	/^    public static void main (String[] args) {$/;"	m	class:Source
+main	source/lvl1/p04/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p05/Source.java	/^    public static void main (String[] args) {$/;"	m	class:Source
+main	source/lvl1/p06/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p07/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p08/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p09/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p10/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p11/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p12/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p13/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p14/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl1/p15/Source.java	/^    public static void main (String[] args) {$/;"	m	class:Source
+main	source/lvl1/p16/Source.java	/^    public static void main (String[] args) {$/;"	m	class:Source
+main	source/lvl1/p17/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p01/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p02/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p03/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p04/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p05/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p06/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p07/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p08/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p09/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p10/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p11/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p12/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p13/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p14/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p15/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p16/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p17/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p18/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p19/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p20/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p21/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p22/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p23/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p24/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p25/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p26/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p27/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p28/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p29/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl2/p30/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p01/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p02/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p03/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p04/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p05/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p06/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p07/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p08/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p09/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p10/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p11/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p12/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p13/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p14/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p15/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p16/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p17/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p18/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p19/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p20/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p21/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p22/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p23/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p24/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p25/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p26/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p27/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p28/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p29/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p30/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p31/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p32/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p33/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p34/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p35/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p36/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p37/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p38/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p39/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p40/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p41/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p42/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p43/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p44/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p45/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p46/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl3/p47/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/Source.java	/^    public static void main(String[] args) {}$/;"	m	class:Source
+main	source/lvl4/p01/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p02/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p03/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p04/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p05/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p06/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p07/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p08/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p09/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p10/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p11/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p12/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p13/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p14/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p15/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p16/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p17/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p18/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p19/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/test/TestLevels.java	/^    public static void main(String[] args) {}$/;"	m	class:TestLevels
+main	source/test/TestTemplates.java	/^    public static void main(String[] args) {$/;"	m	class:Test
+makeChange	source/lvl4/p02/Source.java	/^    public static int makeChange(int[] coins, int amount) {$/;"	m	class:Source
+makeChange2	source/lvl4/p02/Source.java	/^     public static int makeChange2(int[] coins, int amount) {$/;"	m	class:Source
+makeChange3	source/lvl4/p02/Source.java	/^    public static int makeChange3(int[] coins, int amount) {$/;"	m	class:Source
+matrixMaxSumDfs	source/lvl4/p19/Source.java	/^    private static int matrixMaxSumDfs(int[][] grid) {}$/;"	m	class:Source	file:
+max	source/temp/help/TreePrinter.java	/^    private static int max(TreeNode node) {$/;"	m	class:TreePrinter	file:
+maxGain	source/lvl2/p13/Source.java	/^    private static int maxGain(int[] a) {$/;"	m	class:Source	file:
+maxGain2	source/lvl2/p13/Source.java	/^    private static int maxGain2(int[] a) {$/;"	m	class:Source	file:
+maxGain3	source/lvl2/p13/Source.java	/^    private static int maxGain3(int[] a) {$/;"	m	class:Source	file:
+maxProfit	source/lvl3/p45/Source.java	/^    private static int maxProfit(int[] a) {$/;"	m	class:Source	file:
+maxProfit2	source/lvl3/p45/Source.java	/^    private static int maxProfit2(int[] prices){$/;"	m	class:Source	file:
+maxSumPath	source/lvl3/p28/Source.java	/^    private static int maxSumPath(TreeNode root) {$/;"	m	class:Source	file:
+maxSumPath	source/lvl3/p28/Source.java	/^    private static int maxSumPath(TreeNode root, int[] max) {$/;"	m	class:Source	file:
+merge	source/lvl2/p22/Source.java	/^    private static int[] merge(int[] left, int[] right) {$/;"	m	class:Source	file:
+merge2	source/lvl2/p22/Source.java	/^    private static int[] merge2(int[] left, int[] right) {$/;"	m	class:Source	file:
+mergeIntervals	source/lvl3/p41/Source.java	/^    private static ArrayList<Interval> mergeIntervals(ArrayList<Interval> intervalsList) {$/;"	m	class:Source	file:
+mergeIntervals2	source/lvl3/p41/Source.java	/^    private static ArrayList<Interval> mergeIntervals2(ArrayList<Interval> intervalsList) {$/;"	m	class:Source	file:
+mergeTwoSortedList	source/lvl4/p01/Source.java	/^    public ListNode mergeTwoSortedList(ListNode l1, ListNode l2) {$/;"	m	class:Source
+minTreeDepth	source/lvl3/p25/Source.java	/^    private int minTreeDepth(TreeNode root) {$/;"	m	class:Source	file:
+minTreeDepth2	source/lvl3/p25/Source.java	/^    private int minTreeDepth2(TreeNode root) {$/;"	m	class:Source	file:
+minTreeDepth3	source/lvl3/p25/Source.java	/^    private int minTreeDepth3(TreeNode root) {$/;"	m	class:Source	file:
+minTriangleDepth	source/lvl4/p16/Source.java	/^    private static int minTriangleDepth(ArrayList<ArrayList<Integer>> input) {$/;"	m	class:Source	file:
+minTriangleDepth2	source/lvl4/p16/Source.java	/^    private static int minTriangleDepth2(ArrayList<ArrayList<Integer>> input) {$/;"	m	class:Source	file:
+mirror	source/lvl3/p19/Source.java	/^    private TreeNode mirror(TreeNode root) {$/;"	m	class:Source	file:
+mirror2	source/lvl3/p19/Source.java	/^    private TreeNode mirror2(TreeNode root) {$/;"	m	class:Source	file:
+mirror3	source/lvl3/p19/Source.java	/^    private TreeNode mirror3(TreeNode root) {$/;"	m	class:Source	file:
+next	source/temp/node/DoublyListNode.java	/^    public DoublyListNode next;  $/;"	f	class:DoublyListNode
+next	source/temp/node/ListNode.java	/^    public ListNode next;        $/;"	f	class:ListNode
+numberOfFullNodes	source/lvl3/p21/Source.java	/^    private int numberOfFullNodes(TreeNode root) {$/;"	m	class:Source	file:
+numberOfFullNodes2	source/lvl3/p21/Source.java	/^    private int numberOfFullNodes2(TreeNode root) {$/;"	m	class:Source	file:
+numberOfFullNodes3	source/lvl3/p21/Source.java	/^    private int numberOfFullNodes3(TreeNode root) {$/;"	m	class:Source	file:
+numberOfHalfNodes	source/lvl3/p18/Source.java	/^    private int numberOfHalfNodes(TreeNode root) {$/;"	m	class:Source	file:
+numberOfLeaves	source/lvl2/p29/Source.java	/^    private int numberOfLeaves(TreeNode root) { \/\/ BEST SOLUTION$/;"	m	class:Source	file:
+pathLengthFromRoot	source/lvl3/p35/Source.java	/^    private int pathLengthFromRoot(TreeNode root, int n1) {$/;"	m	class:Source	file:
+pathLengthFromRoot2	source/lvl3/p35/Source.java	/^    private int pathLengthFromRoot2(TreeNode root, int n1) {$/;"	m	class:Source	file:
+permutation	source/lvl2/p24/Source.java	/^    private static boolean permutation(String a, String b) {$/;"	m	class:Source	file:
+permutation2	source/lvl2/p24/Source.java	/^    public static boolean permutation2(String a, String b) {$/;"	m	class:Source
+pow	source/lvl2/p17/Source.java	/^    private static double pow(double x, int n) {$/;"	m	class:Source	file:
+pow2	source/lvl2/p17/Source.java	/^    private static double pow2(double x, int n) {$/;"	m	class:Source	file:
+prefix	source/temp/tree/Trie.java	/^    public boolean prefix(String word) {return search(word) != null;}$/;"	m	class:Trie
+preorder	source/lvl2/p03/Source.java	/^    private void preorder(TreeNode root) {$/;"	m	class:Source	file:
+preorderItr	source/lvl2/p01/Source.java	/^    private ArrayList<Integer> preorderItr(TreeNode root) {$/;"	m	class:Source	file:
+preorderedList	source/lvl2/p03/Source.java	/^    private ArrayList<Integer> preorderedList = new ArrayList<>();$/;"	f	class:Source	file:
+prev	source/temp/node/DoublyListNode.java	/^    public DoublyListNode prev;$/;"	f	class:DoublyListNode
+print	source/temp/help/MatrixPrinter.java	/^    public static <T> void print(T[][] matrix) {$/;"	m	class:MatrixPrinter
+print	source/temp/help/MatrixPrinter.java	/^    public static void print(char[][] matrix) {$/;"	m	class:MatrixPrinter
+print	source/temp/help/MatrixPrinter.java	/^    public static void print(int[][] matrix) {$/;"	m	class:MatrixPrinter
+print	source/temp/help/TreePrinter.java	/^    public static void print(TreeNode root) {$/;"	m	class:TreePrinter
+print	source/temp/help/TriePrinter.java	/^    public static void print(TrieNode root) {$/;"	m	class:TriePrinter
+print	source/temp/list/CircularlyLinkedList.java	/^    public void print() {System.out.print(toString());}$/;"	m	class:CircularlyLinkedList
+print	source/temp/list/DoublyLinkedList.java	/^    public void print() {System.out.print(toString());}$/;"	m	class:DoublyLinkedList
+print	source/temp/list/SinglyLinkedList.java	/^    public void print() {System.out.print(toString());}$/;"	m	class:SinglyLinkedList
+print	source/temp/tree/BinarySearchTree.java	/^    public void print() {TreePrinter.print(root);}$/;"	m	class:BinarySearchTree
+print	source/temp/tree/BinaryTree.java	/^    public void print() {TreePrinter.print(root);}$/;"	m	class:BinaryTree
+print	source/temp/tree/Trie.java	/^    private void print(TrieNode node, String str) {$/;"	m	class:Trie	file:
+print	source/temp/tree/Trie.java	/^    public void print(){print(root, "");}$/;"	m	class:Trie
+printAncestors	source/lvl3/p01/Source.java	/^    private boolean printAncestors(TreeNode root, int nodeData) {$/;"	m	class:Source	file:
+printAncestors2	source/lvl3/p01/Source.java	/^    private boolean printAncestors2(TreeNode root, int nodeData) {$/;"	m	class:Source	file:
+printLevelByLevel	source/lvl3/p02/Source.java	/^    private ArrayList<ArrayList<Integer>> printLevelByLevel(TreeNode root) {$/;"	m	class:Source	file:
+printLevelByLevel2	source/lvl3/p02/Source.java	/^    public ArrayList<ArrayList<Integer>> printLevelByLevel2(TreeNode root) {$/;"	m	class:Source
+printPaths	source/lvl3/p13/Source.java	/^    private ArrayList<String> printPaths(char[][] board) {$/;"	m	class:Source	file:
+printPaths2	source/lvl3/p13/Source.java	/^    private ArrayList<String> printPaths2(char[][] board){$/;"	m	class:Source	file:
+printPaths3	source/lvl3/p13/Source.java	/^    public ArrayList<String> printPaths3(char[][] board){$/;"	m	class:Source
+printRange	source/lvl3/p44/Source.java	/^    private void printRange(TreeNode root, int a, int b) {$/;"	m	class:Source	file:
+printRange2	source/lvl3/p44/Source.java	/^    public void printRange2(TreeNode root, int min, int max) {$/;"	m	class:Source
+rangeList	source/lvl3/p44/Source.java	/^    private ArrayList<Integer> rangeList = new ArrayList<Integer>();$/;"	f	class:Source	file:
+rangeList2	source/lvl3/p44/Source.java	/^    public  ArrayList<Integer> rangeList2 = new ArrayList<Integer>();$/;"	f	class:Source
+removeDuplicates	source/lvl2/p10/Source.java	/^    private static ArrayList<String> removeDuplicates(List<String> input) {$/;"	m	class:Source	file:
+removeDuplicates	source/lvl3/p16/Source.java	/^    private ListNode removeDuplicates(ListNode head) {$/;"	m	class:Source	file:
+removeDuplicates2	source/lvl2/p10/Source.java	/^    private static ArrayList<String> removeDuplicates2(List<String> input) {$/;"	m	class:Source	file:
+removeDuplicates2	source/lvl3/p16/Source.java	/^    private ListNode removeDuplicates2(ListNode head) {    $/;"	m	class:Source	file:
+removeDuplicates3	source/lvl2/p10/Source.java	/^    private static ArrayList<String> removeDuplicates3(List<String> input) {$/;"	m	class:Source	file:
+removeDuplicates3	source/lvl3/p16/Source.java	/^    private ListNode removeDuplicates3(ListNode head) {$/;"	m	class:Source	file:
+removeNthFromEnd	source/lvl3/p30/Source.java	/^    public ListNode removeNthFromEnd(ListNode head, int n) {$/;"	m	class:Source
+removeNthFromEnd2	source/lvl3/p30/Source.java	/^    public ListNode removeNthFromEnd2(ListNode head, int n) {$/;"	m	class:Source
+removeNthFromEnd3	source/lvl3/p30/Source.java	/^    public ListNode removeNthFromEnd3(ListNode head, int n) {$/;"	m	class:Source
+replace	source/lvl1/p04/Source.java	/^    private static String replace(String a, String b) {$/;"	m	class:Source	file:
+restoreTree	source/lvl3/p15/Source.java	/^    private TreeNode restoreTree(String s) {return restoreTree(s.split(","), new int[]{0});}$/;"	m	class:Source	file:
+restoreTree	source/lvl3/p15/Source.java	/^    private TreeNode restoreTree(String[] s, int[] i) {$/;"	m	class:Source	file:
+restoreTree2	source/lvl3/p15/Source.java	/^    private TreeNode restoreTree2(List<String> list) {$/;"	m	class:Source	file:
+restoreTree2	source/lvl3/p15/Source.java	/^    private TreeNode restoreTree2(String s) {$/;"	m	class:Source	file:
+reverseInPairs	source/lvl4/p04/Source.java	/^    private ListNode reverseInPairs(ListNode head) {$/;"	m	class:Source	file:
+reverseInPairs2	source/lvl4/p04/Source.java	/^    private ListNode reverseInPairs2(ListNode head) {$/;"	m	class:Source	file:
+reverseInt	source/lvl2/p08/Source.java	/^    private static int reverseInt(int x) {$/;"	m	class:Source	file:
+reverseInt2	source/lvl2/p08/Source.java	/^    private static int reverseInt2(int x) {$/;"	m	class:Source	file:
+reverseString	source/lvl1/p14/Source.java	/^    public static String reverseString(String str) {$/;"	m	class:Source
+reverseString2	source/lvl1/p14/Source.java	/^    public static String reverseString2(String str) {$/;"	m	class:Source
+right	source/temp/node/TreeNode.java	/^    public TreeNode right;$/;"	f	class:TreeNode
+root	source/lvl3/p14/Source.java	/^    private TrieNode root;$/;"	f	class:Source	file:
+root	source/temp/tree/BinarySearchTree.java	/^    public TreeNode root;$/;"	f	class:BinarySearchTree
+root	source/temp/tree/BinaryTree.java	/^    public TreeNode root;$/;"	f	class:BinaryTree
+root	source/temp/tree/Trie.java	/^    public TrieNode root;$/;"	f	class:Trie
+rotate	source/lvl3/p33/Source.java	/^    private static void rotate(int[] arr) {$/;"	m	class:Source	file:
+rotate	source/lvl4/p15/Source.java	/^    private static int[][] rotate(int[][] matrix) {$/;"	m	class:Source	file:
+rotate2	source/lvl4/p15/Source.java	/^    private static int[][] rotate2(int[][] matrix) {$/;"	m	class:Source	file:
+rotateLeft	source/lvl3/p33/Source.java	/^    private static int[] rotateLeft(int[] arr, int k) {$/;"	m	class:Source	file:
+rotateSquareImageCCW	source/lvl3/p34/Source.java	/^    private static void rotateSquareImageCCW(int[][] matrix) {$/;"	m	class:Source	file:
+rotateSquareImageCCW2	source/lvl3/p34/Source.java	/^    private static void rotateSquareImageCCW2(int[][] matrix) {$/;"	m	class:Source	file:
+rotateSquareImageCW	source/lvl3/p17/Source.java	/^    private static void rotateSquareImageCW(int[][] matrix) {$/;"	m	class:Source	file:
+rotateSquareImageCW2	source/lvl3/p17/Source.java	/^    public static void rotateSquareImageCW2(int[][] mat) {$/;"	m	class:Source
+s	source/lvl4/p11/Source.java	/^    Stack<TreeNode> s = new Stack<>();$/;"	f	class:Source
+search	source/lvl3/p13/Source.java	/^    public void search(int i, int j, char[][] board, String str, ArrayList<String> list) {$/;"	m	class:Source
+search	source/lvl3/p14/Source.java	/^    private boolean search(TrieNode curr, String word, int index, boolean searching) {$/;"	m	class:Source	file:
+search	source/temp/tree/Trie.java	/^    public TrieNode search(String word) {$/;"	m	class:Trie
+search2	source/lvl3/p13/Source.java	/^    public void search2(int i, int j, char[][] board, StringBuilder sb, ArrayList<String> out){$/;"	m	class:Source
+search3	source/lvl3/p13/Source.java	/^    private void search3(ArrayList<String> result, String str, int i, int j, char[][] board) {$/;"	m	class:Source	file:
+searchNode	source/lvl3/p14/Source.java	/^    private TrieNode searchNode(String word) {$/;"	m	class:Source	file:
+searchPrefix	source/lvl3/p14/Source.java	/^    private boolean searchPrefix(String word) {$/;"	m	class:Source	file:
+searchPrefix2	source/lvl3/p14/Source.java	/^    public boolean searchPrefix2(String word) {$/;"	m	class:Source
+searchPrefix3	source/lvl3/p14/Source.java	/^    public boolean searchPrefix3(String word) {$/;"	m	class:Source
+searchWord	source/lvl3/p14/Source.java	/^    private boolean searchWord(String word) {$/;"	m	class:Source	file:
+searchWord2	source/lvl3/p14/Source.java	/^    public boolean searchWord2(String word) {$/;"	m	class:Source
+searchWord3	source/lvl3/p14/Source.java	/^    public boolean searchWord3(String word) {$/;"	m	class:Source
+selectionSortArray	source/lvl2/p12/Source.java	/^    private static int[] selectionSortArray(int[] arr) {$/;"	m	class:Source	file:
+selectionSortArray2	source/lvl2/p12/Source.java	/^    private static int[] selectionSortArray2(int[] arr) {$/;"	m	class:Source	file:
+serializeTree	source/lvl3/p15/Source.java	/^    private String serializeTree(TreeNode root) {return serializeTree(root, "");}$/;"	m	class:Source	file:
+serializeTree	source/lvl3/p15/Source.java	/^    private String serializeTree(TreeNode root, String s) {$/;"	m	class:Source	file:
+serializeTree2	source/lvl3/p15/Source.java	/^    private String serializeTree2(TreeNode root) {$/;"	m	class:Source	file:
+set	source/lvl3/p03/Source.java	/^    private static HashSet<Integer> set = new HashSet<>();$/;"	f	class:Source	file:
+singleNumber	source/lvl1/p17/Source.java	/^    private static int singleNumber(int[] A) {$/;"	m	class:Source	file:
+singleNumber2	source/lvl1/p17/Source.java	/^    private static int singleNumber2(int[] A) {$/;"	m	class:Source	file:
+size	source/lvl2/p05/Source.java	/^    private int size(TreeNode root) {$/;"	m	class:Source	file:
+source.lvl1.p01	source/lvl1/p01/Source.java	/^package source.lvl1.p01;$/;"	p
+source.lvl1.p02	source/lvl1/p02/Source.java	/^package source.lvl1.p02;$/;"	p
+source.lvl1.p03	source/lvl1/p03/Source.java	/^package source.lvl1.p03;$/;"	p
+source.lvl1.p04	source/lvl1/p04/Source.java	/^package source.lvl1.p04;$/;"	p
+source.lvl1.p05	source/lvl1/p05/Source.java	/^package source.lvl1.p05;$/;"	p
+source.lvl1.p06	source/lvl1/p06/Source.java	/^package source.lvl1.p06;$/;"	p
+source.lvl1.p07	source/lvl1/p07/Source.java	/^package source.lvl1.p07;$/;"	p
+source.lvl1.p08	source/lvl1/p08/Source.java	/^package source.lvl1.p08;$/;"	p
+source.lvl1.p09	source/lvl1/p09/Source.java	/^package source.lvl1.p09;$/;"	p
+source.lvl1.p10	source/lvl1/p10/Source.java	/^package source.lvl1.p10;$/;"	p
+source.lvl1.p11	source/lvl1/p11/Source.java	/^package source.lvl1.p11;$/;"	p
+source.lvl1.p12	source/lvl1/p12/Source.java	/^package source.lvl1.p12;$/;"	p
+source.lvl1.p13	source/lvl1/p13/Source.java	/^package source.lvl1.p13;$/;"	p
+source.lvl1.p14	source/lvl1/p14/Source.java	/^package source.lvl1.p14;$/;"	p
+source.lvl1.p15	source/lvl1/p15/Source.java	/^package source.lvl1.p15;$/;"	p
+source.lvl1.p16	source/lvl1/p16/Source.java	/^package source.lvl1.p16;$/;"	p
+source.lvl1.p17	source/lvl1/p17/Source.java	/^package source.lvl1.p17;$/;"	p
+source.lvl2.p01	source/lvl2/p01/Source.java	/^package source.lvl2.p01;$/;"	p
+source.lvl2.p02	source/lvl2/p02/Source.java	/^package source.lvl2.p02;$/;"	p
+source.lvl2.p03	source/lvl2/p03/Source.java	/^package source.lvl2.p03;$/;"	p
+source.lvl2.p04	source/lvl2/p04/Source.java	/^package source.lvl2.p04;$/;"	p
+source.lvl2.p05	source/lvl2/p05/Source.java	/^package source.lvl2.p05;$/;"	p
+source.lvl2.p06	source/lvl2/p06/Source.java	/^package source.lvl2.p06;$/;"	p
+source.lvl2.p07	source/lvl2/p07/Source.java	/^package source.lvl2.p07;$/;"	p
+source.lvl2.p08	source/lvl2/p08/Source.java	/^package source.lvl2.p08;$/;"	p
+source.lvl2.p09	source/lvl2/p09/Source.java	/^package source.lvl2.p09;$/;"	p
+source.lvl2.p10	source/lvl2/p10/Source.java	/^package source.lvl2.p10;$/;"	p
+source.lvl2.p11	source/lvl2/p11/Source.java	/^package source.lvl2.p11;$/;"	p
+source.lvl2.p12	source/lvl2/p12/Source.java	/^package source.lvl2.p12;$/;"	p
+source.lvl2.p13	source/lvl2/p13/Source.java	/^package source.lvl2.p13;$/;"	p
+source.lvl2.p14	source/lvl2/p14/Source.java	/^package source.lvl2.p14;$/;"	p
+source.lvl2.p15	source/lvl2/p15/Source.java	/^package source.lvl2.p15;$/;"	p
+source.lvl2.p16	source/lvl2/p16/Source.java	/^package source.lvl2.p16;$/;"	p
+source.lvl2.p17	source/lvl2/p17/Source.java	/^package source.lvl2.p17;$/;"	p
+source.lvl2.p18	source/lvl2/p18/Source.java	/^package source.lvl2.p18;$/;"	p
+source.lvl2.p19	source/lvl2/p19/Source.java	/^package source.lvl2.p19;$/;"	p
+source.lvl2.p20	source/lvl2/p20/Source.java	/^package source.lvl2.p20;$/;"	p
+source.lvl2.p21	source/lvl2/p21/Source.java	/^package source.lvl2.p21;$/;"	p
+source.lvl2.p22	source/lvl2/p22/Source.java	/^package source.lvl2.p22;$/;"	p
+source.lvl2.p23	source/lvl2/p23/Source.java	/^package source.lvl2.p23;$/;"	p
+source.lvl2.p24	source/lvl2/p24/Source.java	/^package source.lvl2.p24;$/;"	p
+source.lvl2.p25	source/lvl2/p25/Source.java	/^package source.lvl2.p25;$/;"	p
+source.lvl2.p26	source/lvl2/p26/Source.java	/^package source.lvl2.p26;$/;"	p
+source.lvl2.p27	source/lvl2/p27/Source.java	/^package source.lvl2.p27;$/;"	p
+source.lvl2.p28	source/lvl2/p28/Source.java	/^package source.lvl2.p28;$/;"	p
+source.lvl2.p29	source/lvl2/p29/Source.java	/^package source.lvl2.p29;$/;"	p
+source.lvl2.p30	source/lvl2/p30/Source.java	/^package source.lvl2.p30;$/;"	p
+source.lvl3.p01	source/lvl3/p01/Source.java	/^package source.lvl3.p01;$/;"	p
+source.lvl3.p02	source/lvl3/p02/Source.java	/^package source.lvl3.p02;$/;"	p
+source.lvl3.p03	source/lvl3/p03/Source.java	/^package source.lvl3.p03;$/;"	p
+source.lvl3.p04	source/lvl3/p04/Source.java	/^package source.lvl3.p04;$/;"	p
+source.lvl3.p05	source/lvl3/p05/Source.java	/^package source.lvl3.p05;$/;"	p
+source.lvl3.p06	source/lvl3/p06/Source.java	/^package source.lvl3.p06;$/;"	p
+source.lvl3.p07	source/lvl3/p07/Source.java	/^package source.lvl3.p07;$/;"	p
+source.lvl3.p08	source/lvl3/p08/Source.java	/^package source.lvl3.p08;$/;"	p
+source.lvl3.p09	source/lvl3/p09/Source.java	/^package source.lvl3.p09;$/;"	p
+source.lvl3.p10	source/lvl3/p10/Source.java	/^package source.lvl3.p10;$/;"	p
+source.lvl3.p11	source/lvl3/p11/Source.java	/^package source.lvl3.p11;$/;"	p
+source.lvl3.p12	source/lvl3/p12/Source.java	/^package source.lvl3.p12;$/;"	p
+source.lvl3.p13	source/lvl3/p13/Source.java	/^package source.lvl3.p13;$/;"	p
+source.lvl3.p14	source/lvl3/p14/Source.java	/^package source.lvl3.p14;$/;"	p
+source.lvl3.p15	source/lvl3/p15/Source.java	/^package source.lvl3.p15;$/;"	p
+source.lvl3.p16	source/lvl3/p16/Source.java	/^package source.lvl3.p16;$/;"	p
+source.lvl3.p17	source/lvl3/p17/Source.java	/^package source.lvl3.p17;$/;"	p
+source.lvl3.p18	source/lvl3/p18/Source.java	/^package source.lvl3.p18;$/;"	p
+source.lvl3.p19	source/lvl3/p19/Source.java	/^package source.lvl3.p19;$/;"	p
+source.lvl3.p20	source/lvl3/p20/Source.java	/^package source.lvl3.p20;$/;"	p
+source.lvl3.p21	source/lvl3/p21/Source.java	/^package source.lvl3.p21;$/;"	p
+source.lvl3.p22	source/lvl3/p22/Source.java	/^package source.lvl3.p22;$/;"	p
+source.lvl3.p23	source/lvl3/p23/Source.java	/^package source.lvl3.p23;$/;"	p
+source.lvl3.p24	source/lvl3/p24/Source.java	/^package source.lvl3.p24;$/;"	p
+source.lvl3.p25	source/lvl3/p25/Source.java	/^package source.lvl3.p25;$/;"	p
+source.lvl3.p26	source/lvl3/p26/Source.java	/^package source.lvl3.p26;$/;"	p
+source.lvl3.p27	source/lvl3/p27/Source.java	/^package source.lvl3.p27;$/;"	p
+source.lvl3.p28	source/lvl3/p28/Source.java	/^package source.lvl3.p28;$/;"	p
+source.lvl3.p29	source/lvl3/p29/Source.java	/^package source.lvl3.p29;$/;"	p
+source.lvl3.p30	source/lvl3/p30/Source.java	/^package source.lvl3.p30;$/;"	p
+source.lvl3.p31	source/lvl3/p31/Source.java	/^package source.lvl3.p31;$/;"	p
+source.lvl3.p32	source/lvl3/p32/Source.java	/^package source.lvl3.p32;$/;"	p
+source.lvl3.p33	source/lvl3/p33/Source.java	/^package source.lvl3.p33;$/;"	p
+source.lvl3.p34	source/lvl3/p34/Source.java	/^package source.lvl3.p34;$/;"	p
+source.lvl3.p35	source/lvl3/p35/Source.java	/^package source.lvl3.p35;$/;"	p
+source.lvl3.p36	source/lvl3/p36/Source.java	/^package source.lvl3.p36;$/;"	p
+source.lvl3.p37	source/lvl3/p37/Source.java	/^package source.lvl3.p37;$/;"	p
+source.lvl3.p38	source/lvl3/p38/Source.java	/^package source.lvl3.p38;$/;"	p
+source.lvl3.p39	source/lvl3/p39/Source.java	/^package source.lvl3.p39;$/;"	p
+source.lvl3.p40	source/lvl3/p40/Source.java	/^package source.lvl3.p40;$/;"	p
+source.lvl3.p41	source/lvl3/p41/Source.java	/^package source.lvl3.p41;$/;"	p
+source.lvl3.p42	source/lvl3/p42/Source.java	/^package source.lvl3.p42;$/;"	p
+source.lvl3.p43	source/lvl3/p43/Source.java	/^package source.lvl3.p43;$/;"	p
+source.lvl3.p44	source/lvl3/p44/Source.java	/^package source.lvl3.p44;$/;"	p
+source.lvl3.p45	source/lvl3/p45/Source.java	/^package source.lvl3.p45;$/;"	p
+source.lvl3.p46	source/lvl3/p46/Source.java	/^package source.lvl3.p46;$/;"	p
+source.lvl3.p47	source/lvl3/p47/Source.java	/^package source.lvl3.p47;$/;"	p
+source.lvl4.p	source/lvl4/Source.java	/^package source.lvl4.p;$/;"	p
+source.lvl4.p01	source/lvl4/p01/Source.java	/^package source.lvl4.p01;$/;"	p
+source.lvl4.p02	source/lvl4/p02/Source.java	/^package source.lvl4.p02;$/;"	p
+source.lvl4.p03	source/lvl4/p03/Source.java	/^package source.lvl4.p03; import java.util.*;$/;"	p
+source.lvl4.p04	source/lvl4/p04/Source.java	/^package source.lvl4.p04;$/;"	p
+source.lvl4.p05	source/lvl4/p05/Source.java	/^package source.lvl4.p05;$/;"	p
+source.lvl4.p06	source/lvl4/p06/Source.java	/^package source.lvl4.p06;$/;"	p
+source.lvl4.p07	source/lvl4/p07/Source.java	/^package source.lvl4.p07;$/;"	p
+source.lvl4.p08	source/lvl4/p08/Source.java	/^package source.lvl4.p08;$/;"	p
+source.lvl4.p09	source/lvl4/p09/Source.java	/^package source.lvl4.p09;$/;"	p
+source.lvl4.p10	source/lvl4/p10/Source.java	/^package source.lvl4.p10;$/;"	p
+source.lvl4.p11	source/lvl4/p11/Source.java	/^package source.lvl4.p11;$/;"	p
+source.lvl4.p12	source/lvl4/p12/Source.java	/^package source.lvl4.p12;$/;"	p
+source.lvl4.p13	source/lvl4/p13/Source.java	/^package source.lvl4.p13;$/;"	p
+source.lvl4.p14	source/lvl4/p14/Source.java	/^package source.lvl4.p14;$/;"	p
+source.lvl4.p15	source/lvl4/p15/Source.java	/^package source.lvl4.p15;$/;"	p
+source.lvl4.p16	source/lvl4/p16/Source.java	/^package source.lvl4.p16;$/;"	p
+source.lvl4.p17	source/lvl4/p17/Source.java	/^package source.lvl4.p17;$/;"	p
+source.lvl4.p18	source/lvl4/p18/Source.java	/^package source.lvl4.p18;$/;"	p
+source.lvl4.p19	source/lvl4/p19/Source.java	/^package source.lvl4.p19;$/;"	p
+source.temp.help	source/temp/help/MatrixPrinter.java	/^package source.temp.help;$/;"	p
+source.temp.help	source/temp/help/TreePrinter.java	/^package source.temp.help;$/;"	p
+source.temp.help	source/temp/help/TriePrinter.java	/^package source.temp.help;$/;"	p
+source.temp.list	source/temp/list/CircularlyLinkedList.java	/^package source.temp.list;$/;"	p
+source.temp.list	source/temp/list/DoublyLinkedList.java	/^package source.temp.list;$/;"	p
+source.temp.list	source/temp/list/SinglyLinkedList.java	/^package source.temp.list;$/;"	p
+source.temp.node	source/temp/node/DoublyListNode.java	/^package source.temp.node;$/;"	p
+source.temp.node	source/temp/node/ListNode.java	/^package source.temp.node;$/;"	p
+source.temp.node	source/temp/node/TreeNode.java	/^package source.temp.node;$/;"	p
+source.temp.node	source/temp/node/TrieNode.java	/^package source.temp.node;$/;"	p
+source.temp.tree	source/temp/tree/BinarySearchTree.java	/^package source.temp.tree;$/;"	p
+source.temp.tree	source/temp/tree/BinaryTree.java	/^package source.temp.tree;$/;"	p
+source.temp.tree	source/temp/tree/Trie.java	/^package source.temp.tree;$/;"	p
+source.test	source/test/TestLevels.java	/^package source.test;$/;"	p
+source.test	source/test/TestTemplates.java	/^package source.test;$/;"	p
+start	source/lvl3/p41/Source.java	/^        int start;$/;"	f	class:Source.Interval
+sum	source/lvl2/p06/Source.java	/^    private int sum(TreeNode root) {$/;"	m	class:Source	file:
+sumItr	source/lvl3/p42/Source.java	/^    private int sumItr(TreeNode root) {$/;"	m	class:Source	file:
+sumItr2	source/lvl3/p42/Source.java	/^    public int sumItr2(TreeNode root) { $/;"	m	class:Source
+swapOddEvenBits	source/lvl4/p13/Source.java	/^    private int swapOddEvenBits(int x) {$/;"	m	class:Source	file:
+toString	source/temp/list/CircularlyLinkedList.java	/^    public String toString() {$/;"	m	class:CircularlyLinkedList
+toString	source/temp/list/DoublyLinkedList.java	/^    public String toString() {$/;"	m	class:DoublyLinkedList
+toString	source/temp/list/SinglyLinkedList.java	/^    public String toString() {$/;"	m	class:SinglyLinkedList
+track	source/lvl3/p03/Source.java	/^    private static ArrayList<Integer> track = new ArrayList<>();$/;"	f	class:Source	file:
+tranposeMatrix	source/lvl2/p19/Source.java	/^    private static void tranposeMatrix(int[][] matrix) {$/;"	m	class:Source	file:
+tranposeMatrix2	source/lvl2/p19/Source.java	/^    private static void tranposeMatrix2(int[][] matrix) {$/;"	m	class:Source	file:
+transpose	source/lvl3/p34/Source.java	/^    private static void transpose(int[][] matrix) {$/;"	m	class:Source	file:
+validateBST	source/lvl2/p18/Source.java	/^    private static boolean validateBST(TreeNode root) {$/;"	m	class:Source	file:
+validateBST2	source/lvl2/p18/Source.java	/^    private static boolean validateBST2(TreeNode root) {$/;"	m	class:Source	file:
+validateBSTItr	source/lvl3/p12/Source.java	/^    private static boolean validateBSTItr(TreeNode root) {$/;"	m	class:Source	file:
+validateBSTItr2	source/lvl3/p12/Source.java	/^    private static boolean validateBSTItr2(TreeNode root) {$/;"	m	class:Source	file:
+validateBSTItr3	source/lvl3/p12/Source.java	/^    private static boolean validateBSTItr3(TreeNode root) {$/;"	m	class:Source	file:
+whitespaces	source/temp/help/TreePrinter.java	/^    private static void whitespaces(int count) {$/;"	m	class:TreePrinter	file:
+word	source/temp/tree/Trie.java	/^    public boolean word(String word) {$/;"	m	class:Trie
+words	source/temp/help/TriePrinter.java	/^    private static ArrayList<String> words(TrieNode root) {$/;"	m	class:TriePrinter	file:

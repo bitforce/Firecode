@@ -34,15 +34,11 @@ public class TreePrinter {
                     TreePrinter.whitespaces(endgeLines + endgeLines + i + 1);
                     continue;
                 }
-                if (nodes.get(j).left != null)
-                    System.out.print("/");
-                else
-                    TreePrinter.whitespaces(1);
+                if (nodes.get(j).left != null) System.out.print("/");
+                else TreePrinter.whitespaces(1);
                 TreePrinter.whitespaces(i + i - 1);
-                if (nodes.get(j).right != null)
-                    System.out.print("\\");
-                else
-                    TreePrinter.whitespaces(1);
+                if (nodes.get(j).right != null) System.out.print("\\");
+                else TreePrinter.whitespaces(1);
                 TreePrinter.whitespaces(endgeLines + endgeLines - i);
             }
             System.out.println("");
@@ -50,17 +46,14 @@ public class TreePrinter {
         internal(list, level + 1, max);
     }
     private static void whitespaces(int count) {
-        for (int i = 0; i < count; i++)
-            System.out.print(" ");
+        for (int i = 0; i < count; i++) System.out.print(" ");
     }
     private static int max(TreeNode node) {
         if (node == null) return 0;
         return Math.max(TreePrinter.max(node.left), TreePrinter.max(node.right)) + 1;
     }
     private static boolean leafless(List<TreeNode> list) {
-        for (Object object : list)
-            if (object != null)
-                return false;
+        for (Object object : list) if (object != null) return false;
         return true;
     }
 }

@@ -5,13 +5,13 @@ auto:
 	java $(DIR)Source $a
 	rm $(DIR)Source.class
 
-edit:
+code:
 	vim $(DIR)Source.java
 
-read:
+edit:
 	vim $(DIR)README.md
 
-info:
+less:
 	less $(DIR)README.md
 
 list:

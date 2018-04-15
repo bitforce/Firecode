@@ -1,9 +1,11 @@
 package source.temp.tree;
 import source.temp.node.TrieNode;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Stack;
 public class Trie {
     public TrieNode root;
-    public Trie() {this.root = new TrieNode();}
+    public Trie() {root = new TrieNode();}
     public void clear() {root = null;}
     public void add(String word) {
         if(word == null) return;
@@ -13,7 +15,7 @@ public class Trie {
             TrieNode node;
             if(map.containsKey(c)) node = map.get(c);
             else {
-                node = new TrieNode();
+                node = new TrieNode(c);
                 map.put(c, node);
             }
             map = node.children;
@@ -38,5 +40,18 @@ public class Trie {
         }
         return node;
     }
-    public void print() {}
+    public void print(){print(root, "");}
+    private void print(TrieNode node, String str) {
+        String s = str;
+        s += node.c;
+        if(node.isLeaf) {
+            System.out.println(s);
+            return;
+        }
+        Iterator<TrieNode> itr = node.children.values().iterator();
+        Stack<TrieNode> stack = new Stack<>();
+
+        while(itr.hasNext()) stack.add(itr.next());
+        while(!stack.isEmpty()) print(stack.pop(), s);
+    }
 }

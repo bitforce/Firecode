@@ -1,7 +1,7 @@
 package source.temp.node;
 import java.util.*;
 public class TrieNode {
-    public Character c;
+    public char c;
     public Boolean isLeaf = false;
     public HashMap<Character, TrieNode> children = new HashMap<>();
     public TrieNode() {}

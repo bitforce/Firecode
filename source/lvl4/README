@@ -10,6 +10,16 @@ PROBLEM IDENTIFIER
 07 Mirror Mirror on the Wall ...
 08 Bit Conversion
 09 1-800 PROBLEM
+10 Recovering IPv4 Addresses
+11 Reverse Level Order Traversal
+12 Distance Between Two Nodes in a Binary Tree
+13 Bit Swapping
+14 Find the Level that Has the Maximum Sum
+15 Image Manipulation
+16 Minimum Sum Path Triangle
+17 Boggle with Electronic Dictionary
+18 Subset Summation
+19 Matrix Max Sum Path with DFS 
 ===============================================================================
 
 WARNING
@@ -21,3 +31,4 @@ TOUGH
 *****
 12
 13
+17

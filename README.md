@@ -64,4 +64,7 @@ make clean-root
 
 Note
 ---
-N/A
+There are a few golden nugget techniques littered around the solutions. The following
+is a list of descriptions below and their locations.
+
+- L:? P:? 2D array insertion of values into 1D array.
