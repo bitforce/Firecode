@@ -64,7 +64,19 @@ make clean-root
 
 Note
 ---
-There are a few golden nugget techniques littered around the solutions. The following
-is a list of descriptions below and their locations.
+_There are a few golden nugget techniques littered around the solutions. The following
+is a list of descriptions below and their locations._
 
-- L:? P:? 2D array insertion of values into 1D array.
+- 1D -> 2D array conversion
+```
+for(int i = 0; i < M; i++)
+  System.arraycopy(arr, i*N, matrix[i], 0, N);
+||
+for(int i = 0; i < M; i++)
+    for(int j = 0; j < N; j++)
+        matrix[i][j] = arr[(j*M)+i];
+||
+for(int i = 0; i < M; i++)
+    for(int j = 0; j < N; j++)
+        matrix[i][j] = arr[(j%N)+i*N];
+```

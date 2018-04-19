@@ -134,6 +134,9 @@ Source	source/lvl4/p16/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p17/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p18/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p19/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p20/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p21/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p22/Source.java	/^class Source {$/;"	c
 Test	source/test/TestTemplates.java	/^class Test {$/;"	c
 TestLevels	source/test/TestLevels.java	/^class TestLevels {$/;"	c
 TreeNode	source/temp/node/TreeNode.java	/^    public TreeNode(int data) {$/;"	m	class:TreeNode
@@ -276,6 +279,8 @@ generateIPAddrs	source/lvl4/p10/Source.java	/^    private static ArrayList<Strin
 generateIPAddrs2	source/lvl4/p10/Source.java	/^    private static ArrayList<String> generateIPAddrs2(String s) {$/;"	m	class:Source	file:
 generateIPAddrs3	source/lvl4/p10/Source.java	/^    private static ArrayList<String> generateIPAddrs3(String prefix, String s, $/;"	m	class:Source	file:
 generateIPAddrs3	source/lvl4/p10/Source.java	/^    private static ArrayList<String> generateIPAddrs3(String s) {$/;"	m	class:Source	file:
+getCombPerms	source/lvl4/p22/Source.java	/^    private static ArrayList<String> getCombPerms(String s) {$/;"	m	class:Source	file:
+getCombPerms	source/lvl4/p22/Source.java	/^    private static ArrayList<String> getCombPerms(String s, ArrayList<String> a) {$/;"	m	class:Source	file:
 getMaximumRepetition	source/lvl3/p31/Source.java	/^    private static int getMaximumRepetition(int[] a) {$/;"	m	class:Source	file:
 getNodeDistance	source/lvl4/p12/Source.java	/^    private int getNodeDistance(TreeNode root, int n1, int n2) { $/;"	m	class:Source	file:
 getNodeDistance2	source/lvl4/p12/Source.java	/^    private int getNodeDistance2(TreeNode root, int n1, int n2) {$/;"	m	class:Source	file:
@@ -315,7 +320,11 @@ internal	source/temp/help/TreePrinter.java	/^    private static void internal(Li
 isAnagram	source/lvl2/p21/Source.java	/^    private static boolean isAnagram(String a, String b) {$/;"	m	class:Source	file:
 isBST	source/lvl2/p18/Source.java	/^    private static boolean isBST(TreeNode root, int high, int low) {$/;"	m	class:Source	file:
 isBST2	source/lvl2/p18/Source.java	/^    private static boolean isBST2(TreeNode root, int high, int low) {$/;"	m	class:Source	file:
+isBalanced	source/lvl4/p20/Source.java	/^    private static boolean isBalanced(String input) {return isBalanced(input, "");}$/;"	m	class:Source	file:
+isBalanced	source/lvl4/p20/Source.java	/^    private static boolean isBalanced(String input, String stack) {$/;"	m	class:Source	file:
+isClose	source/lvl4/p20/Source.java	/^    private static boolean isClose(char ch) {return ")]>}".indexOf(ch) != -1;}$/;"	m	class:Source	file:
 isCyclic	source/lvl3/p32/Source.java	/^    private boolean isCyclic(ListNode head) {$/;"	m	class:Source	file:
+isCyclic	source/lvl4/p21/Source.java	/^    private boolean isCyclic(ListNode head) {$/;"	m	class:Source	file:
 isCyclic2	source/lvl3/p32/Source.java	/^    private boolean isCyclic2(ListNode head) {$/;"	m	class:Source	file:
 isCyclic3	source/lvl3/p32/Source.java	/^    private boolean isCyclic3(ListNode head) {$/;"	m	class:Source	file:
 isHappyNumber	source/lvl3/p03/Source.java	/^    private static boolean isHappyNumber(int n) {$/;"	m	class:Source	file:
@@ -333,7 +342,9 @@ isListEven2	source/lvl2/p27/Source.java	/^    private boolean isListEven2(ListNo
 isListPalindrome	source/lvl3/p29/Source.java	/^    private boolean isListPalindrome(ListNode head) {$/;"	m	class:Source	file:
 isListPalindrome2	source/lvl3/p29/Source.java	/^    private boolean isListPalindrome2(ListNode head) {$/;"	m	class:Source	file:
 isListPalindrome3	source/lvl3/p29/Source.java	/^    private boolean isListPalindrome3(ListNode head) {$/;"	m	class:Source	file:
+isMatching	source/lvl4/p20/Source.java	/^    private static boolean isMatching(char chOpen, char chClose) {$/;"	m	class:Source	file:
 isMirror	source/lvl4/p07/Source.java	/^    private boolean isMirror(TreeNode root1, TreeNode root2) {$/;"	m	class:Source	file:
+isOpen	source/lvl4/p20/Source.java	/^    private static boolean isOpen(char ch) {return "([<{".indexOf(ch) != -1;}$/;"	m	class:Source	file:
 isPowerOfTwo	source/lvl2/p20/Source.java	/^    private static boolean isPowerOfTwo(int num) {$/;"	m	class:Source	file:
 isPowerOfTwo2	source/lvl2/p20/Source.java	/^    private static boolean isPowerOfTwo2(int num) {$/;"	m	class:Source	file:
 isStringPalindrome	source/lvl1/p08/Source.java	/^    private static boolean isStringPalindrome(String str) {$/;"	m	class:Source	file:
@@ -465,12 +476,19 @@ main	source/lvl4/p16/Source.java	/^    public static void main(String[] args) {$
 main	source/lvl4/p17/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/lvl4/p18/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/lvl4/p19/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p20/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p21/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p22/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/test/TestLevels.java	/^    public static void main(String[] args) {}$/;"	m	class:TestLevels
 main	source/test/TestTemplates.java	/^    public static void main(String[] args) {$/;"	m	class:Test
 makeChange	source/lvl4/p02/Source.java	/^    public static int makeChange(int[] coins, int amount) {$/;"	m	class:Source
 makeChange2	source/lvl4/p02/Source.java	/^     public static int makeChange2(int[] coins, int amount) {$/;"	m	class:Source
 makeChange3	source/lvl4/p02/Source.java	/^    public static int makeChange3(int[] coins, int amount) {$/;"	m	class:Source
-matrixMaxSumDfs	source/lvl4/p19/Source.java	/^    private static int matrixMaxSumDfs(int[][] grid) {}$/;"	m	class:Source	file:
+matrixMaxSumDfs	source/lvl4/p19/Source.java	/^    private static int matrixMaxSumDfs(int[][] grid) {$/;"	m	class:Source	file:
+matrixMaxSumDfs	source/lvl4/p19/Source.java	/^    private static int matrixMaxSumDfs(int[][] grid, int r, int c) {$/;"	m	class:Source	file:
+matrixMaxSumDfs2	source/lvl4/p19/Source.java	/^    public static int matrixMaxSumDfs2(int[][] grid) {$/;"	m	class:Source
+matrixMaxSumDfs3	source/lvl4/p19/Source.java	/^    private static int matrixMaxSumDfs3(int[][] grid) {return matrixMaxSumDfs3(grid, 0, 0);}$/;"	m	class:Source	file:
+matrixMaxSumDfs3	source/lvl4/p19/Source.java	/^    private static int matrixMaxSumDfs3(int[][] grid, int r, int c) {$/;"	m	class:Source	file:
 max	source/temp/help/TreePrinter.java	/^    private static int max(TreeNode node) {$/;"	m	class:TreePrinter	file:
 maxGain	source/lvl2/p13/Source.java	/^    private static int maxGain(int[] a) {$/;"	m	class:Source	file:
 maxGain2	source/lvl2/p13/Source.java	/^    private static int maxGain2(int[] a) {$/;"	m	class:Source	file:
@@ -702,6 +720,9 @@ source.lvl4.p16	source/lvl4/p16/Source.java	/^package source.lvl4.p16;$/;"	p
 source.lvl4.p17	source/lvl4/p17/Source.java	/^package source.lvl4.p17;$/;"	p
 source.lvl4.p18	source/lvl4/p18/Source.java	/^package source.lvl4.p18;$/;"	p
 source.lvl4.p19	source/lvl4/p19/Source.java	/^package source.lvl4.p19;$/;"	p
+source.lvl4.p20	source/lvl4/p20/Source.java	/^package source.lvl4.p20;$/;"	p
+source.lvl4.p21	source/lvl4/p21/Source.java	/^package source.lvl4.p21;$/;"	p
+source.lvl4.p22	source/lvl4/p22/Source.java	/^package source.lvl4.p22;$/;"	p
 source.temp.help	source/temp/help/MatrixPrinter.java	/^package source.temp.help;$/;"	p
 source.temp.help	source/temp/help/TreePrinter.java	/^package source.temp.help;$/;"	p
 source.temp.help	source/temp/help/TriePrinter.java	/^package source.temp.help;$/;"	p
