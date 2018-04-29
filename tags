@@ -15,6 +15,8 @@ DoublyListNode	source/temp/node/DoublyListNode.java	/^    public DoublyListNode(
 DoublyListNode	source/temp/node/DoublyListNode.java	/^public class DoublyListNode {$/;"	c
 Interval	source/lvl3/p41/Source.java	/^        Interval(int start, int end) {$/;"	m	class:Source.Interval
 Interval	source/lvl3/p41/Source.java	/^    private static class Interval {$/;"	c	class:Source
+Interval	source/lvl4/p23/Source.java	/^        Interval(int start, int end) {$/;"	m	class:Source.Interval
+Interval	source/lvl4/p23/Source.java	/^    private static class Interval {$/;"	c	class:Source
 ListNode	source/temp/node/ListNode.java	/^    public ListNode(int data) {this.data = data;}$/;"	m	class:ListNode
 ListNode	source/temp/node/ListNode.java	/^public class ListNode {$/;"	c
 MatrixPrinter	source/temp/help/MatrixPrinter.java	/^public class MatrixPrinter {$/;"	c
@@ -137,6 +139,8 @@ Source	source/lvl4/p19/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p20/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p21/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p22/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p23/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p24/Source.java	/^class Source {$/;"	c
 Test	source/test/TestTemplates.java	/^class Test {$/;"	c
 TestLevels	source/test/TestLevels.java	/^class TestLevels {$/;"	c
 TreeNode	source/temp/node/TreeNode.java	/^    public TreeNode(int data) {$/;"	m	class:TreeNode
@@ -230,6 +234,7 @@ duplicate2	source/lvl1/p09/Source.java	/^    private static String duplicate2(in
 duplicate3	source/lvl1/p09/Source.java	/^    private static String duplicate3(int[] numbers) {$/;"	m	class:Source	file:
 editDistance	source/lvl4/p06/Source.java	/^    private int editDistance(String a, String b) {$/;"	m	class:Source	file:
 end	source/lvl3/p41/Source.java	/^        int end;$/;"	f	class:Source.Interval
+end	source/lvl4/p23/Source.java	/^        int end;$/;"	f	class:Source.Interval
 fib	source/lvl1/p13/Source.java	/^    public static int fib(int n) {$/;"	m	class:Source
 fib2	source/lvl1/p13/Source.java	/^    public static int fib2(int n) {$/;"	m	class:Source
 fib3	source/lvl1/p13/Source.java	/^    public static int fib3(int n) {$/;"	m	class:Source
@@ -280,7 +285,9 @@ generateIPAddrs2	source/lvl4/p10/Source.java	/^    private static ArrayList<Stri
 generateIPAddrs3	source/lvl4/p10/Source.java	/^    private static ArrayList<String> generateIPAddrs3(String prefix, String s, $/;"	m	class:Source	file:
 generateIPAddrs3	source/lvl4/p10/Source.java	/^    private static ArrayList<String> generateIPAddrs3(String s) {$/;"	m	class:Source	file:
 getCombPerms	source/lvl4/p22/Source.java	/^    private static ArrayList<String> getCombPerms(String s) {$/;"	m	class:Source	file:
-getCombPerms	source/lvl4/p22/Source.java	/^    private static ArrayList<String> getCombPerms(String s, ArrayList<String> a) {$/;"	m	class:Source	file:
+getCombPerms2	source/lvl4/p22/Source.java	/^    private static ArrayList<String> getCombPerms2(String s) {$/;"	m	class:Source	file:
+getCombPerms2	source/lvl4/p22/Source.java	/^    private static void getCombPerms2(String prefix, String s, ArrayList<String> list) {$/;"	m	class:Source	file:
+getCombPerms3	source/lvl4/p22/Source.java	/^    public static ArrayList<String> getCombPerms3(String s) {$/;"	m	class:Source
 getMaximumRepetition	source/lvl3/p31/Source.java	/^    private static int getMaximumRepetition(int[] a) {$/;"	m	class:Source	file:
 getNodeDistance	source/lvl4/p12/Source.java	/^    private int getNodeDistance(TreeNode root, int n1, int n2) { $/;"	m	class:Source	file:
 getNodeDistance2	source/lvl4/p12/Source.java	/^    private int getNodeDistance2(TreeNode root, int n1, int n2) {$/;"	m	class:Source	file:
@@ -310,8 +317,11 @@ insertAtPosition	source/lvl3/p05/Source.java	/^    private ListNode insertAtPosi
 insertAtPosition2	source/lvl3/p05/Source.java	/^    private ListNode insertAtPosition2(ListNode head, int data, int pos) {$/;"	m	class:Source	file:
 insertAtTail	source/lvl3/p37/Source.java	/^    private ListNode insertAtTail(ListNode head, int data) {$/;"	m	class:Source	file:
 insertAtTail2	source/lvl3/p37/Source.java	/^    private ListNode insertAtTail2(ListNode head, int data) {$/;"	m	class:Source	file:
+insertCharAt	source/lvl4/p22/Source.java	/^    private static String insertCharAt(String s, String c, int i) {$/;"	m	class:Source	file:
 insertPairStar	source/lvl2/p15/Source.java	/^    private static String insertPairStar(String s) {$/;"	m	class:Source	file:
 insertPairStar2	source/lvl2/p15/Source.java	/^    private static String insertPairStar2(String s) {$/;"	m	class:Source	file:
+insertRange	source/lvl4/p23/Source.java	/^    private static ArrayList<Interval> insertRange(ArrayList<Interval> intervalsList, Interval insert) {$/;"	m	class:Source	file:
+insertRange2	source/lvl4/p23/Source.java	/^    public static ArrayList<Interval> insertRange2(ArrayList<Interval> intervalsList, Interval insert) {$/;"	m	class:Source
 insertWord	source/lvl3/p14/Source.java	/^    private void insertWord(String word) {$/;"	m	class:Source	file:
 insertWord2	source/lvl3/p14/Source.java	/^    public void insertWord2(String word) {$/;"	m	class:Source
 insertWord3	source/lvl3/p14/Source.java	/^    private void insertWord3(TrieNode currentNode, String word, int index) {$/;"	m	class:Source	file:
@@ -479,11 +489,15 @@ main	source/lvl4/p19/Source.java	/^    public static void main(String[] args) {$
 main	source/lvl4/p20/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/lvl4/p21/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/lvl4/p22/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p23/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p24/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/test/TestLevels.java	/^    public static void main(String[] args) {}$/;"	m	class:TestLevels
 main	source/test/TestTemplates.java	/^    public static void main(String[] args) {$/;"	m	class:Test
 makeChange	source/lvl4/p02/Source.java	/^    public static int makeChange(int[] coins, int amount) {$/;"	m	class:Source
 makeChange2	source/lvl4/p02/Source.java	/^     public static int makeChange2(int[] coins, int amount) {$/;"	m	class:Source
 makeChange3	source/lvl4/p02/Source.java	/^    public static int makeChange3(int[] coins, int amount) {$/;"	m	class:Source
+matrixMaxSumDP	source/lvl4/p24/Source.java	/^    private static int matrixMaxSumDP(int[][] grid) {$/;"	m	class:Source	file:
+matrixMaxSumDP2	source/lvl4/p24/Source.java	/^    public static int matrixMaxSumDP2(int[][] grid) {$/;"	m	class:Source
 matrixMaxSumDfs	source/lvl4/p19/Source.java	/^    private static int matrixMaxSumDfs(int[][] grid) {$/;"	m	class:Source	file:
 matrixMaxSumDfs	source/lvl4/p19/Source.java	/^    private static int matrixMaxSumDfs(int[][] grid, int r, int c) {$/;"	m	class:Source	file:
 matrixMaxSumDfs2	source/lvl4/p19/Source.java	/^    public static int matrixMaxSumDfs2(int[][] grid) {$/;"	m	class:Source
@@ -723,6 +737,8 @@ source.lvl4.p19	source/lvl4/p19/Source.java	/^package source.lvl4.p19;$/;"	p
 source.lvl4.p20	source/lvl4/p20/Source.java	/^package source.lvl4.p20;$/;"	p
 source.lvl4.p21	source/lvl4/p21/Source.java	/^package source.lvl4.p21;$/;"	p
 source.lvl4.p22	source/lvl4/p22/Source.java	/^package source.lvl4.p22;$/;"	p
+source.lvl4.p23	source/lvl4/p23/Source.java	/^package source.lvl4.p23;$/;"	p
+source.lvl4.p24	source/lvl4/p24/Source.java	/^package source.lvl4.p24;$/;"	p
 source.temp.help	source/temp/help/MatrixPrinter.java	/^package source.temp.help;$/;"	p
 source.temp.help	source/temp/help/TreePrinter.java	/^package source.temp.help;$/;"	p
 source.temp.help	source/temp/help/TriePrinter.java	/^package source.temp.help;$/;"	p
@@ -739,10 +755,12 @@ source.temp.tree	source/temp/tree/Trie.java	/^package source.temp.tree;$/;"	p
 source.test	source/test/TestLevels.java	/^package source.test;$/;"	p
 source.test	source/test/TestTemplates.java	/^package source.test;$/;"	p
 start	source/lvl3/p41/Source.java	/^        int start;$/;"	f	class:Source.Interval
+start	source/lvl4/p23/Source.java	/^        int start;$/;"	f	class:Source.Interval
 sum	source/lvl2/p06/Source.java	/^    private int sum(TreeNode root) {$/;"	m	class:Source	file:
 sumItr	source/lvl3/p42/Source.java	/^    private int sumItr(TreeNode root) {$/;"	m	class:Source	file:
 sumItr2	source/lvl3/p42/Source.java	/^    public int sumItr2(TreeNode root) { $/;"	m	class:Source
 swapOddEvenBits	source/lvl4/p13/Source.java	/^    private int swapOddEvenBits(int x) {$/;"	m	class:Source	file:
+toString	source/lvl4/p23/Source.java	/^        public String toString() {return "[" + start + ", " + end + "]";}$/;"	m	class:Source.Interval
 toString	source/temp/list/CircularlyLinkedList.java	/^    public String toString() {$/;"	m	class:CircularlyLinkedList
 toString	source/temp/list/DoublyLinkedList.java	/^    public String toString() {$/;"	m	class:DoublyLinkedList
 toString	source/temp/list/SinglyLinkedList.java	/^    public String toString() {$/;"	m	class:SinglyLinkedList
