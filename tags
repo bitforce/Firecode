@@ -141,6 +141,7 @@ Source	source/lvl4/p21/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p22/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p23/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p24/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p25/Source.java	/^class Source {$/;"	c
 Test	source/test/TestTemplates.java	/^class Test {$/;"	c
 TestLevels	source/test/TestLevels.java	/^class TestLevels {$/;"	c
 TreeNode	source/temp/node/TreeNode.java	/^    public TreeNode(int data) {$/;"	m	class:TreeNode
@@ -213,6 +214,8 @@ decompressTree	source/lvl3/p46/Source.java	/^    private TreeNode decompressTree
 decompressTree2	source/lvl3/p46/Source.java	/^    private TreeNode decompressTree2(String str){$/;"	m	class:Source	file:
 decompressTree3	source/lvl3/p46/Source.java	/^    private TreeNode decompressTree3(String str) {return decompressTree3(str.split(","),0);}$/;"	m	class:Source	file:
 decompressTree3	source/lvl3/p46/Source.java	/^    private TreeNode decompressTree3(String[] nodes, int index){$/;"	m	class:Source	file:
+delete	source/lvl4/p25/Source.java	/^    private TreeNode delete(TreeNode root, int data) {$/;"	m	class:Source	file:
+delete2	source/lvl4/p25/Source.java	/^    public TreeNode delete2(TreeNode root, int data) { $/;"	m	class:Source
 deleteAtHead	source/lvl1/p16/Source.java	/^    private ListNode deleteAtHead(ListNode head) {$/;"	m	class:Source	file:
 deleteAtHead	source/lvl2/p09/Source.java	/^    private ListNode deleteAtHead(ListNode head) {$/;"	m	class:Source	file:
 deleteAtHead2	source/lvl1/p16/Source.java	/^    private ListNode deleteAtHead2(ListNode head) {$/;"	m	class:Source	file:
@@ -491,6 +494,7 @@ main	source/lvl4/p21/Source.java	/^    public static void main(String[] args) {$
 main	source/lvl4/p22/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/lvl4/p23/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/lvl4/p24/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p25/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/test/TestLevels.java	/^    public static void main(String[] args) {}$/;"	m	class:TestLevels
 main	source/test/TestTemplates.java	/^    public static void main(String[] args) {$/;"	m	class:Test
 makeChange	source/lvl4/p02/Source.java	/^    public static int makeChange(int[] coins, int amount) {$/;"	m	class:Source
@@ -516,6 +520,7 @@ merge2	source/lvl2/p22/Source.java	/^    private static int[] merge2(int[] left,
 mergeIntervals	source/lvl3/p41/Source.java	/^    private static ArrayList<Interval> mergeIntervals(ArrayList<Interval> intervalsList) {$/;"	m	class:Source	file:
 mergeIntervals2	source/lvl3/p41/Source.java	/^    private static ArrayList<Interval> mergeIntervals2(ArrayList<Interval> intervalsList) {$/;"	m	class:Source	file:
 mergeTwoSortedList	source/lvl4/p01/Source.java	/^    public ListNode mergeTwoSortedList(ListNode l1, ListNode l2) {$/;"	m	class:Source
+min	source/lvl4/p25/Source.java	/^    private TreeNode min(TreeNode root) {$/;"	m	class:Source	file:
 minTreeDepth	source/lvl3/p25/Source.java	/^    private int minTreeDepth(TreeNode root) {$/;"	m	class:Source	file:
 minTreeDepth2	source/lvl3/p25/Source.java	/^    private int minTreeDepth2(TreeNode root) {$/;"	m	class:Source	file:
 minTreeDepth3	source/lvl3/p25/Source.java	/^    private int minTreeDepth3(TreeNode root) {$/;"	m	class:Source	file:
@@ -739,6 +744,7 @@ source.lvl4.p21	source/lvl4/p21/Source.java	/^package source.lvl4.p21;$/;"	p
 source.lvl4.p22	source/lvl4/p22/Source.java	/^package source.lvl4.p22;$/;"	p
 source.lvl4.p23	source/lvl4/p23/Source.java	/^package source.lvl4.p23;$/;"	p
 source.lvl4.p24	source/lvl4/p24/Source.java	/^package source.lvl4.p24;$/;"	p
+source.lvl4.p25	source/lvl4/p25/Source.java	/^package source.lvl4.p25;$/;"	p
 source.temp.help	source/temp/help/MatrixPrinter.java	/^package source.temp.help;$/;"	p
 source.temp.help	source/temp/help/TreePrinter.java	/^package source.temp.help;$/;"	p
 source.temp.help	source/temp/help/TriePrinter.java	/^package source.temp.help;$/;"	p
