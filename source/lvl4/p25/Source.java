@@ -101,7 +101,8 @@ class Source {
             tree.add(Integer.parseInt(args[i]));
         tree.print();
         new Source().delete(tree.root, Integer.parseInt(args[0]));
-        // new Source().delete2(tree.root, Integer.parseInt(args[0]));
+        tree.print();
+        new Source().delete2(tree.root, Integer.parseInt(args[args.length-1]));
         tree.print();
     }
 }

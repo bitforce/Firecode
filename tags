@@ -142,6 +142,7 @@ Source	source/lvl4/p22/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p23/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p24/Source.java	/^class Source {$/;"	c
 Source	source/lvl4/p25/Source.java	/^class Source {$/;"	c
+Source	source/lvl4/p26/Source.java	/^class Source {$/;"	c
 Test	source/test/TestTemplates.java	/^class Test {$/;"	c
 TestLevels	source/test/TestLevels.java	/^class TestLevels {$/;"	c
 TreeNode	source/temp/node/TreeNode.java	/^    public TreeNode(int data) {$/;"	m	class:TreeNode
@@ -495,6 +496,7 @@ main	source/lvl4/p22/Source.java	/^    public static void main(String[] args) {$
 main	source/lvl4/p23/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/lvl4/p24/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/lvl4/p25/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
+main	source/lvl4/p26/Source.java	/^    public static void main(String[] args) {$/;"	m	class:Source
 main	source/test/TestLevels.java	/^    public static void main(String[] args) {}$/;"	m	class:TestLevels
 main	source/test/TestTemplates.java	/^    public static void main(String[] args) {$/;"	m	class:Test
 makeChange	source/lvl4/p02/Source.java	/^    public static int makeChange(int[] coins, int amount) {$/;"	m	class:Source
@@ -519,6 +521,7 @@ merge	source/lvl2/p22/Source.java	/^    private static int[] merge(int[] left, i
 merge2	source/lvl2/p22/Source.java	/^    private static int[] merge2(int[] left, int[] right) {$/;"	m	class:Source	file:
 mergeIntervals	source/lvl3/p41/Source.java	/^    private static ArrayList<Interval> mergeIntervals(ArrayList<Interval> intervalsList) {$/;"	m	class:Source	file:
 mergeIntervals2	source/lvl3/p41/Source.java	/^    private static ArrayList<Interval> mergeIntervals2(ArrayList<Interval> intervalsList) {$/;"	m	class:Source	file:
+mergeKLists	source/lvl4/p26/Source.java	/^    private ListNode mergeKLists(ArrayList<ListNode> lists) {$/;"	m	class:Source	file:
 mergeTwoSortedList	source/lvl4/p01/Source.java	/^    public ListNode mergeTwoSortedList(ListNode l1, ListNode l2) {$/;"	m	class:Source
 min	source/lvl4/p25/Source.java	/^    private TreeNode min(TreeNode root) {$/;"	m	class:Source	file:
 minTreeDepth	source/lvl3/p25/Source.java	/^    private int minTreeDepth(TreeNode root) {$/;"	m	class:Source	file:
@@ -745,6 +748,7 @@ source.lvl4.p22	source/lvl4/p22/Source.java	/^package source.lvl4.p22;$/;"	p
 source.lvl4.p23	source/lvl4/p23/Source.java	/^package source.lvl4.p23;$/;"	p
 source.lvl4.p24	source/lvl4/p24/Source.java	/^package source.lvl4.p24;$/;"	p
 source.lvl4.p25	source/lvl4/p25/Source.java	/^package source.lvl4.p25;$/;"	p
+source.lvl4.p26	source/lvl4/p26/Source.java	/^package source.lvl4.p26;$/;"	p
 source.temp.help	source/temp/help/MatrixPrinter.java	/^package source.temp.help;$/;"	p
 source.temp.help	source/temp/help/TreePrinter.java	/^package source.temp.help;$/;"	p
 source.temp.help	source/temp/help/TriePrinter.java	/^package source.temp.help;$/;"	p
