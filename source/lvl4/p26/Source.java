@@ -10,12 +10,11 @@ class Source {
     /* ********************************************************************* */
     public static void main(String[] args) {
         ArrayList<ListNode> lists = new ArrayList<>();
-        int numberOfLists = Integer.parseInt(args[0]);
 		int k = 0;
-        for(int i = 0; i < numberOfLists; i++) {
+        for(int i = 0; i < Integer.parseInt(args[0]); i++) {
             SinglyLinkedList list = new SinglyLinkedList();
             for(int j = 0; j < Integer.parseInt(args[i+1]); j++) {
-                list.append(Integer.parseInt(args[numberOfLists+i+k+1]));
+                list.append(Integer.parseInt(args[Integer.parseInt(args[0])+i+k+1]));
                 k++;
             }
             k--;
