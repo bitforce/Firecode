@@ -9,17 +9,18 @@ class Source {
     }
     /* ********************************************************************* */
     public static void main(String[] args) {
-        // until your stupid fucking midn can figure out how to appropriately grab these values, 
-        // just hardecode this shit like the idiot fucking retard you are
         ArrayList<ListNode> lists = new ArrayList<>();
-        int numberOfLists = Integer.parseInt(args[0]); 
-        int k = 1; // shifts to appropriate parsing placeholder
+        int numberOfLists = Integer.parseInt(args[0]);
+		int k = 0;
         for(int i = 0; i < numberOfLists; i++) {
-            int numberOfElements = Integer.parseInt(args[i+1]);
-            for(int j = 0; j < Integer.parseInt(args[numberOfElements]); j++) {
-                System.out.println(Integer.parseInt(args[k + numberOfElements + j]));
+            SinglyLinkedList list = new SinglyLinkedList();
+            for(int j = 0; j < Integer.parseInt(args[i+1]); j++) {
+                list.append(Integer.parseInt(args[numberOfLists+i+k+1]));
                 k++;
             }
+            k--;
+            lists.add(list.head);
+            list.print();
         }
         System.out.println(new Source().mergeKLists(lists));
     }
