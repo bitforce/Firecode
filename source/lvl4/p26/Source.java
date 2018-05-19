@@ -59,11 +59,11 @@ class Source {
         for (ListNode list : lists) if (list != null) queue.add(list);
         ListNode head = new ListNode(0), curr = head; 
         while (queue.size() > 0) {
-          ListNode temp = queue.poll();
-          curr.next = temp;
-          if (temp.next != null)
-              queue.add(temp.next); 
-          curr = curr.next;
+            ListNode temp = queue.poll();
+            curr.next = temp;
+            if (temp.next != null)
+                queue.add(temp.next); 
+            curr = curr.next;
         }
         return head.next;
     }
