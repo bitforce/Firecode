@@ -2,8 +2,6 @@ package source.temp.list;
 import source.temp.node.ListNode;
 public class SinglyLinkedList {
     public ListNode head;
-    public void clear() {head = null;}
-    public void print() {System.out.print(toString());}
     public void append(int data) {
         ListNode node = new ListNode(data);
         if(head != null) {
@@ -13,6 +11,8 @@ public class SinglyLinkedList {
             temp.next = node;
         } else head = node;
     }
+    public void clear() {head = null;}
+    public void print() {System.out.print(toString());}
     @Override
     public String toString() {
         String s = "";

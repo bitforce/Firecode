@@ -19,6 +19,10 @@ numbers each representing the respective list sizes. The following example, ther
 3 lists, where each list will contain 2, 3, and 4 elements respectively. The sequence 
 of elements following are the values to be within the lists--the cut off being the 
 length of each _M_ and thus, the next sequence of _M_ numbers starting.
+
+Below we have 3 lists of lengths: 2, 3, and 4 respectively, where said lists are 
+[0, 1], [2, 3, 4], [5, 6, 7, 8]
+
 `3 2 3 4 0 1 2 3 4 5 6 7 8`
 
 Usage
