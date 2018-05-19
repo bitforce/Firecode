@@ -35,19 +35,18 @@ class Source {
     /* ********************************************************************* */
     public ListNode mergeKLists2(ArrayList<ListNode> lists) {
         if (lists.size() == 0)  return null;
-        PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>(lists.size(),
-            new Comparator<ListNode>() {
-                public int compare(ListNode a, ListNode b) {
-                    if (a.data > b.data) return 1;
-                    else if(a.data == b.data) return 0;
-                    else return -1;}});
-        for (ListNode list : lists) if (list != null) queue.add(list);
-        ListNode head = new ListNode(0), curr = head; 
-        while (queue.size() > 0) {
+        PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>(new
+                Comparator<ListNode>(){public int compare(ListNode a, ListNode b){
+                    return a.data - b.data;
+                }});
+        for (ListNode list : lists) queue.offer(list);
+        ListNode head = new ListNode(Integer.MIN_VALUE);
+        ListNode prev = head;
+        while(!queue.isEmpty()) {
             ListNode temp = queue.poll();
-            curr.next = temp;
-            if (temp.next != null) queue.add(temp.next); 
-            curr = curr.next;
+            prev.next = temp;
+            prev = prev.next;
+            if(temp.next != null) queue.offer(temp.next);
         }
         return head.next;
     }
@@ -66,18 +65,16 @@ class Source {
             lists.add(list.head);
             list.print();
         }
-        ListNode head = new Source().mergeKLists(lists);
+        // NOTE - both methods do give the correct answer, but running them
+        // sequentially forces a infinite recursive call
+        print(new Source().mergeKLists(lists));
+        print(new Source().mergeKLists2(lists));
+    }
+    private static void print(ListNode head) {
         while(head != null) {
             System.out.print(head.data + " -> ");
             head = head.next;
         }
         System.out.println();
-        head = new Source().mergeKLists(lists);
-        while(head != null) {
-            System.out.print(head.data + " -> ");
-            head = head.next;
-        }
-        System.out.println();
-
     }
 }
