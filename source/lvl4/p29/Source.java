@@ -28,8 +28,8 @@ class Source {
     public static void main(String[] args) {
         SinglyLinkedList list1 = new SinglyLinkedList();
         SinglyLinkedList list2 = new SinglyLinkedList();
-        for(int i = 0; i < args.length; i++) {
-            if(i < args.length / 2) list1.append(Integer.parseInt(args[i]));
+        for(int i = 1; i < args.length; i++) {
+            if(i < Integer.parseInt(args[0]) + 1) list1.append(Integer.parseInt(args[i]));
             else list2.append(Integer.parseInt(args[i]));
         }
         list1.print();

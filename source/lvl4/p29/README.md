@@ -20,5 +20,5 @@ N/A
 Note
 ---
 You can assume that the input integers are non negative and the digits stored in the linked lists 
-are in the reverse order. Take a look at the examples to understand the format. For now, we 
-assume that the lists are even in length.
+are in the reverse order. Take a look at the examples to understand the format. The lists can be 
+of differing lengths.
