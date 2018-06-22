@@ -1,4 +1,5 @@
-package source.lvl4.p03; import java.util.*;
+package source.lvl4.p03;
+import java.util.*;
 class Source {
     /* ********************************************************************* */
     private static int longestNRSubstringLen(String input) {

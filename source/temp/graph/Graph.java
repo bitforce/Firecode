@@ -1,4 +1,5 @@
 package source.temp.graph;
+import source.temp.node.GraphNode;
 import java.util.*;
 /**
  * This is a simple graph which utilizes a adjacency map (as opposed to list or matrix) structure.
