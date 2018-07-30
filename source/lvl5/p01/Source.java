@@ -5,8 +5,20 @@ import java.util.*;
 class Source {
     /* ********************************************************************* */
     private boolean depthFirstSearch(GraphNode rootNode, String data) {
+        if(rootNode == null || data == null) return false;
         Stack<GraphNode> stack = new Stack<>();
-        stack.push(rootNode);
+        stack.add(rootNode);
+        rootNode.visited = true;
+        while(!stack.isEmpty()) {
+            Node node = stack.pop();
+            if(node.data != null && node.data.equals(data))
+                return true;
+            for(Node n : n.adjacentNodes)
+                if(!n.visited) {
+                    n.visited = true;
+                    stack.add(n);
+                }
+        }
         return false;
     }
     /* ********************************************************************* */
