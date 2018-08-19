@@ -1,8 +1,8 @@
-# Graph Depth First Search 
+# 
 
 Overview
 ---
-Implement a method to find a node in a graph using Depth First Search.
+N/A
 
 Analysis
 ---

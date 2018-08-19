@@ -8,7 +8,10 @@ public class Graph<T> implements Iterable<T> {
     private Map<T, Set<T>> map;
     private int edges;
     public Graph() {map = new HashMap<>();}
-    public void add(T v) {if(!map.containsKey(v)) map.put(v, new HashSet<>());}
+    public void add(T v) {
+        if(!map.containsKey(v)) 
+            map.put(v, new HashSet<>());
+    }
     public void add(T v, T w) {
         if(!map.containsKey(v)) add(v);
         if(!map.containsKey(w)) add(w);
@@ -23,7 +26,8 @@ public class Graph<T> implements Iterable<T> {
         return map.get(v).size();
     }
     private void validate(T v) {
-        if(!map.containsKey(v)) throw new IllegalArgumentException("Invalid vertex: " + v.toString());
+        if(!map.containsKey(v)) 
+            throw new IllegalArgumentException("Invalid vertex: " + v.toString());
     }
     private boolean hasEdge(T v, T w) {
         validate(v);

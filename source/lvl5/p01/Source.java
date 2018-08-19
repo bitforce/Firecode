@@ -1,41 +1,29 @@
 package source.lvl5.p01;
-import source.temp.graph.Graph;
-import source.temp.node.GraphNode;
 import java.util.*;
 class Source {
     /* ********************************************************************* */
-    private boolean depthFirstSearch(GraphNode rootNode, String data) {
-        if(rootNode == null || data == null) return false;
-        Stack<GraphNode> stack = new Stack<>();
-        stack.add(rootNode);
-        rootNode.visited = true;
-        while(!stack.isEmpty()) {
-            Node node = stack.pop();
-            if(node.data != null && node.data.equals(data))
-                return true;
-            for(Node n : n.adjacentNodes)
-                if(!n.visited) {
-                    n.visited = true;
-                    stack.add(n);
+    private String longestPalSubstr(String str) {
+        if(str == null || str.length() < 2) return str;
+        final int STRING_SIZE = str.length();
+        final boolean[][] table = new boolean[STRING_SIZE][STRING_SIZE];
+        int maxSubstringLength = 1;
+        String longestSubstring = null;
+        for(int i = 0; i < STRING_SIZE; i++)
+            for(int j = 0; j < STRING_SIZE-1; j++) {
+                final int K = j + i;
+                if(K >= STRING_SIZE) continue;
+                if(str.charAt(j) == str.charAt(K) && (K-j < 3 || table[j+1][K-1])) {
+                    table[j][K] = true;
+                    if(K-j+1 > maxSubstringLength) {
+                        maxSubstringLength = K - j + 1;
+                        longestSubstring = str.substring(j, K+1);
+                    }
                 }
-        }
-        return false;
+            }
+        return longestSubstring;
     }
     /* ********************************************************************* */
     public static void main(String[] args) {
-        Graph<String> graph = new Graph<>();
-        for(int i = 0; i < args.length; i++) { // subtract by the amount 
-            // vim command; assign ctrl-J/K for going down list of available method suggestions
-            int n = Integer.parseInt(args[i]); 
-            if(n == 1) {
-                graph.add(args[i+1]);
-                i++;
-            } else if(n == 2) {
-                graph.add(args[i+1], args[i+2]);
-                i += 2;
-            } else throw new Error("\n\nInvalid integer argument, must be 1 or 2.\n");
-        }
-        System.out.println();
-        graph.print();
+        System.out.println(new Source().longestPalSubstr(args[0]));
     }
 }

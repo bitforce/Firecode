@@ -28,7 +28,7 @@ class Source {
         return temp;
     }
     /* ********************************************************************* */
-    private ListNode findMiddleNode2(ListNode head) {
+    private ListNode findMiddleNode2(ListNode head) { // BEST SOLUTION
         if(head == null) return null;
         ListNode slow = head;
         ListNode fast = head;
