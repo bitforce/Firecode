@@ -23,7 +23,47 @@ class Source {
         return longestSubstring;
     }
     /* ********************************************************************* */
+    private String longestPalSubstr2(String str){
+        int length = str.length();
+        int max = 0;
+        int start = -1;
+        for (int startRow = 0; startRow < length; startRow += 1) {
+            int current = 0;
+            int currentStart = 0;
+            for (int col = 0; col <= startRow; col += 1) {
+                if (str.charAt(col) == str.charAt(startRow - col))
+                    current += 1;
+                 else {
+                    current = 0;
+                    currentStart = col + 1;
+                } 
+                if (current > max) {
+                    max = current;
+                    start = currentStart;
+                }
+            }
+        }  
+        for (int startRow = 1; startRow < length; startRow += 1) {
+            int current = 0;
+            int currentStart = startRow;
+            for (int col = length - 1; col >= startRow; col -= 1) {
+                if (str.charAt(col) == str.charAt(startRow + length - 1 - col))
+                    current += 1;
+                else {
+                    current = 0;
+                    currentStart = startRow + length - col;
+                } 
+                if (current > max) {
+                    max = current;
+                    start = currentStart;
+                }
+            }
+        } 
+        return str.substring(start, start + max);
+    }
+    /* ********************************************************************* */
     public static void main(String[] args) {
         System.out.println(new Source().longestPalSubstr(args[0]));
+        System.out.println(new Source().longestPalSubstr2(args[0]));
     }
 }
