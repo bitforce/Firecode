@@ -1,4 +1,9 @@
-DIR=source/lvl$l/p$p/
+DIR = source/lvl$l/p$p/
+VIM = /usr/bin/vim
+
+ifeq ($(shell uname), Darwin)
+	VIM = /usr/local/bin/vim
+endif
 
 auto:
 	javac $(DIR)Source.java
@@ -6,10 +11,10 @@ auto:
 	rm $(DIR)Source.class
 
 code:
-	vim $(DIR)Source.java
+	$(VIM) $(DIR)Source.java
 
 edit:
-	vim $(DIR)README.md
+	$(VIM) $(DIR)README.md
 
 less:
 	less $(DIR)README.md
