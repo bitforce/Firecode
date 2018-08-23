@@ -62,8 +62,37 @@ class Source {
         return str.substring(start, start + max);
     }
     /* ********************************************************************* */
+    public String longestPalSubstr3(String str) {
+        int n = str.length();
+        String longest = str.substring(0, 1);
+
+        for (int i = 0; i < n - 1; i++) {
+            String s1 = expandAroundCentre(str, i, i);
+            if (s1.length() > longest.length()) {
+                longest = s1;
+            }
+
+            String s2 = expandAroundCentre(str, i, i + 1);
+            if (s2.length() > longest.length()) {
+                longest = s2;
+            }
+        }
+        return longest;
+    }
+
+    private String expandAroundCentre(String str, int l, int r) {
+        int n = str.length();
+
+        while (l >= 0 && r < n && str.charAt(l) == str.charAt(r)) {
+            l--;
+            r++;
+        }
+        return str.substring(l + 1, r);
+    }
+    /* ********************************************************************* */
     public static void main(String[] args) {
         System.out.println(new Source().longestPalSubstr(args[0]));
         System.out.println(new Source().longestPalSubstr2(args[0]));
+        System.out.println(new Source().longestPalSubstr3(args[0]));
     }
 }
