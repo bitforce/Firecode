@@ -54,19 +54,6 @@ class Source {
         return 0;
     }
    /* ********************************************************************* */
-     private static int minWeightedPath4(int[][] grid) {
-        final int[] sum = new int[grid[0].length];
-        sum[0] = grid[0][0];
-        for (int i = 1; i < grid.length; i++)
-            sum[i] = grid[0][i] + sum[i - 1];
-        for (int i = 1; i < grid.length; i++) {
-            sum[0] = grid[i][0] + sum[0];
-            for (int j = 1; j < grid[0].length; j++)
-                sum[j] = grid[i][j] + Math.min(sum[j], sum[j - 1]);
-        }
-        return sum[sum.length - 1];
-    }
-   /* ********************************************************************* */
     public static void main(String[] args) {
         final int M = Integer.parseInt(args[0]);
         final int N = Integer.parseInt(args[1]);
@@ -81,6 +68,5 @@ class Source {
         System.out.println(minWeightedPath(matrix));
         System.out.println(minWeightedPath2(matrix));
         System.out.println(minWeightedPath3(matrix));
-        System.out.println(minWeightedPath4(matrix));
     }
 }
