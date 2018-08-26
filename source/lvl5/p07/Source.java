@@ -4,16 +4,16 @@ import source.temp.node.GraphNode;
 import java.util.*;
 class Source {
     /* ********************************************************************* */
-    private boolean depthFirstSearch(GraphNode<Integer> rootNode, String data) {
+    private boolean depthFirstSearch(GraphNode rootNode, String data) {
         if(rootNode == null || data == null) return false;
-        Stack<GraphNode<Integer>> stack = new Stack<>();
+        Stack<GraphNode> stack = new Stack<>();
         stack.add(rootNode);
         rootNode.visited = true;
         while(!stack.isEmpty()) {
-            GraphNode<Integer> node = stack.pop();
+            GraphNode node = stack.pop();
             if(node.data != null && node.data.equals(data))
                 return true;
-            for(GraphNode<Integer> n : node.adjacentNodes)
+            for(GraphNode n : node.adjacentNodes)
                 if(!n.visited) {
                     n.visited = true;
                     stack.add(n);
