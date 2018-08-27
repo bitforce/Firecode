@@ -72,7 +72,6 @@ class Source {
         Vertex previousVertex = null;
         int vertexArgumentLimit = 0;
         for(int i = 2; i < args.length; i++) {
-            for(Vertex v : vertices) System.out.println("LIST " + v);
             try {
                 final int WEIGHT = Integer.parseInt(args[i]);
                 System.out.println(WEIGHT);
@@ -101,32 +100,12 @@ class Source {
                     vertices.add(previousVertex);
                 vertexArgumentLimit = 1;
             } catch(NumberFormatException e) {
-                /*
-                 * the beauty in this piece of code is that if the new  vertex is already in the list,
-                 * prev doesn't change and we go straight to the next arg (should be an integer)
-                 */
                 boolean vertexListed = false;
                 for(Vertex v : vertices) // change to lambda at some point
                     if(v.name.equals(args[i])) {
                         vertexListed = true;
                         break;
                     }
-                
-                // LOGIC
-                /*
-                 * Since it doesn't already exist in map; there is not much we can do here except 
-                 * add it to the list and hope that at next incrementation, we'll see an integer 
-                 * followed by another vertex, which if so, then we now have enough information 
-                 * to place this inside of a map / graph. Map<prevVertex, {(newVertex, WEIGHT)}
-                 *
-                 * OR 
-                 *
-                 * we may see another vertex, which if is the case, we set previousVertex to 
-                 * null and start as if new; whereby we check the map to see if exists 
-                 * already (in the case: A 1 B A 2 Z) and if so, just get it's set 
-                 * and add the next vertex (by perhaps breaking out of the first try?).
-                 *
-                 */
                 if(!vertexListed) {
                     final Vertex targetVertex = new Source().new Vertex(args[i]);
                     previousVertex = targetVertex;
@@ -140,6 +119,7 @@ class Source {
             }
         }
         vertices.add(previousVertex);
+        for(Vertex v : vertices) System.out.println("LIST " + v);
 
         for(Vertex key : graph.keySet())
             for(int i = 0; i < vertices.size(); i++) {
