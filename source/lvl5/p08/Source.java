@@ -66,11 +66,11 @@ class Source {
         } catch(NumberFormatException e) {/*silent*/}
         final HashMap<Vertex, HashSet<Pair<Vertex, Integer>>> graph = new HashMap<>();
         final ArrayList<Vertex> vertices = new ArrayList<>(); // could be a set (probably better that way)
-        /* ******************************************************************************** */
-        // FIGURE THIS SHIT OUT | ARG INPUT
-        /* ******************************************************************************** */
         Vertex previousVertex = null;
         int vertexArgumentLimit = 0;
+        /*
+         * BUG a='A 1 B 2 D D 4 E A 8 F' -> A is not re-referenced again to add to set
+         */
         for(int i = 2; i < args.length; i++) {
             try {
                 final int WEIGHT = Integer.parseInt(args[i]);
@@ -86,8 +86,8 @@ class Source {
                     System.exit(1);
                 }
                 final Pair<Vertex, Integer> vertexWeightPair = new Pair<>(targetVertex, WEIGHT);
-                if(graph.keySet().contains(targetVertex)) 
-                    graph.get(targetVertex).add(vertexWeightPair);
+                if(graph.keySet().contains(previousVertex)) 
+                    graph.get(previousVertex).add(vertexWeightPair);
                 else {
                     final HashSet<Pair<Vertex, Integer>> vertexWeightPairSet = new HashSet<>();
                     vertexWeightPairSet.add(vertexWeightPair);
@@ -99,8 +99,9 @@ class Source {
                 vertexArgumentLimit = 1;
             } catch(NumberFormatException e) {
                 boolean vertexListed = false;
-                for(Vertex v : vertices) // change to lambda at some point
+                for(Vertex v : vertices)
                     if(v.name.equals(args[i])) {
+                        previousVertex = v;
                         vertexListed = true;
                         break;
                     }
@@ -116,8 +117,6 @@ class Source {
                 System.exit(1);
             }
         }
-        for(Vertex v : vertices) System.out.println("LIST " + v);
-
         for(Vertex key : graph.keySet())
             for(int i = 0; i < vertices.size(); i++) {
                 if(!key.equals(vertices.get(i))) continue;
@@ -131,8 +130,6 @@ class Source {
                 }
                 vertices.set(i, targetVertex);
             }
-
-        /* ******************************************************************************** */
         Vertex source = null;
         Vertex target = null;
         boolean sourceAssigned = false;
@@ -161,9 +158,9 @@ class Source {
         }
         System.out.println();
         final List<Vertex> shortestPath = getShortestPath(source, target);
-        final int SIZE_MIN_ONE = vertices.size()-1;
+        final int SIZE_MIN_ONE = vertices.size()-1; // causing exception until I solve method
         for(int i = 0; i < SIZE_MIN_ONE; i++)
-            System.out.print(vertices.get(i) + " -> ");
-        System.out.print(vertices.get(SIZE_MIN_ONE) + "\n");
+            System.out.print(shortestPath.get(i) + " -> ");
+        System.out.print(shortestPath.get(SIZE_MIN_ONE) + "\n");
     }
 }
