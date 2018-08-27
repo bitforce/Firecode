@@ -60,37 +60,37 @@ class Source {
     /* ********************************************************************* */
     public static void main(String[] args) {
         try {
-            Integer.parseInt(args[2]);
+            Double.parseDouble(args[2]);
             System.out.println("illegal input: vertex should be first argument");
             System.exit(1);
         } catch(NumberFormatException e) {/*silent*/}
-        final HashMap<Vertex, HashSet<Pair<Vertex, Integer>>> graph = new HashMap<>();
+        final HashMap<Vertex, HashSet<Pair<Vertex, Double>>> graph = new HashMap<>();
         final ArrayList<Vertex> vertices = new ArrayList<>();
         Vertex previousVertex = null;
         int vertexArgumentLimit = 0;
         for(int i = 2; i < args.length; i++) {
             try {
-                final int WEIGHT = Integer.parseInt(args[i]);
+                final double WEIGHT = Double.parseDouble(args[i]);
                 i++;
                 try {
-                    Integer.parseInt(args[i]);
+                    Double.parseDouble(args[i]);
                     System.out.println("illegal input: continous weights " + WEIGHT  + " " + args[i]);
                     System.exit(1);
                 } catch(NumberFormatException e) {/*silent*/}
-                final Vertex targetVertex = new Source().new Vertex(args[i]);
-                if(targetVertex.equals(previousVertex)) {
-                    System.out.println("illegal input: vertex [" + targetVertex + "] re-referenced");
+                final Vertex keyVertex = new Source().new Vertex(args[i]);
+                if(keyVertex.equals(previousVertex)) {
+                    System.out.println("illegal input: vertex [" + keyVertex + "] re-referenced");
                     System.exit(1);
                 }
-                final Pair<Vertex, Integer> vertexWeightPair = new Pair<>(targetVertex, WEIGHT);
+                final Pair<Vertex, Double> vertexWeightPair = new Pair<>(keyVertex, WEIGHT);
                 if(graph.keySet().contains(previousVertex)) 
                     graph.get(previousVertex).add(vertexWeightPair);
                 else {
-                    final HashSet<Pair<Vertex, Integer>> vertexWeightPairSet = new HashSet<>();
+                    final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = new HashSet<>();
                     vertexWeightPairSet.add(vertexWeightPair);
                     graph.put(previousVertex, vertexWeightPairSet);
                 }
-                previousVertex = targetVertex;
+                previousVertex = keyVertex;
                 if(!vertices.contains(previousVertex))
                     vertices.add(previousVertex);
                 vertexArgumentLimit = 1;
@@ -103,9 +103,9 @@ class Source {
                         break;
                     }
                 if(!vertexListed) {
-                    final Vertex targetVertex = new Source().new Vertex(args[i]);
-                    previousVertex = targetVertex;
-                    vertices.add(targetVertex);
+                    final Vertex keyVertex = new Source().new Vertex(args[i]);
+                    previousVertex = keyVertex;
+                    vertices.add(keyVertex);
                 }
                 vertexArgumentLimit++;
             }
@@ -116,52 +116,64 @@ class Source {
         }
         // ********************************************************************************
         // CREATE EDGES FROM EACH KEY VERTEX TO VALUE SET OF VERTICES 
-        for(Vertex key : graph.keySet())
+        for(Vertex keyVertex : graph.keySet())
             for(int i = 0; i < vertices.size(); i++) {
-                if(!key.equals(vertices.get(i))) continue;
-                final Vertex targetVertex = vertices.get(i);
-                final Set<Pair<Vertex, Integer>> vertexWeightPairSet = graph.get(targetVertex);
-                targetVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
-                final Iterator<Pair<Vertex, Integer>> iterator = vertexWeightPairSet.iterator();
+                if(!keyVertex.equals(vertices.get(i))) continue;
+                final Set<Pair<Vertex, Double>> vertexWeightPairSet = graph.get(keyVertex);
+                keyVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
+                final Iterator<Pair<Vertex, Double>> iterator = vertexWeightPairSet.iterator();
                 for(int j = 0; iterator.hasNext(); j++) {
-                    final Pair<Vertex, Integer> vertexWeightPair = iterator.next();
-                    targetVertex.adjacencies[j] = 
+                    final Pair<Vertex, Double> vertexWeightPair = iterator.next();
+                    keyVertex.adjacencies[j] = 
                         new Source().new Edge(vertexWeightPair.getKey(), vertexWeightPair.getValue());
                 }
-                vertices.set(i, targetVertex);
+                vertices.set(i, keyVertex);
             }
+        
+        // object introspection: somehow you are changing references and the the vertices follow the map
+        // you need to look at how you are initializing an re-initializing vertices
+
         // ********************************************************************************
         // INVERTS PREVIOUS GRAPH
-        final HashMap<Vertex, HashSet<Pair<Vertex, Integer>>> invertedGraph = new HashMap<>();
-        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Integer>>> entry : graph.entrySet())
-            for(Pair<Vertex, Integer> vertexWeightPair : entry.getValue()) {
+        final HashMap<Vertex, HashSet<Pair<Vertex, Double>>> invertedGraph = new HashMap<>();
+        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : graph.entrySet())
+            for(Pair<Vertex, Double> vertexWeightPair : entry.getValue()) {
                 final Vertex sourceKey = vertexWeightPair.getKey();
-                final Pair<Vertex, Integer> newPair = 
+                final Pair<Vertex, Double> newPair = 
                     new Pair<>(entry.getKey(), vertexWeightPair.getValue());
                 if(invertedGraph.keySet().contains(sourceKey))
                     invertedGraph.get(sourceKey).add(newPair);
                 else {
-                    final HashSet<Pair<Vertex, Integer>> newSet = new HashSet<>();
+                    final HashSet<Pair<Vertex, Double>> newSet = new HashSet<>();
                     newSet.add(newPair);
                     invertedGraph.put(sourceKey, newSet);
                 }
             }
         // ********************************************************************************
         // CREATE EDGES BACK TO EACH EACH KEY VERTEX TO VALUE SET OF VERTICES OF ORIGINAL GRAPH
-        for(Vertex key : invertedGraph.keySet())
+        for(Vertex keyVertex : invertedGraph.keySet())
             for(int i = 0; i < vertices.size(); i++) { // CAUTIOUS : vertices may no longer be relevant
-                if(!key.equals(vertices.get(i))) continue;
-                final Vertex targetVertex = vertices.get(i);
-                final Set<Pair<Vertex, Integer>> vertexWeightPairSet = invertedGraph.get(targetVertex);
-                targetVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
-                final Iterator<Pair<Vertex, Integer>> iterator = vertexWeightPairSet.iterator();
+                if(!keyVertex.equals(vertices.get(i))) continue;
+                final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = invertedGraph.get(keyVertex);
+                // somewhere in here, you simply reassign edge references instead of add to them
+                // copy over previous edges!
+                if(keyVertex.adjacencies != null)
+                    for(Edge e : keyVertex.adjacencies)// possible same vals?
+                        vertexWeightPairSet.add(new Pair<Vertex, Double>(e.target, e.weight));
+                keyVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
+                final Iterator<Pair<Vertex, Double>> iterator = vertexWeightPairSet.iterator();
                 for(int j = 0; iterator.hasNext(); j++) {
-                    final Pair<Vertex, Integer> vertexWeightPair = iterator.next();
-                    targetVertex.adjacencies[j] = 
+                    final Pair<Vertex, Double> vertexWeightPair = iterator.next();
+                    keyVertex.adjacencies[j] = 
                         new Source().new Edge(vertexWeightPair.getKey(), vertexWeightPair.getValue());
                 }
-                vertices.set(i, targetVertex);
+                vertices.set(i, keyVertex);
             }
+        // graph check
+        for(Vertex v : vertices)
+            for(Edge e : v.adjacencies)
+                System.out.println(v + " -> " + e.target);
+        System.out.println();
         Vertex source = null;
         Vertex target = null;
         boolean sourceAssigned = false;
@@ -182,18 +194,18 @@ class Source {
             System.exit(1);
         }
         System.out.println("ORIGINAL GRAPH");
-        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Integer>>> entry : graph.entrySet()) {
+        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : graph.entrySet()) {
             System.out.print(entry.getKey() + " | ");
-            for(Pair<Vertex, Integer> pair : entry.getValue()) {
+            for(Pair<Vertex, Double> pair : entry.getValue()) {
                 System.out.print("(" + pair.getKey() + ", " + pair.getValue() +") ");
             }
             System.out.println();
         }
         System.out.println();
         System.out.println("INVERTED GRAPH");
-        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Integer>>> entry : invertedGraph.entrySet()) {
+        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : invertedGraph.entrySet()) {
             System.out.print(entry.getKey() + " | ");
-            for(Pair<Vertex, Integer> pair : entry.getValue()) {
+            for(Pair<Vertex, Double> pair : entry.getValue()) {
                 System.out.print("(" + pair.getKey() + ", " + pair.getValue() +") ");
             }
             System.out.println();
