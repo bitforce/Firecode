@@ -74,19 +74,17 @@ class Source {
         for(int i = 2; i < args.length; i++) {
             try {
                 final int WEIGHT = Integer.parseInt(args[i]);
-                System.out.println(WEIGHT);
                 i++;
-                System.out.println(i);
                 try {
                     Integer.parseInt(args[i]);
                     System.out.println("illegal input: continous weights " + WEIGHT  + " " + args[i]);
                     System.exit(1);
                 } catch(NumberFormatException e) {/*silent*/}
                 final Vertex targetVertex = new Source().new Vertex(args[i]);
-//                if(targetVertex.equals(previousVertex)) {
-//                    System.out.println("illegal input: vertex [" + targetVertex + "] re-referenced");
-//                    System.exit(1);
-//                }
+                if(targetVertex.equals(previousVertex)) {
+                    System.out.println("illegal input: vertex [" + targetVertex + "] re-referenced");
+                    System.exit(1);
+                }
                 final Pair<Vertex, Integer> vertexWeightPair = new Pair<>(targetVertex, WEIGHT);
                 if(graph.keySet().contains(targetVertex)) 
                     graph.get(targetVertex).add(vertexWeightPair);
@@ -118,7 +116,6 @@ class Source {
                 System.exit(1);
             }
         }
-        vertices.add(previousVertex);
         for(Vertex v : vertices) System.out.println("LIST " + v);
 
         for(Vertex key : graph.keySet())
@@ -142,11 +139,11 @@ class Source {
         boolean targetAssigned = false;
         for(Vertex v : vertices) {
             if(sourceAssigned && targetAssigned) break;
-            if(v.equals(args[0])) {
+            if(v.name.equals(args[0])) {
                 source = v;
                 sourceAssigned = true;
             }
-            if(v.equals(args[1])) {
+            if(v.name.equals(args[1])) {
                 target = v;
                 targetAssigned = true;
             }
