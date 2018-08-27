@@ -155,8 +155,6 @@ class Source {
             for(int i = 0; i < vertices.size(); i++) { // CAUTIOUS : vertices may no longer be relevant
                 if(!keyVertex.equals(vertices.get(i))) continue;
                 final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = invertedGraph.get(keyVertex);
-                // somewhere in here, you simply reassign edge references instead of add to them
-                // copy over previous edges!
                 if(keyVertex.adjacencies != null)
                     for(Edge e : keyVertex.adjacencies)// possible same vals?
                         vertexWeightPairSet.add(new Pair<Vertex, Double>(e.target, e.weight));
@@ -169,7 +167,7 @@ class Source {
                 }
                 vertices.set(i, keyVertex);
             }
-        // graph check
+        System.out.println();
         for(Vertex v : vertices)
             for(Edge e : v.adjacencies)
                 System.out.println(v + " -> " + e.target);
@@ -211,8 +209,6 @@ class Source {
             System.out.println();
         }
         System.out.println();
-        // big problem: if source points to target, target should also be initialized 
-        // to have edge back to source
         for(Edge e : source.adjacencies) System.out.println(source + "-" + e.target);
         for(Edge e : target.adjacencies) System.out.println(target + "-" + e.target);
         System.exit(0); // DELETE ME
