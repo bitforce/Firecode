@@ -12,6 +12,11 @@ import javafx.util.Pair;
  *
  * Currently, I did update Vertex to have equals and hashCode overrides, but those will be taken out 
  * once I finish tuning things up.
+ *
+ * TODO
+ * change ArrayList of Vertex to set (more aptly designed) and get rid of additional methods (equals 
+ * and hashCode) and then correct code appropriately to ensure you have worked with the explicit 
+ * given clasess. Use lambdas where possible.
  */
 class Source {
     /* ********************************************************************* */
@@ -54,76 +59,103 @@ class Source {
     }
     /* ********************************************************************* */
     public static void main(String[] args) {
+        try {
+            Integer.parseInt(args[2]);
+            System.out.println("illegal input: vertex should be first argument");
+            System.exit(1);
+        } catch(NumberFormatException e) {/*silent*/}
         final HashMap<Vertex, HashSet<Pair<Vertex, Integer>>> graph = new HashMap<>();
-        final ArrayList<Vertex> vertices = new ArrayList<>();
+        final ArrayList<Vertex> vertices = new ArrayList<>(); // could be a set (probably better that way)
+        /* ******************************************************************************** */
+        // FIGURE THIS SHIT OUT | ARG INPUT
+        /* ******************************************************************************** */
         Vertex previousVertex = null;
         int vertexArgumentLimit = 0;
         for(int i = 2; i < args.length; i++) {
+            for(Vertex v : vertices) System.out.println("LIST " + v);
+            try {
+                final int WEIGHT = Integer.parseInt(args[i]);
+                System.out.println(WEIGHT);
+                i++;
+                System.out.println(i);
+                try {
+                    Integer.parseInt(args[i]);
+                    System.out.println("illegal input: continous weights " + WEIGHT  + " " + args[i]);
+                    System.exit(1);
+                } catch(NumberFormatException e) {/*silent*/}
+                final Vertex targetVertex = new Source().new Vertex(args[i]);
+//                if(targetVertex.equals(previousVertex)) {
+//                    System.out.println("illegal input: vertex [" + targetVertex + "] re-referenced");
+//                    System.exit(1);
+//                }
+                final Pair<Vertex, Integer> vertexWeightPair = new Pair<>(targetVertex, WEIGHT);
+                if(graph.keySet().contains(targetVertex)) 
+                    graph.get(targetVertex).add(vertexWeightPair);
+                else {
+                    final HashSet<Pair<Vertex, Integer>> vertexWeightPairSet = new HashSet<>();
+                    vertexWeightPairSet.add(vertexWeightPair);
+                    graph.put(previousVertex, vertexWeightPairSet);
+                }
+                previousVertex = targetVertex;
+                if(!vertices.contains(previousVertex))
+                    vertices.add(previousVertex);
+                vertexArgumentLimit = 1;
+            } catch(NumberFormatException e) {
+                /*
+                 * the beauty in this piece of code is that if the new  vertex is already in the list,
+                 * prev doesn't change and we go straight to the next arg (should be an integer)
+                 */
+                boolean vertexListed = false;
+                for(Vertex v : vertices) // change to lambda at some point
+                    if(v.name.equals(args[i])) {
+                        vertexListed = true;
+                        break;
+                    }
+                
+                // LOGIC
+                /*
+                 * Since it doesn't already exist in map; there is not much we can do here except 
+                 * add it to the list and hope that at next incrementation, we'll see an integer 
+                 * followed by another vertex, which if so, then we now have enough information 
+                 * to place this inside of a map / graph. Map<prevVertex, {(newVertex, WEIGHT)}
+                 *
+                 * OR 
+                 *
+                 * we may see another vertex, which if is the case, we set previousVertex to 
+                 * null and start as if new; whereby we check the map to see if exists 
+                 * already (in the case: A 1 B A 2 Z) and if so, just get it's set 
+                 * and add the next vertex (by perhaps breaking out of the first try?).
+                 *
+                 */
+                if(!vertexListed) {
+                    final Vertex targetVertex = new Source().new Vertex(args[i]);
+                    previousVertex = targetVertex;
+                    vertices.add(targetVertex);
+                }
+                vertexArgumentLimit++;
+            }
             if(vertexArgumentLimit > 2) {
                 System.out.println("illegal input: too many continous vertices");
                 System.exit(1);
             }
-            String arg = args[i];
-            try {
-                final int WEIGHT = Integer.parseInt(arg);
-                // check to see prevVert is not null (A 1 B 2 C), then use that to insert it into 
-                // hashmap and make next vertex be the edge. If prevVert is null (A 1 B C 3 D) 
-                // || (A 1 B A 2 C), just insert new node into hashmap with following node
-                vertexArgumentLimit = 0;
-                i++;
-                arg = args[i];
-                try {
-                    Integer.parseInt(arg);
-                    System.out.println("illegal input: continous integers " + WEIGHT  + " " + arg);
-                    System.exit(1);
-                } catch(NumberFormatException e) {
-                    final Vertex targetVertex = new Source().new Vertex(arg);
-                    if(targetVertex.equals(previousVertex)) {
-                        System.out.println("illegal input: vertex [" + targetVertex + "] re-referenced");
-                        System.exit(1);
-                    }
-                    final Pair<Vertex, Integer> vertexWeightPair = new Pair<>(targetVertex, WEIGHT);
-                    if(graph.keySet().contains(targetVertex)) graph.get(targetVertex).add(vertexWeightPair);
-                    else {
-                        final HashSet<Pair<Vertex, Integer>> vertexWeightPairSet = new HashSet<>();
-                        vertexWeightPairSet.add(vertexWeightPair);
-                        graph.put(targetVertex, vertexWeightPairSet);
-                    }
-                    previousVertex = targetVertex;
-                   vertexArgumentLimit++;
-                }
-            } catch(NumberFormatException e) {
-                boolean vertexListed = false;
-                Vertex currentVertex = null;
-                for(Vertex v : vertices)
-                    if(v.equals(arg)) {
-                        currentVertex = v;
-                        vertexListed = true;
-                        break;
-                    }
-                if(!vertexListed) {
-                    currentVertex = new Source().new Vertex(arg);
-                    vertices.add(currentVertex);
-                }
-                previousVertex = currentVertex;
-                vertexArgumentLimit++;
-            }
         }
+        vertices.add(previousVertex);
 
         for(Vertex key : graph.keySet())
             for(int i = 0; i < vertices.size(); i++) {
                 if(!key.equals(vertices.get(i))) continue;
-                final Vertex currentVertex = vertices.get(i);
-                final Set<Pair<Vertex, Integer>> vertexWeightPairSet = graph.get(currentVertex);
-                currentVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
+                final Vertex targetVertex = vertices.get(i);
+                final Set<Pair<Vertex, Integer>> vertexWeightPairSet = graph.get(targetVertex);
+                targetVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
                 final Iterator<Pair<Vertex, Integer>> iterator = vertexWeightPairSet.iterator();
                 for(int j = 0; iterator.hasNext(); j++) {
                     final Pair<Vertex, Integer> vertexWeightPair = iterator.next();
-                    currentVertex.adjacencies[j] = new Source().new Edge(vertexWeightPair.getKey(), vertexWeightPair.getValue());
+                    targetVertex.adjacencies[j] = new Source().new Edge(vertexWeightPair.getKey(), vertexWeightPair.getValue());
                 }
-                vertices.set(i, currentVertex);
+                vertices.set(i, targetVertex);
             }
 
+        /* ******************************************************************************** */
         Vertex source = null;
         Vertex target = null;
         boolean sourceAssigned = false;
