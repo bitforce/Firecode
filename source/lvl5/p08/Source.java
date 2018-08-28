@@ -59,6 +59,7 @@ class Source {
     }
     /* ********************************************************************* */
     public static void main(String[] args) {
+        // add conditional to test if you are entering by args or by input
         try {
             Double.parseDouble(args[2]);
             System.out.println("illegal input: vertex should be first argument");
@@ -119,7 +120,7 @@ class Source {
         for(Vertex keyVertex : graph.keySet())
             for(int i = 0; i < vertices.size(); i++) {
                 if(!keyVertex.equals(vertices.get(i))) continue;
-                final Set<Pair<Vertex, Double>> vertexWeightPairSet = graph.get(keyVertex);
+                final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = graph.get(keyVertex);
                 keyVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
                 final Iterator<Pair<Vertex, Double>> iterator = vertexWeightPairSet.iterator();
                 for(int j = 0; iterator.hasNext(); j++) {
@@ -129,16 +130,21 @@ class Source {
                 }
                 vertices.set(i, keyVertex);
             }
-        
-        // object introspection: somehow you are changing references and the the vertices follow the map
-        // you need to look at how you are initializing an re-initializing vertices
-
         // ********************************************************************************
         // INVERTS PREVIOUS GRAPH
         final HashMap<Vertex, HashSet<Pair<Vertex, Double>>> invertedGraph = new HashMap<>();
         for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : graph.entrySet())
             for(Pair<Vertex, Double> vertexWeightPair : entry.getValue()) {
-                final Vertex sourceKey = vertexWeightPair.getKey();
+                Vertex sourceKey = null;
+                boolean assigned = false;
+                for(Vertex v : graph.keySet())
+                    if(v.equals(vertexWeightPair.getKey())) {
+                        sourceKey = v;
+                        assigned = true;
+                        break;
+                    }
+                if(!assigned) 
+                    sourceKey = vertexWeightPair.getKey();
                 final Pair<Vertex, Double> newPair = 
                     new Pair<>(entry.getKey(), vertexWeightPair.getValue());
                 if(invertedGraph.keySet().contains(sourceKey))
@@ -154,9 +160,10 @@ class Source {
         for(Vertex keyVertex : invertedGraph.keySet())
             for(int i = 0; i < vertices.size(); i++) { // CAUTIOUS : vertices may no longer be relevant
                 if(!keyVertex.equals(vertices.get(i))) continue;
+                // VALIDATE VERTEX : H
                 final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = invertedGraph.get(keyVertex);
                 if(keyVertex.adjacencies != null)
-                    for(Edge e : keyVertex.adjacencies)// possible same vals?
+                    for(Edge e : keyVertex.adjacencies)
                         vertexWeightPairSet.add(new Pair<Vertex, Double>(e.target, e.weight));
                 keyVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
                 final Iterator<Pair<Vertex, Double>> iterator = vertexWeightPairSet.iterator();
@@ -167,11 +174,17 @@ class Source {
                 }
                 vertices.set(i, keyVertex);
             }
+        // ********************************************************************************
+        // PRINT OUT VERTICES AND CORRESPONDING EDGES
         System.out.println();
-        for(Vertex v : vertices)
+        for(Vertex v : vertices) {
             for(Edge e : v.adjacencies)
                 System.out.println(v + " -> " + e.target);
+            System.out.println("----");
+        }
         System.out.println();
+        // ********************************************************************************
+        // VALIDATE SOURCE / TARGET VERTICES
         Vertex source = null;
         Vertex target = null;
         boolean sourceAssigned = false;
@@ -191,6 +204,8 @@ class Source {
             System.out.println("source / target vertices not assigned");
             System.exit(1);
         }
+        // ********************************************************************************
+        // PRINT ORIGINAL MAP TO SHOW INITIAL VECTOR SET PERSPECTIVE
         System.out.println("ORIGINAL GRAPH");
         for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : graph.entrySet()) {
             System.out.print(entry.getKey() + " | ");
@@ -200,6 +215,8 @@ class Source {
             System.out.println();
         }
         System.out.println();
+        // ********************************************************************************
+        // PRINT INVERTED MAP TO SHOW OTHER VERTEX SET PERSPECTIVE
         System.out.println("INVERTED GRAPH");
         for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : invertedGraph.entrySet()) {
             System.out.print(entry.getKey() + " | ");

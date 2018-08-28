@@ -22,5 +22,8 @@ less:
 list:
 	less source/lvl$l/README
 
+test:
+	$(VIM) $(DIR)test.txt
+
 clean:
 	find source/ -type f -name '*.class' -delete
