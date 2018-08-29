@@ -1,4 +1,6 @@
 package source.lvl5.p08;
+import source.temp.help.FileReader;
+import source.temp.help.GraphPrinter;
 import java.util.*;
 import javafx.util.Pair;
 /**
@@ -55,17 +57,23 @@ class Source {
     }
     /* ********************************************************************* */
     private static List<Vertex> getShortestPath(final Vertex source, final Vertex target) {
-        return null;
+        final ArrayList<Vertex> shortestPath = new ArrayList<>();
+        for(Vertex vertex = target; vertex != null; vertex = vertex.previous)
+            shortestPath.add(vertex);
+        Collections.reverse(shortestPath);
+        return shortestPath;
     }
     /* ********************************************************************* */
-    public static void main(String[] args) {
-        // add conditional to test if you are entering by args or by input
+    /*
+     * YOU FORGOT TO USE THE PREVIOUS VERTEX ATTRIBUTE AND MIN DISTANCE
+     */
+    public static void main(String[] args) { 
         try {
             Double.parseDouble(args[2]);
             System.out.println("illegal input: vertex should be first argument");
             System.exit(1);
         } catch(NumberFormatException e) {/*silent*/}
-        final HashMap<Vertex, HashSet<Pair<Vertex, Double>>> graph = new HashMap<>();
+        final HashMap<Vertex, HashSet<Pair<Vertex, Double>>> initialGraph = new HashMap<>();
         final ArrayList<Vertex> vertices = new ArrayList<>();
         Vertex previousVertex = null;
         int vertexArgumentLimit = 0;
@@ -84,12 +92,12 @@ class Source {
                     System.exit(1);
                 }
                 final Pair<Vertex, Double> vertexWeightPair = new Pair<>(keyVertex, WEIGHT);
-                if(graph.keySet().contains(previousVertex)) 
-                    graph.get(previousVertex).add(vertexWeightPair);
+                if(initialGraph.keySet().contains(previousVertex)) 
+                    initialGraph.get(previousVertex).add(vertexWeightPair);
                 else {
                     final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = new HashSet<>();
                     vertexWeightPairSet.add(vertexWeightPair);
-                    graph.put(previousVertex, vertexWeightPairSet);
+                    initialGraph.put(previousVertex, vertexWeightPairSet);
                 }
                 previousVertex = keyVertex;
                 if(!vertices.contains(previousVertex))
@@ -117,10 +125,10 @@ class Source {
         }
         // ********************************************************************************
         // CREATE EDGES FROM EACH KEY VERTEX TO VALUE SET OF VERTICES 
-        for(Vertex keyVertex : graph.keySet())
+        for(Vertex keyVertex : initialGraph.keySet())
             for(int i = 0; i < vertices.size(); i++) {
                 if(!keyVertex.equals(vertices.get(i))) continue;
-                final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = graph.get(keyVertex);
+                final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = initialGraph.get(keyVertex);
                 keyVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
                 final Iterator<Pair<Vertex, Double>> iterator = vertexWeightPairSet.iterator();
                 for(int j = 0; iterator.hasNext(); j++) {
@@ -132,12 +140,12 @@ class Source {
             }
         // ********************************************************************************
         // INVERTS PREVIOUS GRAPH
-        final HashMap<Vertex, HashSet<Pair<Vertex, Double>>> invertedGraph = new HashMap<>();
-        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : graph.entrySet())
+        final HashMap<Vertex, HashSet<Pair<Vertex, Double>>> completeGraph = new HashMap<>();
+        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : initialGraph.entrySet())
             for(Pair<Vertex, Double> vertexWeightPair : entry.getValue()) {
                 Vertex sourceKey = null;
                 boolean assigned = false;
-                for(Vertex v : graph.keySet())
+                for(Vertex v : initialGraph.keySet())
                     if(v.equals(vertexWeightPair.getKey())) {
                         sourceKey = v;
                         assigned = true;
@@ -147,21 +155,21 @@ class Source {
                     sourceKey = vertexWeightPair.getKey();
                 final Pair<Vertex, Double> newPair = 
                     new Pair<>(entry.getKey(), vertexWeightPair.getValue());
-                if(invertedGraph.keySet().contains(sourceKey))
-                    invertedGraph.get(sourceKey).add(newPair);
+                if(completeGraph.keySet().contains(sourceKey))
+                    completeGraph.get(sourceKey).add(newPair);
                 else {
                     final HashSet<Pair<Vertex, Double>> newSet = new HashSet<>();
                     newSet.add(newPair);
-                    invertedGraph.put(sourceKey, newSet);
+                    completeGraph.put(sourceKey, newSet);
                 }
             }
         // ********************************************************************************
         // CREATE EDGES BACK TO EACH EACH KEY VERTEX TO VALUE SET OF VERTICES OF ORIGINAL GRAPH
-        for(Vertex keyVertex : invertedGraph.keySet())
+        for(Vertex keyVertex : completeGraph.keySet())
             for(int i = 0; i < vertices.size(); i++) { // CAUTIOUS : vertices may no longer be relevant
                 if(!keyVertex.equals(vertices.get(i))) continue;
                 // VALIDATE VERTEX : H
-                final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = invertedGraph.get(keyVertex);
+                final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = completeGraph.get(keyVertex);
                 if(keyVertex.adjacencies != null)
                     for(Edge e : keyVertex.adjacencies)
                         vertexWeightPairSet.add(new Pair<Vertex, Double>(e.target, e.weight));
@@ -174,15 +182,6 @@ class Source {
                 }
                 vertices.set(i, keyVertex);
             }
-        // ********************************************************************************
-        // PRINT OUT VERTICES AND CORRESPONDING EDGES
-        System.out.println();
-        for(Vertex v : vertices) {
-            for(Edge e : v.adjacencies)
-                System.out.println(v + " -> " + e.target);
-            System.out.println("----");
-        }
-        System.out.println();
         // ********************************************************************************
         // VALIDATE SOURCE / TARGET VERTICES
         Vertex source = null;
@@ -204,10 +203,11 @@ class Source {
             System.out.println("source / target vertices not assigned");
             System.exit(1);
         }
+        System.out.println();
         // ********************************************************************************
         // PRINT ORIGINAL MAP TO SHOW INITIAL VECTOR SET PERSPECTIVE
-        System.out.println("ORIGINAL GRAPH");
-        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : graph.entrySet()) {
+        System.out.println("INITIAL GRAPH");
+        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : initialGraph.entrySet()) {
             System.out.print(entry.getKey() + " | ");
             for(Pair<Vertex, Double> pair : entry.getValue()) {
                 System.out.print("(" + pair.getKey() + ", " + pair.getValue() +") ");
@@ -217,8 +217,8 @@ class Source {
         System.out.println();
         // ********************************************************************************
         // PRINT INVERTED MAP TO SHOW OTHER VERTEX SET PERSPECTIVE
-        System.out.println("INVERTED GRAPH");
-        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : invertedGraph.entrySet()) {
+        System.out.println("COMPLETE GRAPH");
+        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : completeGraph.entrySet()) {
             System.out.print(entry.getKey() + " | ");
             for(Pair<Vertex, Double> pair : entry.getValue()) {
                 System.out.print("(" + pair.getKey() + ", " + pair.getValue() +") ");
@@ -226,9 +226,28 @@ class Source {
             System.out.println();
         }
         System.out.println();
-        for(Edge e : source.adjacencies) System.out.println(source + "-" + e.target);
-        for(Edge e : target.adjacencies) System.out.println(target + "-" + e.target);
-        System.exit(0); // DELETE ME
+        // ********************************************************************************
+        // PRINT OUT ALL VERTICES AND CORRESPONDING EDGES
+        for(Vertex v : vertices) {
+            for(Edge e : v.adjacencies)
+                System.out.println(v + " -> " + e.target);
+            System.out.println("----");
+        }
+        System.out.println();
+        // ********************************************************************************
+        // PRINT OUT SOURCE / TARGET WITH CORRESPONDING EDGES
+        System.out.println("source" + "\n------");
+        for(Edge e : source.adjacencies) 
+            System.out.println(source + "-" + e.target);
+        System.out.println();
+        System.out.println("target" + "\n------");
+        for(Edge e : target.adjacencies) 
+            System.out.println(target + "-" + e.target);
+        // ********************************************************************************
+        // TRAVERSE ALL VERTICES FROM SOURCE TO SEE IF ALL EDGES ARE CONNECTED
+        System.out.println();
+        // ********************************************************************************
+        // MAIN RUN
         final List<Vertex> shortestPath = getShortestPath(source, target);
         final int SIZE_MIN_ONE = vertices.size()-1; // causing exception until I solve method
         for(int i = 0; i < SIZE_MIN_ONE; i++)
