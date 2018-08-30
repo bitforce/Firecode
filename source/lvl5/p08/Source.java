@@ -57,6 +57,23 @@ class Source {
     }
     /* ********************************************************************* */
     private static List<Vertex> getShortestPath(final Vertex source, final Vertex target) {
+        source.minDistance = 0.0;
+        final PriorityQueue<Vertex> vertexQueue = new PriorityQueue<>();
+        vertexQueue.add(source);
+        while (!vertexQueue.isEmpty()) {
+            final Vertex polledVertex = vertexQueue.poll();
+            System.out.println(polledVertex);
+            for (Edge e : polledVertex.adjacencies) {
+                final Vertex targetVertex = e.target;
+                final double distance = polledVertex.minDistance + e.weight;
+                if (distance < targetVertex.minDistance) {
+                    vertexQueue.remove(targetVertex);
+                    targetVertex.minDistance = distance;
+                    targetVertex.previous = polledVertex;
+                    vertexQueue.add(targetVertex);
+                }
+            }
+        }
         final ArrayList<Vertex> shortestPath = new ArrayList<>();
         for(Vertex vertex = target; vertex != null; vertex = vertex.previous)
             shortestPath.add(vertex);
@@ -205,19 +222,8 @@ class Source {
         }
         System.out.println();
         // ********************************************************************************
-        // PRINT ORIGINAL MAP TO SHOW INITIAL VECTOR SET PERSPECTIVE
-        System.out.println("INITIAL GRAPH");
-        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : initialGraph.entrySet()) {
-            System.out.print(entry.getKey() + " | ");
-            for(Pair<Vertex, Double> pair : entry.getValue()) {
-                System.out.print("(" + pair.getKey() + ", " + pair.getValue() +") ");
-            }
-            System.out.println();
-        }
-        System.out.println();
-        // ********************************************************************************
-        // PRINT INVERTED MAP TO SHOW OTHER VERTEX SET PERSPECTIVE
-        System.out.println("COMPLETE GRAPH");
+        // PRINT GRAPH
+        System.out.println("GRAPH");
         for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : completeGraph.entrySet()) {
             System.out.print(entry.getKey() + " | ");
             for(Pair<Vertex, Double> pair : entry.getValue()) {
@@ -246,10 +252,27 @@ class Source {
         // ********************************************************************************
         // TRAVERSE ALL VERTICES FROM SOURCE TO SEE IF ALL EDGES ARE CONNECTED
         System.out.println();
+        final HashSet<String> visitedVertices = new HashSet<>();
+        final Stack<Vertex> vertexStack = new Stack<>();
+        vertexStack.push(source);
+        while(!vertexStack.isEmpty()) {
+            final Vertex currentVertex = vertexStack.pop();
+            System.out.print(currentVertex.name + " -> ");
+            visitedVertices.add(currentVertex.name);
+            for(Edge edge : currentVertex.adjacencies) {
+                if(visitedVertices.contains(edge.target.name))
+                    continue;
+                vertexStack.push(edge.target);
+            }
+
+            // the vertices referenced in the adjacencies are not necessarily the 
+            // same as the corresponding vertices found in the list
+        }
+        System.out.println("\n");
         // ********************************************************************************
         // MAIN RUN
         final List<Vertex> shortestPath = getShortestPath(source, target);
-        final int SIZE_MIN_ONE = vertices.size()-1; // causing exception until I solve method
+        final int SIZE_MIN_ONE = vertices.size()-1;
         for(int i = 0; i < SIZE_MIN_ONE; i++)
             System.out.print(shortestPath.get(i) + " -> ");
         System.out.print(shortestPath.get(SIZE_MIN_ONE) + "\n");
