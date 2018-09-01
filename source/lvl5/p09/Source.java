@@ -6,7 +6,8 @@ import java.util.*;
 class Source {
     /* ********************************************************************* */
     private static int[] maxContSequence(int[] arr) {
-        int max = arr == null || arr.length == 0 ? 0 : Integer.MIN_VALUE;
+        if(arr == null) return null;
+        int max = arr.length == 0 ? 0 : Integer.MIN_VALUE;
         int startIndex = 0;
         int tempStart = 0;
         int endIndex = -1;
@@ -56,38 +57,42 @@ class Source {
         }
         return new int[]{max_sum, max_starting_index, max_ending_index};
     }
-    
+    /* ********************************************************************* */
     public static int[] maxContSequence3(int[] arr) {
-        if(arr==null) return null;
-        if(arr.length<1) return new int[]{0,0,-1};
-        int max=arr[0];
-        int maxSumStartIndex=0;
-        int maxSumEndIndex=0;
-        int sumTillNow=arr[0];
-        for(int i=1;i<arr.length;i++) {
-            if(sumTillNow>0 ) {
+        if(arr == null) return null;
+        if(arr.length < 1) return new int[]{0,0,-1};
+        int max = arr[0];
+        int startIndex = 0;
+        int endIndex = 0;
+        int sumTillNow = arr[0];
+        for(int i = 1; i < arr.length; i++) {
+            if(sumTillNow > 0 ) {
                 sumTillNow += arr[i];
-                if (sumTillNow>max) {
-                    max=sumTillNow;
-                    maxSumEndIndex=i;
+                if (sumTillNow > max) {
+                    max = sumTillNow;
+                    endIndex = i;
                 }
             } else if(sumTillNow < 0 && arr[i] > sumTillNow) {
                 sumTillNow = arr[i];
                 if (sumTillNow > max){
-                    max=sumTillNow;
-                    maxSumStartIndex=i;
-                    maxSumEndIndex=i;
+                    max = sumTillNow;
+                    startIndex = i;
+                    endIndex = i;
                 }
             }
         }
-        return new int[]{max, maxSumStartIndex, maxSumEndIndex};
+        return new int[]{max, startIndex, endIndex};
     }
     /* ********************************************************************* */
     public static void main(String[] args) {
         final int[] ARR = new int[args.length];
         for(int i = 0; i < ARR.length; i++)
             ARR[i] = Integer.parseInt(args[i]);
+
         for(int i : maxContSequence(ARR))
+            System.out.print(i + " ");
+        System.out.println();
+        for(int i : maxContSequence2(ARR))
             System.out.print(i + " ");
         System.out.println();
         for(int i : maxContSequence2(ARR))
