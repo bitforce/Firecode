@@ -103,12 +103,12 @@ class Source {
                     System.out.println("illegal input: continous weights " + WEIGHT  + " " + args[i]);
                     System.exit(1);
                 } catch(NumberFormatException e) {/*silent*/}
-                final Vertex keyVertex = new Source().new Vertex(args[i]);
-                if(keyVertex.equals(previousVertex)) {
-                    System.out.println("illegal input: vertex [" + keyVertex + "] re-referenced");
+                final Vertex currentVertex = new Source().new Vertex(args[i]);
+                if(currentVertex.equals(previousVertex)) {
+                    System.out.println("illegal input: vertex [" + currentVertex + "] re-referenced");
                     System.exit(1);
                 }
-                final Pair<Vertex, Double> vertexWeightPair = new Pair<>(keyVertex, WEIGHT);
+                final Pair<Vertex, Double> vertexWeightPair = new Pair<>(currentVertex, WEIGHT);
                 if(initialGraph.keySet().contains(previousVertex)) 
                     initialGraph.get(previousVertex).add(vertexWeightPair);
                 else {
@@ -116,22 +116,28 @@ class Source {
                     vertexWeightPairSet.add(vertexWeightPair);
                     initialGraph.put(previousVertex, vertexWeightPairSet);
                 }
-                previousVertex = keyVertex;
+                previousVertex = currentVertex;
                 if(!vertices.contains(previousVertex))
                     vertices.add(previousVertex);
                 vertexArgumentLimit = 1;
             } catch(NumberFormatException e) {
                 boolean vertexListed = false;
+                
+                // ATTENTION HERE
+
+                // this should be checking the map rather to see if anything in keyset or values 
+                // matches up with this and if so, reassign previous vertex to that object
                 for(Vertex v : vertices)
                     if(v.name.equals(args[i])) {
                         previousVertex = v;
                         vertexListed = true;
                         break;
                     }
+                // if not, then create a new vertex
                 if(!vertexListed) {
-                    final Vertex keyVertex = new Source().new Vertex(args[i]);
-                    previousVertex = keyVertex;
-                    vertices.add(keyVertex);
+                    final Vertex currentVertex = new Source().new Vertex(args[i]);
+                    previousVertex = currentVertex;
+                    vertices.add(currentVertex);
                 }
                 vertexArgumentLimit++;
             }
@@ -185,7 +191,6 @@ class Source {
         for(Vertex keyVertex : completeGraph.keySet())
             for(int i = 0; i < vertices.size(); i++) { // CAUTIOUS : vertices may no longer be relevant
                 if(!keyVertex.equals(vertices.get(i))) continue;
-                // VALIDATE VERTEX : H
                 final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = completeGraph.get(keyVertex);
                 if(keyVertex.adjacencies != null)
                     for(Edge e : keyVertex.adjacencies)
@@ -194,11 +199,15 @@ class Source {
                 final Iterator<Pair<Vertex, Double>> iterator = vertexWeightPairSet.iterator();
                 for(int j = 0; iterator.hasNext(); j++) {
                     final Pair<Vertex, Double> vertexWeightPair = iterator.next();
+                    // if vwp.getKey() name is in the map, assign it to be that reference
                     keyVertex.adjacencies[j] = 
                         new Source().new Edge(vertexWeightPair.getKey(), vertexWeightPair.getValue());
                 }
                 vertices.set(i, keyVertex);
             }
+        // ********************************************************************************
+        // REPLACE ALL MATCHING NODES WITH THOSE IN LIST USING ENTRY SET?
+
         // ********************************************************************************
         // VALIDATE SOURCE / TARGET VERTICES
         Vertex source = null;
