@@ -1,0 +1,21 @@
+fix cscope vim plugin and add other Java capabilities
+
+fix Graph class and ensure that it actually works--appears that your nodes 
+are not doubly linked and the graph is not correctly directed
+
+add all the necessary README info
+
+good code conventions and final variable usage
+
+makefile should point all class files to bin folder which should be excluded
+using gitignore
+
+create test textfiles for each class
+
+create a generic Input class similar to princeton.edu
+
+correctly title all your source files.
+
+add important and relevant problem tricks and things in the README
+
+add Java8 versions of all current answers; if possible--using streams and such.

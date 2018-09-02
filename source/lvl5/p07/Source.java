@@ -10,9 +10,8 @@ class Source {
         stack.add(rootNode);
         rootNode.visited = true;
         while(!stack.isEmpty()) {
-            GraphNode node = stack.pop();
-            if(node.data != null && node.data.equals(data))
-                return true;
+            final GraphNode node = stack.pop();
+            if(node.data != null && node.data.equals(data)) return true;
             for(GraphNode n : node.adjacentNodes)
                 if(!n.visited) {
                     n.visited = true;
@@ -49,4 +48,4 @@ class Source {
         System.out.println(new Source().depthFirstSearch(node, args[0]));
         System.out.println(new Source().depthFirstSearch2(node, args[0]));
     }
-}
+} // you can find a way to deal with your dynamic input by looking @ Princeton edu Input classes

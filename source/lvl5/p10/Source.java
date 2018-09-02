@@ -2,6 +2,11 @@ package source.lvl5.p10;
 import source.temp.graph.Graph;
 import source.temp.node.GraphNode;
 import java.util.*;
+/**
+ * Implement the Breadth First Search Algorithm for a Graph.
+ *
+ * Turns out DFS is traditionally not a recusrive algorithm.
+ */
 class Source {
     /* ********************************************************************* */
     private boolean breadthFirstSearch(GraphNode rootNode, String data) {
@@ -20,7 +25,6 @@ class Source {
         }
         return false;
     }
-    /* ********************************************************************* */
     /* ********************************************************************* */
     public static void main(String[] args) {
         // if args=test; run test input

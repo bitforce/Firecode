@@ -1,7 +1,15 @@
 ===============================================================================
 PROBLEM IDENTIFIER
 ------------------
-01 Recursively Merge Two Sorted Linked Lists
+01 Longest Palindromic Substring 
+02 Subset Summation with Number Constraint
+03 Pascal's Triangle
+04 Minimum Sum Path
+05 Largest Square
+06 Boggle With Paper Dictionary
+07 Graph Depth First Search
+08 Implement the Djikstra Shortest Path Algorithm in a Graph
+09 Find the Maximum Contiguous Subsequence in an Array 
+10 Implement the Breadth First Search Algorithm for a Graph
+11 Even Split
 ==============================================================================
-
-NOTE : original first problem was changed; therefore, we have p00
