@@ -2,10 +2,26 @@ package source.temp.graph;
 import source.temp.node.GraphNode;
 import java.util.*;
 /**
+ * Unweighted, connected, directed, acyclic graph (connected UDAG).
  * This is a simple graph which utilizes a adjacency map (as opposed to list or matrix) structure.
+ *
+ * EXAMPLE
+ * -------------
+ * A | {J K X B}
+ * B | {K Q A}
+ * C | {Q}
+ * Q | {B C}
+ * K | {A B}
+ * X | {A}
+ * -------------
+ *
+ * While the printout will show that vertices share each other's nodes in their corresponding 
+ * sets, said nodes are not actually connected via reference and thus are not undirected.
+ * Think about that time when I had the graph and then attempted to re-traverse the map 
+ * to create the back-map to reconnect all the nodes with each other--[L=5 | P=08]
  */
 public class Graph<T> implements Iterable<T> {
-    private Map<T, Set<T>> map;
+    private final HashMap<T, HashSet<T>> map;
     private int edges;
     public Graph() {map = new HashMap<>();}
     public void add(T v) {
@@ -47,5 +63,6 @@ public class Graph<T> implements Iterable<T> {
         }
         return builder.toString();
     }
-    public void print() {System.out.println(toString());} // UPDATE THIS TO PRINT OUT ACTUAL GRAPH FROM GRAPHPRINTER.JAVA
+    // UPDATE THIS TO PRINT OUT ACTUAL GRAPH FROM GRAPHPRINTER.JAVA
+    public void print() {System.out.println(toString());}
 }

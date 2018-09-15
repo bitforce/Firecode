@@ -4,21 +4,7 @@ import source.temp.help.GraphPrinter;
 import java.util.*;
 import javafx.util.Pair;
 /**
- * BACKGROUND.
- * The <b>Vertex</b> and <b>Edge</b> classes were provided by Firecode; however, in order to interact 
- * with the problem method, a custom <b>Graph</b> had to be created in order to provide nodal 
- * structure for Dijkstra's traversal. In addition, since I follow given definitions, such as 
- * the beforementioned classes; strictyl, I did not alter <code>Edge[] adjacencies</code> to 
- * an <code>ArrayList</code>, which would have made life generally easier; however, 
- * especially designing the main logic input handler.
- *
- * Currently, I did update Vertex to have equals and hashCode overrides, but those will be taken out 
- * once I finish tuning things up.
- *
- * TODO
- * change ArrayList of Vertex to set (more aptly designed) and get rid of additional methods (equals 
- * and hashCode) and then correct code appropriately to ensure you have worked with the explicit 
- * given clasess. Use lambdas where possible.
+ * Dikjstra's Graph.
  */
 class Source {
     /* ********************************************************************* */
@@ -34,17 +20,6 @@ class Source {
         public int compareTo(final Vertex other) {
             return Double.compare(minDistance, other.minDistance);
         }
-
-        // PERSONAL ADDITION
-        @Override
-        public boolean equals(Object o) {
-            if(o == this) return true;
-            if(!(o instanceof Vertex)) return false;
-            return ((Vertex) o).name.equals(name);
-        }
-
-        @Override
-        public int hashCode() {return name.hashCode();} // gets ride of warning
     }
 
     private class Edge {
@@ -81,132 +56,97 @@ class Source {
         return shortestPath;
     }
     /* ********************************************************************* */
-    /*
-     * YOU FORGOT TO USE THE PREVIOUS VERTEX ATTRIBUTE AND MIN DISTANCE
-     */
     public static void main(String[] args) { 
         try {
             Double.parseDouble(args[2]);
             System.out.println("illegal input: vertex should be first argument");
             System.exit(1);
         } catch(NumberFormatException e) {/*silent*/}
-        final HashMap<Vertex, HashSet<Pair<Vertex, Double>>> initialGraph = new HashMap<>();
-        final ArrayList<Vertex> vertices = new ArrayList<>();
+        final HashMap<String, Integer> vertexAdjacencyIndices = new HashMap<>();
+        final HashSet<Vertex> graph = new HashSet<>();
         Vertex previousVertex = null;
         int vertexArgumentLimit = 0;
         for(int i = 2; i < args.length; i++) {
             try {
                 final double WEIGHT = Double.parseDouble(args[i]);
                 i++;
+
+                // integer @ i was assigned, i++ is now presumed to be next vertex
+
                 try {
                     Double.parseDouble(args[i]);
                     System.out.println("illegal input: continous weights " + WEIGHT  + " " + args[i]);
                     System.exit(1);
                 } catch(NumberFormatException e) {/*silent*/}
-                final Vertex currentVertex = new Source().new Vertex(args[i]);
-                if(currentVertex.equals(previousVertex)) {
-                    System.out.println("illegal input: vertex [" + currentVertex + "] re-referenced");
+
+                // we have validated that they are not continuous integers
+
+                if(args[i].equals(previousVertex.name)) {
+                    System.out.println("illegal input: vertex [" + args[i] + "] re-referenced");
                     System.exit(1);
                 }
-                final Pair<Vertex, Double> vertexWeightPair = new Pair<>(currentVertex, WEIGHT);
-                if(initialGraph.keySet().contains(previousVertex)) 
-                    initialGraph.get(previousVertex).add(vertexWeightPair);
-                else {
-                    final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = new HashSet<>();
-                    vertexWeightPairSet.add(vertexWeightPair);
-                    initialGraph.put(previousVertex, vertexWeightPairSet);
-                }
-                previousVertex = currentVertex;
-                if(!vertices.contains(previousVertex))
-                    vertices.add(previousVertex);
-                vertexArgumentLimit = 1;
-            } catch(NumberFormatException e) {
-                boolean vertexListed = false;
-                
-                // ATTENTION HERE
 
-                // this should be checking the map rather to see if anything in keyset or values 
-                // matches up with this and if so, reassign previous vertex to that object
-                for(Vertex v : vertices)
-                    if(v.name.equals(args[i])) {
-                        previousVertex = v;
-                        vertexListed = true;
-                        break;
-                    }
-                // if not, then create a new vertex
-                if(!vertexListed) {
+                // we have validated that 'A 1 A' is not a thing 
+
+                final Vertex tempVertex = findVertex(graph, args[i]);
+                final int PREV_VERT_INDEX = vertexAdjacencyIndices.get(previousVertex.name);
+                if(tempVertex == null) {
                     final Vertex currentVertex = new Source().new Vertex(args[i]);
+                    currentVertex.adjacencies = new Source.Edge[100];
+                    currentVertex.adjacencies[0] = new Source().new Edge(previousVertex, WEIGHT);
+                    vertexAdjacencyIndices.put(currentVertex.name, 1);
+                    previousVertex.adjacencies[PREV_VERT_INDEX] = new Source().new Edge(currentVertex, WEIGHT);
                     previousVertex = currentVertex;
-                    vertices.add(currentVertex);
+                    graph.add(previousVertex); // when are you supposed to add it
+                } else {
+                    final int TEMP_VERT_INDEX = vertexAdjacencyIndices.get(tempVertex.name);
+                    tempVertex.adjacencies[TEMP_VERT_INDEX] = new Source().new Edge(previousVertex, WEIGHT);
+                    vertexAdjacencyIndices.put(tempVertex.name, TEMP_VERT_INDEX+1);
+                    previousVertex.adjacencies[PREV_VERT_INDEX] = new Source().new Edge(tempVertex, WEIGHT);
+                }
+
+                // IFF args[i] is not same as prev vertex, then create new one and assign it's back-edge
+
+                vertexAdjacencyIndices.put(previousVertex.name, PREV_VERT_INDEX+1);
+
+                // ensures that corresponding index of vertex is increased
+
+                vertexArgumentLimit = 1;
+
+                // reset argument limit
+            } catch(NumberFormatException e) {
+                if(args[i].equals(previousVertex.name)) {
+                    vertexArgumentLimit++;
+                    continue;
+                }
+                
+                // keeps previous vertex the same if we find A 1 B B 2 C == A 1 B 2 C
+
+                previousVertex = findVertex(graph, args[i]);
+                if(previousVertex == null) {
+                    final Vertex currentVertex = new Source().new Vertex(args[i]);
+                    currentVertex.adjacencies = new Source.Edge[100];
+                    vertexAdjacencyIndices.put(currentVertex.name, 0);
+                    previousVertex = currentVertex;
+                    graph.add(previousVertex);
                 }
                 vertexArgumentLimit++;
+
+                // find existing vertex and use that as next prevVert; if not, create and use new one
             }
+            // don't forget to check if disjoint values exist in graph
             if(vertexArgumentLimit > 2) {
                 System.out.println("illegal input: too many continous vertices");
                 System.exit(1);
             }
+
+            // validates the A 1 B C D doesn't exist
+
+            compactGraph(graph);
+
+            // removes any set elements which already exist within a previous one's adjacencies
         }
         // ********************************************************************************
-        // CREATE EDGES FROM EACH KEY VERTEX TO VALUE SET OF VERTICES 
-        for(Vertex keyVertex : initialGraph.keySet())
-            for(int i = 0; i < vertices.size(); i++) {
-                if(!keyVertex.equals(vertices.get(i))) continue;
-                final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = initialGraph.get(keyVertex);
-                keyVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
-                final Iterator<Pair<Vertex, Double>> iterator = vertexWeightPairSet.iterator();
-                for(int j = 0; iterator.hasNext(); j++) {
-                    final Pair<Vertex, Double> vertexWeightPair = iterator.next();
-                    keyVertex.adjacencies[j] = 
-                        new Source().new Edge(vertexWeightPair.getKey(), vertexWeightPair.getValue());
-                }
-                vertices.set(i, keyVertex);
-            }
-        // ********************************************************************************
-        // INVERTS PREVIOUS GRAPH
-        final HashMap<Vertex, HashSet<Pair<Vertex, Double>>> completeGraph = new HashMap<>();
-        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : initialGraph.entrySet())
-            for(Pair<Vertex, Double> vertexWeightPair : entry.getValue()) {
-                Vertex sourceKey = null;
-                boolean assigned = false;
-                for(Vertex v : initialGraph.keySet())
-                    if(v.equals(vertexWeightPair.getKey())) {
-                        sourceKey = v;
-                        assigned = true;
-                        break;
-                    }
-                if(!assigned) 
-                    sourceKey = vertexWeightPair.getKey();
-                final Pair<Vertex, Double> newPair = 
-                    new Pair<>(entry.getKey(), vertexWeightPair.getValue());
-                if(completeGraph.keySet().contains(sourceKey))
-                    completeGraph.get(sourceKey).add(newPair);
-                else {
-                    final HashSet<Pair<Vertex, Double>> newSet = new HashSet<>();
-                    newSet.add(newPair);
-                    completeGraph.put(sourceKey, newSet);
-                }
-            }
-        // ********************************************************************************
-        // CREATE EDGES BACK TO EACH EACH KEY VERTEX TO VALUE SET OF VERTICES OF ORIGINAL GRAPH
-        for(Vertex keyVertex : completeGraph.keySet())
-            for(int i = 0; i < vertices.size(); i++) { // CAUTIOUS : vertices may no longer be relevant
-                if(!keyVertex.equals(vertices.get(i))) continue;
-                final HashSet<Pair<Vertex, Double>> vertexWeightPairSet = completeGraph.get(keyVertex);
-                if(keyVertex.adjacencies != null)
-                    for(Edge e : keyVertex.adjacencies)
-                        vertexWeightPairSet.add(new Pair<Vertex, Double>(e.target, e.weight));
-                keyVertex.adjacencies = new Source.Edge[vertexWeightPairSet.size()];
-                final Iterator<Pair<Vertex, Double>> iterator = vertexWeightPairSet.iterator();
-                for(int j = 0; iterator.hasNext(); j++) {
-                    final Pair<Vertex, Double> vertexWeightPair = iterator.next();
-                    // if vwp.getKey() name is in the map, assign it to be that reference
-                    keyVertex.adjacencies[j] = 
-                        new Source().new Edge(vertexWeightPair.getKey(), vertexWeightPair.getValue());
-                }
-                vertices.set(i, keyVertex);
-            }
-        // ********************************************************************************
-        // REPLACE ALL MATCHING NODES WITH THOSE IN LIST USING ENTRY SET?
 
         // ********************************************************************************
         // VALIDATE SOURCE / TARGET VERTICES
@@ -214,7 +154,7 @@ class Source {
         Vertex target = null;
         boolean sourceAssigned = false;
         boolean targetAssigned = false;
-        for(Vertex v : vertices) {
+        for(Vertex v : graph) {
             if(sourceAssigned && targetAssigned) break;
             if(v.name.equals(args[0])) {
                 source = v;
@@ -226,64 +166,49 @@ class Source {
             }
         }
         if(source == null || target == null) {
-            System.out.println("source / target vertices not assigned");
+            System.out.println("source / target graph not assigned");
             System.exit(1);
         }
         System.out.println();
         // ********************************************************************************
-        // PRINT GRAPH
-        System.out.println("GRAPH");
-        for(Map.Entry<Vertex, HashSet<Pair<Vertex, Double>>> entry : completeGraph.entrySet()) {
-            System.out.print(entry.getKey() + " | ");
-            for(Pair<Vertex, Double> pair : entry.getValue()) {
-                System.out.print("(" + pair.getKey() + ", " + pair.getValue() +") ");
-            }
-            System.out.println();
-        }
-        System.out.println();
-        // ********************************************************************************
-        // PRINT OUT ALL VERTICES AND CORRESPONDING EDGES
-        for(Vertex v : vertices) {
-            for(Edge e : v.adjacencies)
-                System.out.println(v + " -> " + e.target);
-            System.out.println("----");
-        }
-        System.out.println();
-        // ********************************************************************************
-        // PRINT OUT SOURCE / TARGET WITH CORRESPONDING EDGES
-        System.out.println("source" + "\n------");
-        for(Edge e : source.adjacencies) 
-            System.out.println(source + "-" + e.target);
-        System.out.println();
-        System.out.println("target" + "\n------");
-        for(Edge e : target.adjacencies) 
-            System.out.println(target + "-" + e.target);
-        // ********************************************************************************
-        // TRAVERSE ALL VERTICES FROM SOURCE TO SEE IF ALL EDGES ARE CONNECTED
-        System.out.println();
-        final HashSet<String> visitedVertices = new HashSet<>();
-        final Stack<Vertex> vertexStack = new Stack<>();
-        vertexStack.push(source);
-        while(!vertexStack.isEmpty()) {
-            final Vertex currentVertex = vertexStack.pop();
-            System.out.print(currentVertex.name + " -> ");
-            visitedVertices.add(currentVertex.name);
-            for(Edge edge : currentVertex.adjacencies) {
-                if(visitedVertices.contains(edge.target.name))
-                    continue;
-                vertexStack.push(edge.target);
-            }
-
-            // the vertices referenced in the adjacencies are not necessarily the 
-            // same as the corresponding vertices found in the list
-        }
-        System.out.println("\n");
-        // ********************************************************************************
-        // MAIN RUN
         final List<Vertex> shortestPath = getShortestPath(source, target);
-        final int SIZE_MIN_ONE = vertices.size()-1;
+        final int SIZE_MIN_ONE = graph.size()-1;
         for(int i = 0; i < SIZE_MIN_ONE; i++)
             System.out.print(shortestPath.get(i) + " -> ");
         System.out.print(shortestPath.get(SIZE_MIN_ONE) + "\n");
+    }
+
+    // ******************************************************************************** //
+    // HELPER METHODS
+    // ******************************************************************************** //
+
+    private static Vertex findVertex(final HashSet<Vertex> graph, final String name) {
+        Vertex vertex = null;
+        for(Vertex v : graph) {
+            vertex = findVertex(v, name, new HashSet<Vertex>());
+            if(vertex != null)
+                break;
+        }
+        return vertex;
+    }
+    private static Vertex findVertex(final Vertex vertex, final String name, final HashSet<Vertex> visitedVertices) {
+        if(vertex == null)
+            return null;
+        if(vertex.name.equals(name))
+            return vertex;
+        if(visitedVertices.contains(vertex))
+            return null;
+        visitedVertices.add(vertex);
+        for(Edge edge : vertex.adjacencies)
+            findVertex(edge.target, name, visitedVertices);
+        return null;
+    }
+
+    /**
+     * Loops through set values and then attempts to find them within 
+     * the graph's vertex-adjacencies.
+     */
+    private static void compactGraph(final HashSet<Vertex> graph) {
+        //
     }
 }

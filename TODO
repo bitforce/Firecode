@@ -19,3 +19,9 @@ correctly title all your source files.
 add important and relevant problem tricks and things in the README
 
 add Java8 versions of all current answers; if possible--using streams and such.
+
+
+ISSUES WITH SRC CODE
+--------------------
+- graph creation not working in L4 P08 (Dijkstra)
+- graph class created in temp/ not correct either

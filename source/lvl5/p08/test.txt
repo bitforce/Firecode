@@ -1,1 +1,8 @@
-A 1 B 2 C C 4 Q C 7 R C 14 S D 3 E D 11 F H 1 G C 7 H 2 F R 3 S A 4 E 1 H 1 A
+A B A 1 B 2 C C 4 Q C 7 R C 14 S D 3 E D 11 F H 1 G C 7 H 2 F R 3 S A 4 E 1 H 1 A
+
+A 1 B 2 C
+A 1 B B 2 C
+should be same outcome
+
+A 1 B C 2 D {disjoint graph}
+A 1 B C 2 D 3 E 4 A {disjoint graph that reconnects}
