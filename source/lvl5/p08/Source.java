@@ -46,8 +46,7 @@ class Source {
             }
         }
         private void print(final Vertex vertex, final LinkedList<Vertex> visited) {
-            if(visited.contains(vertex))
-                return;
+            if(visited.contains(vertex)) return;
             visited.add(vertex);
             for(Edge edge : vertex.adjacencies)
                 if(edge != null && edge.target != null) { // DELETE AFTER TRUNCATION WORKS
@@ -61,18 +60,21 @@ class Source {
          * when the graph is disjoint.
          */
         private void add(final Vertex vertex) {
-            if(graph.isEmpty() || !vertexContained(graph.peek(), vertex, new LinkedList<Vertex>()))
-                graph.add(vertex);
+            if(graph.isEmpty()) graph.add(vertex);
+            else
+                for(Vertex v : graph)
+                    if(!vertexContained(v, vertex, new LinkedList<Vertex>()))
+                        graph.add(vertex);
         }
 
         private boolean vertexContained(final Vertex source, final Vertex target, final LinkedList<Vertex> visited) {
             if(visited.contains(source)) return false;
             if(source.name.equals(target.name)) return true;
             visited.add(source);
-            // not every method should be worrying about edge[.target] nulls, just in the beginning
             for(Edge edge : source.adjacencies)
                 if(edge != null && edge.target == null)
                     vertexContained(edge.target, target, visited);
+                else break;
             return false;
         }
 
