@@ -8,6 +8,66 @@ import javafx.util.Pair;
  */
 class Source {
     /* ********************************************************************* */
+    /**
+     * Custom graph class used to interact with Edge and Vertex.
+     */
+    private static class Graph {
+        final HashSet<Vertex> graph = new HashSet<>();
+        /**
+         * Prints all details relating to the graph, including the graph connections itself.
+         */
+        private void print(){
+            if(graph.size() == 1) {
+                System.out.println("Non-disjoint graph\n");
+                print(graph.iterator().next(), new HashSet<Vertex>());
+            } else {
+                System.out.println("Disjoint graphs contained : " + graph.size() + "\n");
+                int i = 1;
+                for(Vertex v : graph) {
+                    System.out.println("graph : " + i);
+                    print(v, new HashSet<Vertex>());
+                    System.out.println("----\n");
+                    i++;
+                }
+            }
+        }
+        private void print(final Vertex vertex, final HashSet<Vertex> visited) {
+            if(visited.contains(vertex))
+                return;
+            visited.add(vertex);
+            for(Edge edge : vertex.adjacencies)
+                if(edge != null && edge.target != null) {
+                    System.out.println(vertex.name + " --> " + edge.target.name);
+                    print(edge.target, visited);
+                }
+        }
+        private void add(final Vertex vertex) {}
+        private Vertex find(final String name) {
+            Vertex vertex = null;
+            for(Vertex v : graph) {
+                vertex = find(v, name, new HashSet<Vertex>());
+                if(vertex != null)
+                    break;
+            }
+            return vertex;
+        }
+        private Vertex find(final Vertex vertex, final String name, final HashSet<Vertex> visitedVertices) {
+            if(vertex == null || visitedVertices.contains(vertex))
+                return null;
+            if(vertex.name.equals(name))
+                return vertex;
+            visitedVertices.add(vertex);
+            for(Edge edge : vertex.adjacencies)
+                if(edge != null && edge.target != null)
+                    find(edge.target, name, visitedVertices);
+            return null;
+        }
+        private void truncateAdjacencies() {
+
+        }
+        private int size() {return graph.size();}
+    }
+    /* ********************************************************************* */
     private class Vertex implements Comparable<Vertex> {
         Vertex previous;
         Edge[] adjacencies;
@@ -59,7 +119,7 @@ class Source {
     public static void main(String[] args) { 
         validateArgs(args);
         final HashMap<String, Integer> vertexIndexMap = new HashMap<>();
-        final HashSet<Vertex> graph = new HashSet<>();
+        final Graph graph = new Graph();
         Vertex previousVertex = null;
         int vertexArgumentLimit = 0;
         for(int i = 2; i < args.length; i++) {
@@ -88,7 +148,7 @@ class Source {
                 // we have validated that 'A 1 A' is not a thing 
                 // System.out.println("TRYING " + args[i]);
                 final int PREV_VERT_INDEX = vertexIndexMap.get(previousVertex.name);
-                final Vertex tempVertex = findVertex(graph, args[i]);
+                final Vertex tempVertex = graph.find(args[i]);
                 System.out.println(args[i]);
                 if(tempVertex == null) {
                     final Vertex currentVertex = new Source().new Vertex(args[i]);
@@ -97,7 +157,7 @@ class Source {
                     vertexIndexMap.put(currentVertex.name, 1);
                     previousVertex.adjacencies[PREV_VERT_INDEX] = new Source().new Edge(currentVertex, WEIGHT);
                     previousVertex = currentVertex;
-                    addVertex(graph, previousVertex);
+                    graph.add(previousVertex);
                 } else {
                     final int TEMP_VERT_INDEX = vertexIndexMap.get(tempVertex.name);
                     tempVertex.adjacencies[TEMP_VERT_INDEX] = new Source().new Edge(previousVertex, WEIGHT);
@@ -131,13 +191,13 @@ class Source {
                 
                 // keeps previous vertex the same if we find A 1 B B 2 C == A 1 B 2 C
 
-                previousVertex = findVertex(graph, args[i]);
+                previousVertex = graph.find(args[i]);
                 if(previousVertex == null) {
                     final Vertex currentVertex = new Source().new Vertex(args[i]);
                     currentVertex.adjacencies = new Source.Edge[100];
                     vertexIndexMap.put(currentVertex.name, 0);
                     previousVertex = currentVertex;
-                    addVertex(graph, previousVertex);
+                    graph.add(previousVertex);
                 } else
                     vertexIndexMap.put(previousVertex.name, vertexIndexMap.get(previousVertex.name)+1);
                 vertexArgumentLimit++;
@@ -152,14 +212,14 @@ class Source {
 
             // validates the A 1 B C D doesn't exist
         }
-
-        printGraphDetails(graph);
+        graph.truncateAdjacencies();
+        graph.print();
         // ********************************************************************************
 
         // ********************************************************************************
         // VALIDATE SOURCE / TARGET VERTICES
-        final Vertex source = findVertex(graph, args[0]);
-        final Vertex target = findVertex(graph, args[1]);
+        final Vertex source = graph.find(args[0]);
+        final Vertex target = graph.find(args[1]);
         if(source == null || target == null) {
             System.out.println("source / target graph not assigned");
             System.exit(1);
@@ -175,39 +235,7 @@ class Source {
     // ******************************************************************************** //
     // HELPER METHODS
     // ******************************************************************************** //
-    
-    private static void addVertex(HashSet<Vertex> graph, final Vertex vertex) {
-        graph.add(vertex);
-    }
 
-    private static void printGraphDetails(final HashSet<Vertex> graph) {
-        if(graph.size() == 1) {
-            System.out.println("Non-disjoint graph\n");
-            printVertexGraph(graph.iterator().next());
-        } else {
-            System.out.println("Disjoint graphs contained : " + graph.size() + "\n");
-            int i = 1;
-            for(Vertex v : graph) {
-                System.out.println("graph : " + i);
-                printVertexGraph(v);
-                System.out.println("----\n");
-                i++;
-            }
-        }
-    }
-    private static void printVertexGraph(final Vertex graph) {
-        printVertexGraph(graph, new HashSet<Vertex>());
-    }
-    private static void printVertexGraph(final Vertex vertex, final HashSet<Vertex> visited) {
-        if(visited.contains(vertex))
-            return;
-        visited.add(vertex);
-        for(Edge edge : vertex.adjacencies)
-            if(edge != null && edge.target != null) {
-                System.out.println(vertex.name + " --> " + edge.target.name);
-                printVertexGraph(edge.target, visited);
-            }
-    }
     private static void validateArgs(String[] args) {
         if(!argIsVertex(args, 2)) {
             System.out.println("illegal input: vertex should be first argument");
@@ -230,35 +258,5 @@ class Source {
         } catch(NumberFormatException e) {
             return true;
         }
-    }
-
-    private static Vertex findVertex(final HashSet<Vertex> graph, final String name) {
-        Vertex vertex = null;
-        for(Vertex v : graph) {
-            vertex = findVertex(v, name, new HashSet<Vertex>());
-            if(vertex != null)
-                break;
-        }
-        return vertex;
-    }
-    private static Vertex findVertex(final Vertex vertex, final String name, final HashSet<Vertex> visitedVertices) {
-        if(vertex == null || visitedVertices.contains(vertex))
-            return null;
-        if(vertex.name.equals(name))
-            return vertex;
-        visitedVertices.add(vertex);
-        for(Edge edge : vertex.adjacencies)
-            if(edge != null && edge.target != null)
-                findVertex(edge.target, name, visitedVertices);
-        return null;
-    }
-
-    /**
-     * Custom graph class used to interact with Edge and Vertex classes using problem-tailored methods.
-     */
-    private static class Graph {
-        final HashSet<Vertex> graph = new HashSet<>();
-        private void printDetails(){}
-        private void add(final Vertex vertex) {}
     }
 }
