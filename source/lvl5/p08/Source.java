@@ -10,61 +10,98 @@ class Source {
     /* ********************************************************************* */
     /**
      * Custom graph class used to interact with Edge and Vertex.
+     *
+     *
+     * The way this currently works is that as each vertex is added to the set; the other 
+     * vertices in the set are updated along with matching adjacencies of the newest 
+     * entries; thus the set essentially becomes different vertex starting points 
+     * of the same graph. Therefore, at the end of the loop, you can choose any 
+     * element and it will successfully represent a different starting point 
+     * in the graph--pretty cool, but not what we want.
+     *
+     * We need to create a method that only adds a new element if is a disjoint path from 
+     * the original graph; otherwise, why the hell do we need a set, we can just use a 
+     * head vertex (like a linkedlist) and be done--except if a disjoint vertex came 
+     * up, we would lose the previous graph.
      */
     private static class Graph {
-        final HashSet<Vertex> graph = new HashSet<>();
+         LinkedList<Vertex> graph = new LinkedList<>();
+
         /**
          * Prints all details relating to the graph, including the graph connections itself.
          */
         private void print(){
             if(graph.size() == 1) {
-                System.out.println("Non-disjoint graph\n");
-                print(graph.iterator().next(), new HashSet<Vertex>());
+                System.out.println("GRAPH\n-----\n");
+                print(graph.iterator().next(), new LinkedList<Vertex>());
             } else {
-                System.out.println("Disjoint graphs contained : " + graph.size() + "\n");
+                System.out.println("DISJOINT GRAPHS : " + graph.size() + "\n-----------------\n");
                 int i = 1;
                 for(Vertex v : graph) {
                     System.out.println("graph : " + i);
-                    print(v, new HashSet<Vertex>());
+                    print(v, new LinkedList<Vertex>());
                     System.out.println("----\n");
                     i++;
                 }
             }
         }
-        private void print(final Vertex vertex, final HashSet<Vertex> visited) {
+        private void print(final Vertex vertex, final LinkedList<Vertex> visited) {
             if(visited.contains(vertex))
                 return;
             visited.add(vertex);
             for(Edge edge : vertex.adjacencies)
-                if(edge != null && edge.target != null) {
+                if(edge != null && edge.target != null) { // DELETE AFTER TRUNCATION WORKS
                     System.out.println(vertex.name + " --> " + edge.target.name);
                     print(edge.target, visited);
                 }
         }
-        private void add(final Vertex vertex) {}
-        private Vertex find(final String name) {
-            Vertex vertex = null;
-            for(Vertex v : graph) {
-                vertex = find(v, name, new HashSet<Vertex>());
-                if(vertex != null)
-                    break;
-            }
-            return vertex;
+        /**
+         * If new vertex contains vertices that are within the set, the set is reassigned to 
+         * contain only the new vertex; the only time the set contains other elements, is 
+         * when the graph is disjoint.
+         */
+        private void add(final Vertex vertex) {
+            if(graph.isEmpty() || !vertexContained(graph.peek(), vertex, new LinkedList<Vertex>()))
+                graph.add(vertex);
         }
-        private Vertex find(final Vertex vertex, final String name, final HashSet<Vertex> visitedVertices) {
-            if(vertex == null || visitedVertices.contains(vertex))
-                return null;
-            if(vertex.name.equals(name))
-                return vertex;
+
+        private boolean vertexContained(final Vertex source, final Vertex target, final LinkedList<Vertex> visited) {
+            if(visited.contains(source)) return false;
+            if(source.name.equals(target.name)) return true;
+            visited.add(source);
+            // not every method should be worrying about edge[.target] nulls, just in the beginning
+            for(Edge edge : source.adjacencies)
+                if(edge != null && edge.target == null)
+                    vertexContained(edge.target, target, visited);
+            return false;
+        }
+
+        private Vertex find(final String name) {
+            for(Vertex v : graph) {
+                final Vertex vertex = find(v, name, new LinkedList<Vertex>());
+                if(vertex != null) return vertex;
+            }
+            return null;
+        }
+        private Vertex find(final Vertex vertex, final String name, final LinkedList<Vertex> visitedVertices) {
+            if(visitedVertices.contains(vertex)) return null;
+            if(vertex.name.equals(name)) return vertex;
             visitedVertices.add(vertex);
             for(Edge edge : vertex.adjacencies)
                 if(edge != null && edge.target != null)
                     find(edge.target, name, visitedVertices);
+                else break;
             return null;
         }
-        private void truncateAdjacencies() {
 
+        /**
+         * For the array of edges from each vertex, reduce it's size to the length of the first 
+         * index to the first null element.
+         */
+        private void truncateAdjacencies() {
+            // don't finish until you have successfully been able to segregate the graph
         }
+
         private int size() {return graph.size();}
     }
     /* ********************************************************************* */
@@ -98,7 +135,7 @@ class Source {
         while (!vertexQueue.isEmpty()) {
             final Vertex polledVertex = vertexQueue.poll();
             for (Edge e : polledVertex.adjacencies) {
-                if(e == null) break; // based on current edge array creation | should delete
+                if(e == null) break; // DELETE ME AFTER TRUNCATION TEST
                 final Vertex targetVertex = e.target;
                 final double distance = polledVertex.minDistance + e.weight;
                 if (distance < targetVertex.minDistance) {
@@ -143,36 +180,25 @@ class Source {
                 }
 
                 // ===================================================================================
-                // ===================================================================================
 
                 // we have validated that 'A 1 A' is not a thing 
-                // System.out.println("TRYING " + args[i]);
+
                 final int PREV_VERT_INDEX = vertexIndexMap.get(previousVertex.name);
-                final Vertex tempVertex = graph.find(args[i]);
-                System.out.println(args[i]);
-                if(tempVertex == null) {
-                    final Vertex currentVertex = new Source().new Vertex(args[i]);
+                Vertex currentVertex = graph.find(args[i]);
+                if(currentVertex == null) {
+                    currentVertex = new Source().new Vertex(args[i]);
                     currentVertex.adjacencies = new Source.Edge[10];
                     currentVertex.adjacencies[0] = new Source().new Edge(previousVertex, WEIGHT);
                     vertexIndexMap.put(currentVertex.name, 1);
                     previousVertex.adjacencies[PREV_VERT_INDEX] = new Source().new Edge(currentVertex, WEIGHT);
-                    previousVertex = currentVertex;
-                    graph.add(previousVertex);
                 } else {
-                    final int TEMP_VERT_INDEX = vertexIndexMap.get(tempVertex.name);
-                    tempVertex.adjacencies[TEMP_VERT_INDEX] = new Source().new Edge(previousVertex, WEIGHT);
-                    vertexIndexMap.put(tempVertex.name, TEMP_VERT_INDEX+1);
-                    previousVertex.adjacencies[PREV_VERT_INDEX] = new Source().new Edge(tempVertex, WEIGHT);
+                    final int TEMP_VERT_INDEX = vertexIndexMap.get(currentVertex.name);
+                    currentVertex.adjacencies[TEMP_VERT_INDEX] = new Source().new Edge(previousVertex, WEIGHT);
+                    vertexIndexMap.put(currentVertex.name, TEMP_VERT_INDEX+1);
+                    previousVertex.adjacencies[PREV_VERT_INDEX] = new Source().new Edge(currentVertex, WEIGHT);
                 }
-
-                // ===================================================================================
-                // if pervious vertex is not contained within graph, then create new one and instantiate its
-                // adjacencies, assign new vertex's first adjacency to previous vertex and then assign 
-                // previous vertex's next available adjacency to new vertex 
-                // increment new vertex's index to 1
-
-                // otherwise, assign found vertex's next adjacency to previous and previous' next adjacency
-                // to newfound one while incrementing newfound's index
+                previousVertex = currentVertex;
+                graph.add(previousVertex);
                 // ===================================================================================
 
                 vertexIndexMap.put(previousVertex.name, PREV_VERT_INDEX+1);
@@ -183,7 +209,6 @@ class Source {
 
                 // reset argument limit
             } catch(NumberFormatException e) {
-                //System.out.println("CATCHING " + args[i]);
                 if(previousVertex != null && args[i].equals(previousVertex.name)) {
                     vertexArgumentLimit++;
                     continue;
@@ -194,7 +219,7 @@ class Source {
                 previousVertex = graph.find(args[i]);
                 if(previousVertex == null) {
                     final Vertex currentVertex = new Source().new Vertex(args[i]);
-                    currentVertex.adjacencies = new Source.Edge[100];
+                    currentVertex.adjacencies = new Source.Edge[10];
                     vertexIndexMap.put(currentVertex.name, 0);
                     previousVertex = currentVertex;
                     graph.add(previousVertex);
@@ -204,7 +229,6 @@ class Source {
 
                 // find existing vertex and use that as next prevVert; if not, create and use new one
             }
-            // don't forget to check if disjoint values exist in graph
             if(vertexArgumentLimit > 2) {
                 System.out.println("illegal input: too many continous vertices");
                 System.exit(1);
