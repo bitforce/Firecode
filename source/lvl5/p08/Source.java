@@ -63,8 +63,11 @@ class Source {
             if(graph.isEmpty()) graph.add(vertex);
             else
                 for(Vertex v : graph)
-                    if(!vertexContained(v, vertex, new LinkedList<Vertex>()))
+                    if(!vertexContained(v, vertex, new LinkedList<Vertex>())) {
                         graph.add(vertex);
+                        break;
+                    }
+                    else System.out.println(vertex.name);
         }
 
         private boolean vertexContained(final Vertex source, final Vertex target, final LinkedList<Vertex> visited) {
