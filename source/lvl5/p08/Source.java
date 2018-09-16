@@ -58,31 +58,52 @@ class Source {
          * If new vertex contains vertices that are within the set, the set is reassigned to 
          * contain only the new vertex; the only time the set contains other elements, is 
          * when the graph is disjoint.
+         *
+         * Remember that these elements are already being modified by that ain code in the main method.
          */
+        // THE VERTEX I'M PROVIDING IS THE NEW VERTEX; THEREFORE IT WON'T BE IN THE ADJANCENCIES; 
+        // WHAT I NEEED TO DO IS BACKTRACK TO ONE PREVIOUS VERTEX AND THEN CHECK
         private void add(final Vertex vertex) {
             if(graph.isEmpty()) graph.add(vertex);
             else {
-                boolean found = false;
                 for(Vertex v : graph)
-                    if(vertexContained(v, vertex, new LinkedList<Vertex>())) {
-                        found = true;
-                        break;
-                    }
-                if(!found) graph.add(vertex);
+                    if(connectionExists(v, vertex.adjacencies))
+                        return;
+                graph.add(vertex);
             }
         }
 
-        private boolean vertexContained(final Vertex source, final Vertex target, final LinkedList<Vertex> visited) {
-            if(visited.contains(source)) return false;
-            if(source.name.equals(target.name)) return true;
-            visited.add(source);
-            for(Edge edge : source.adjacencies)
-                if(edge != null && edge.target == null)
-                    vertexContained(edge.target, target, visited);
-                else break;
+        /**
+         * Checks to see if new target adjacencies are connected to any of the source vertex's.
+         * STEPS
+         * -----
+         *  1. recurse through all source vertices 
+         *  2. recurse through all target vertices under source
+         *  3. attempt to match any of the target's vertex's with one of the source's
+         *  4. don't start next recursion of source until you have attempted to match all values 
+         *     of target
+         */
+        private boolean connectionExists(final Vertex source, final Edge[] edges) {
+            return connectionExists(source, edges, new LinkedList<Vertex>());
+        }
+        private boolean connectionExists(final Vertex source, final Edge[] edges, final LinkedList<Vertex> visited) {
+            if(source == null || edges == null) return false;
+            for(Edge edge : edges)
+                if(edge == null || edge.target == null) break;
+                else if(!visited.contains(edge.target) && source == edge.target) 
+                    return true;
+                else visited.add(edge.target);
+            for(Edge edge : source.adjacencies) {
+                for(Edge e : edges)
+                    if(e != null && e.target != null && !visited.contains(e.target))
+                        return connectionExists(edge.target, e.target.adjacencies, visited);
+            }
             return false;
         }
 
+        /**
+         * Finds vertex based on name.
+         */
         private Vertex find(final String name) {
             for(Vertex v : graph) {
                 final Vertex vertex = find(v, name, new LinkedList<Vertex>());
