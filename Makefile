@@ -27,11 +27,8 @@ test:
 list:
 	less source/lvl$l/README
 
-edit_readme:
+edit:
 	vim $(SRC_DIR)README.md
 
-view_readme:
+view:
 	less $(SRC_DIR)README.md
-
-clean:
-	find source/ -type f -name '*.class' -delete
