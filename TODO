@@ -1,3 +1,8 @@
+VIM DOES NOT WORK WITH MAKE?
+
+CHANGE ALL "source.temp..."  to "source.libs..." and "temp" to "libs"
+
+
 fix cscope vim plugin and add other Java capabilities
 
 fix Graph class and ensure that it actually works--appears that your nodes 

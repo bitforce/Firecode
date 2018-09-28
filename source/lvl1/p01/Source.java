@@ -1,7 +1,7 @@
 package source.lvl1.p01;
 class Source {
     /* ********************************************************************* */
-    private static int[] bubbleSortArray(int[] arr) {
+    static int[] bubbleSortArray(int[] arr) {
         final int LEN = arr.length;
         int temp = Integer.MIN_VALUE;
         for (int i = 0; i < LEN; i++)
@@ -14,12 +14,4 @@ class Source {
         return arr;
     }
     /* ********************************************************************* */
-    public static void main(String[] args) {
-        int[] arr = new int[args.length];
-        for (int i = 0 ; i < args.length; i++)
-            arr[i] = Integer.parseInt(args[i]);
-        for (int i : bubbleSortArray(arr))
-            System.out.print(i + " ");
-        System.out.println();
-    }
 }
