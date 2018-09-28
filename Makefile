@@ -6,8 +6,8 @@ JUNIT = org.junit.runner.JUnitCore
 
 auto:
 	javac $(SRC_DIR)Source.java -d $(BIN_DIR) 
-	javac -cp .:$(LIB_DIR) $(SRC_DIR)SourceTest.java -d $(BIN_DIR)
-	java -cp .:$(BIN_DIR):$(LIB_DIR) $(JUNIT) $(SRC_DIR)SourceTest $a
+	javac -cp $(LIB_DIR):. $(SRC_DIR)SourceTest.java -d $(BIN_DIR)
+	java -cp $(BIN_DIR):$(LIB_DIR):. $(JUNIT) $(SRC_DIR)SourceTest $a
 
 code:
 	vim $(SRC_DIR)Source.java
