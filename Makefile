@@ -1,17 +1,19 @@
-LIB_DIR = archive/
+LIB_DIR = archive/*
 BIN_DIR = binary/
 SRC_DIR = source/lvl$l/p$p/
 
-auto:
-	javac $(SRC_DIR)Source.java -d $(BIN_DIR)
-	javac -cp $(BIN_DIR):$(LIB_DIR) $(SRC_DIR)Test.java -d $(BIN_DIR)
-	java -cp $(BIN_DIR):$(LIB_DIR) $(SRC_DIR)Test $a
+JUNIT = org.junit.runner.JUnitCore
 
-src:
+auto:
+	javac $(SRC_DIR)Source.java -d $(BIN_DIR) 
+	javac -cp .:$(LIB_DIR) $(SRC_DIR)SourceTest.java -d $(BIN_DIR)
+	java -cp .:$(BIN_DIR):$(LIB_DIR) $(JUNIT) $(SRC_DIR)SourceTest $a
+
+code:
 	vim $(SRC_DIR)Source.java
 
 test:
-	vim $(SRC_DIR)Test.java
+	vim $(SRC_DIR)SourceTest.java
 
 list:
 	less source/lvl$l/README
