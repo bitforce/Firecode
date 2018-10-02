@@ -32,3 +32,6 @@ edit:
 
 view:
 	less $(SRC_DIR)README.md
+
+tests:
+	echo 'running all problem test cases'

@@ -1,7 +1,13 @@
-VIM DOES NOT WORK WITH MAKE?
-
 CHANGE ALL "source.temp..."  to "source.libs..." and "temp" to "libs"
 
+create command which opens up syntastic JavacEditClassPath and fills in the 
+appropriate current project root and from there allows you to fill in the 
+jar locations
+
+syntastic knows where custom classpath is; which means 3 things:
+1. you need to point YCM there so it can do code completion
+2. you need to test taking it away afterwards to see if YCM overrides it
+3. local classpath management does exists for java and somehow these plugins are finessing it
 
 fix cscope vim plugin and add other Java capabilities
 
@@ -25,6 +31,11 @@ add important and relevant problem tricks and things in the README
 
 add Java8 versions of all current answers; if possible--using streams and such.
 
+bash script to run all junit test cases; which is essentially traverse every level/problem
+directory and have an iterator variable for which you update 01-09 until you hit 10 and 
+then increment it until there are no more files; this will be for the problem, you can 
+just use 1-5 for the levels. Once you have your number pair (level + problem), you 
+run the "make junit l=X p=Y" command.
 
 ISSUES WITH SRC CODE
 --------------------

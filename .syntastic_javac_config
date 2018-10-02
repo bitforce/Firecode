@@ -1,0 +1,1 @@
+let g:syntastic_java_javac_classpath = '$HOME/_OTHER/code/Firecode/archive/*.jar:$HOME/_OTHER/code/Firecode/binary/'
