@@ -1,14 +1,13 @@
 package source.lvl1.p01;
 
 import java.util.Arrays;
-import java.util.logging.Logger;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Handler;
+import java.util.logging.Logger;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
-
 import source.temp.help.MyFormatter;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
