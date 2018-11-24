@@ -1,8 +1,9 @@
 package source.lvl1.p07;
+
 import java.util.*;
+
 class Source {
-    /* ********************************************************************* */
-    private static Character findFirstNonRepeatedCharacter(String str) {
+    static Character findFirstNonRepeatedCharacter(String str) {
         Character c;
         final int length = str.length();
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
@@ -20,14 +21,9 @@ class Source {
         return null;
     }
     /* ********************************************************************* */
-    private static Character findFirstNonRepeatedCharacter2(String str) {
+    static Character findFirstNonRepeatedCharacter2(String str) {
         for(char c : str.toCharArray())
             if(str.indexOf(c) == str.lastIndexOf(c)) return c;
         return null;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(findFirstNonRepeatedCharacter(args[0]));
-        System.out.println(findFirstNonRepeatedCharacter2(args[0]));
     }
 }

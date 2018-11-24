@@ -1,7 +1,8 @@
 package source.lvl1.p03;
+
 import source.temp.node.ListNode;
+
 class Source {
-    /* ********************************************************************* */
     ListNode deleteAtTail(ListNode head) {
         if (head == null || head.next == null)
             return null;
@@ -11,5 +12,4 @@ class Source {
         temp.next = null;
         return head;
     }
-    /* ********************************************************************* */
 }

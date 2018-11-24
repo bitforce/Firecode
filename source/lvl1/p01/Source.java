@@ -1,6 +1,6 @@
 package source.lvl1.p01;
+
 class Source {
-    /* ********************************************************************* */
     static int[] bubbleSortArray(int[] arr) {
         if(arr == null) return null;
         final int LEN = arr.length;
@@ -14,5 +14,4 @@ class Source {
                 }
         return arr;
     }
-    /* ********************************************************************* */
 }

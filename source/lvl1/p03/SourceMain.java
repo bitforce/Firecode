@@ -1,6 +1,8 @@
 package source.lvl1.p03;
+
 import source.temp.list.SinglyLinkedList;
-class Test {
+
+class SourceMain {
     public static void main (String[] args) {
         final SinglyLinkedList list = new SinglyLinkedList();
         for (String s : args) 

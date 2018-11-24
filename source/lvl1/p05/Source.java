@@ -1,9 +1,9 @@
 package source.lvl1.p05;
-import source.temp.list.SinglyLinkedList;
+
 import source.temp.node.ListNode;
+
 class Source {
-    /* ********************************************************************* */
-    private ListNode findMiddleNode(ListNode head) {
+    ListNode findMiddleNode(ListNode head) {
         if(head == null) return null;
         int count = 1;
         ListNode temp = head.next;
@@ -28,7 +28,7 @@ class Source {
         return temp;
     }
     /* ********************************************************************* */
-    private ListNode findMiddleNode2(ListNode head) { // BEST SOLUTION
+    ListNode findMiddleNode2(ListNode head) {
         if(head == null) return null;
         ListNode slow = head;
         ListNode fast = head;
@@ -37,14 +37,5 @@ class Source {
             fast = fast.next.next;
         }
         return slow;
-    }
-    /* ********************************************************************* */
-    public static void main (String[] args) {
-        SinglyLinkedList list = new SinglyLinkedList();
-        for (int i = 0; i < args.length; i++) 
-            list.append(Integer.parseInt(args[i]));
-        list.print();
-        System.out.println(new Source().findMiddleNode(list.head).data);
-        System.out.println(new Source().findMiddleNode2(list.head).data);
     }
 }

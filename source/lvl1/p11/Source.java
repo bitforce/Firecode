@@ -1,8 +1,9 @@
 package source.lvl1.p11;
+
 import java.util.*;
+
 class Source {
-    /* ********************************************************************* */
-    private static boolean areAllCharactersUnique(String str) {
+    static boolean areAllCharactersUnique(String str) {
         if(str == null || str.length() <= 1) return true;
         Set<Character> set = new HashSet<>();
         for(char c : str.toCharArray()) set.add(c);
@@ -10,7 +11,7 @@ class Source {
         return false;
     }
     /* ********************************************************************* */
-    private static boolean areAllCharactersUnique2(String str) {
+    static boolean areAllCharactersUnique2(String str) {
         if(str == null || str.length() <= 1) return true;
         boolean[] checker_array = new boolean[256];
         for(int i = 0; i < str.length(); i++){
@@ -19,10 +20,5 @@ class Source {
             checker_array[position] = true;
         }
         return true;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        System.out.println(areAllCharactersUnique(args[0]));
-        System.out.println(areAllCharactersUnique2(args[0]));
     }
 }

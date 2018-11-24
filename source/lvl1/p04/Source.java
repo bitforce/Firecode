@@ -1,18 +1,11 @@
 package source.lvl1.p04;
+
 class Source {
-    /* ********************************************************************* */
-    private static String replace(String a, String b) {
-        String r = "";
+    static String replace(String a, String b) {
+        StringBuilder r = new StringBuilder();
         String[] arr = a.split(" ");
         for (String s : arr)
-            r += (s + b);
+            r.append(s).append(b);
         return r.substring(0, r.length()-b.length());
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        String a = "";
-        for(String s : args) a += s + " ";
-        a = a.substring(0, a.length()-2);
-        System.out.println(replace(a, args[args.length-1]));
     }
 }

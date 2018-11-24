@@ -1,8 +1,10 @@
 package source.lvl1.p17;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.HashMap;
+
 class Source {
-    /* ********************************************************************* */
-    private static int singleNumber(int[] A) {
+    static int singleNumber(int[] A) {
         if(A.length == 1) return A[0];
         Arrays.sort(A);
         if(A[0] != A[1]) return A[0];
@@ -23,20 +25,12 @@ class Source {
         return Integer.MIN_VALUE;
     }
     /* ********************************************************************* */
-    private static int singleNumber2(int[] A) {
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for(int i = 0; i < A.length; i++)
-            if(!map.containsKey(A[i])) map.put(A[i], 1);
-            else map.put(A[i], map.get(A[i])+1);
-        for(int i = 0; i < A.length; i++) if(map.get(A[i]) == 1) return A[i];
+    static int singleNumber2(int[] A) {
+        final HashMap<Integer, Integer> map = new HashMap<>();
+        for (int aA : A)
+            if (!map.containsKey(aA)) map.put(aA, 1);
+            else map.put(aA, map.get(aA) + 1);
+        for (int aA : A) if (map.get(aA) == 1) return aA;
         return Integer.MIN_VALUE;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        int[] arr = new int[args.length];
-        for(int i = 0; i < arr.length; i++)
-            arr[i] = Integer.parseInt(args[i]);
-        System.out.println(singleNumber(arr));
-        System.out.println(singleNumber2(arr));
     }
 }

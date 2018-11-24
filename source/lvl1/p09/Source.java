@@ -1,8 +1,9 @@
 package source.lvl1.p09;
+
 import java.util.*;
+
 class Source {
-    /* ********************************************************************* */
-    private static String duplicate(int[] numbers) {
+    static String duplicate(int[] numbers) {
         if(numbers == null || numbers.length < 3) return "[]";
         ArrayList<Integer> list = new ArrayList<>();
         for(int i = 0; i < numbers.length; i++)
@@ -15,7 +16,7 @@ class Source {
         return list.toString();
     }
     /* ********************************************************************* */
-    private static String duplicate2(int[] numbers) {
+    static String duplicate2(int[] numbers) {
         TreeSet<Integer> set = new TreeSet<>();
         Arrays.sort(numbers);
         for(int i = 1; i < numbers.length; i++)
@@ -24,21 +25,12 @@ class Source {
         return set.toString();
     }
     /* ********************************************************************* */
-    private static String duplicate3(int[] numbers) {
+    static String duplicate3(int[] numbers) {
         Set<Integer> map = new HashSet<>();
         Set<Integer> list = new TreeSet<>();
         for(int num : numbers)
             if(map.contains(num)) list.add(num);
             else map.add(num);
         return list.toString();
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        int[] array = new int[args.length];
-        for(int i = 0; i < args.length; i++)
-            array[i] = Integer.parseInt(args[i]);
-        System.out.println(duplicate(array));
-        System.out.println(duplicate2(array));
-        System.out.println(duplicate3(array));
     }
 }

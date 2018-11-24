@@ -1,30 +1,14 @@
 package source.lvl1.p01;
 
-import java.util.Arrays;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Handler;
-import java.util.logging.Logger;
-
-import org.junit.BeforeClass;
 import org.junit.Test;
+import source.temp.help.BaseTest;
 
-import source.temp.help.MyFormatter;
+import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class SourceTest {
-    private static final Logger logger = Logger.getLogger(SourceTest.class.getName());
-
-    @BeforeClass
-    public static void setup() {
-        final ConsoleHandler handler = new ConsoleHandler();
-        handler.setFormatter(new MyFormatter());
-        logger.addHandler(handler);
-        logger.info("L1 | P1");
-    }
-
-    /* ******************************************************************************** */
+public class SourceTest extends BaseTest {
 
     @Test
     public void testNull() {

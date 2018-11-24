@@ -1,8 +1,9 @@
 package source.lvl1.p12;
+
 import java.util.*;
+
 class Source {
-    /* ********************************************************************* */
-    private static boolean binarySearch(int[] arr, int n) {
+    static boolean binarySearch(int[] arr, int n) {
         int low = 0;
         int mid = 0;
         int high = arr.length-1;
@@ -15,7 +16,7 @@ class Source {
         return false;
     }
     /* ********************************************************************* */
-    private static boolean binarySearch2(int[] arr, int n) {
+    static boolean binarySearch2(int[] arr, int n) {
         if(arr.length == 0) return false;
         int mid = arr[arr.length/2];
         if(n < mid)
@@ -24,15 +25,6 @@ class Source {
         if(n > mid)
             return binarySearch(Arrays.copyOfRange
                     (arr, arr.length/2+1, arr.length), n);
-        return mid == n;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        int[] arr = new int[args.length-1];
-        for(int i = 0; i < arr.length; i++)
-            arr[i] = Integer.parseInt(args[i+1]);
-        final int N = Integer.parseInt(args[0]);
-        System.out.println(binarySearch(arr, N));
-        System.out.println(binarySearch2(arr, N));
+        return true;
     }
 }
