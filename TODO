@@ -41,3 +41,9 @@ ISSUES WITH SRC CODE
 --------------------
 - graph creation not working in L4 P08 (Dijkstra)
 - graph class created in temp/ not correct either
+
+
+EDIT SourceMain Classes so that it asks which method you prefer to use and chooses it (potentially using scanner). It
+also tells you how many methods exist.
+
+Utilize a Java code formatter (like the Google style formatter).

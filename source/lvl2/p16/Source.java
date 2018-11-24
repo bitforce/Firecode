@@ -1,11 +1,12 @@
 package source.lvl2.p16;
-import java.util.*;
+
+import java.util.HashMap;
+
 class Source {
-   /* ********************************************************************** */
-    private static boolean isIsomorphic(String input1, String input2) {
+    static boolean isIsomorphic(String input1, String input2) {
         if(input1 == null || input2 == null || input1.length() != input2.length())
             return false;
-        HashMap<Character, Character> map = new HashMap<>();
+        final HashMap<Character, Character> map = new HashMap<>();
         for(int i = 0; i < input1.length(); i++) {
             if(!map.containsKey(input1.charAt(i)) && !map.containsValue(input2.charAt(i)))
                 map.put(input1.charAt(i), input2.charAt(i));
@@ -17,7 +18,7 @@ class Source {
         return true;
     }
    /* ********************************************************************** */
-    private static boolean isIsomorphic2(String input1, String input2) {
+    static boolean isIsomorphic2(String input1, String input2) {
         if (input1 == null || input2 == null || input1.length() != input2.length())
             return false; 
         int charcount = 0;
@@ -34,10 +35,5 @@ class Source {
             }
         }
         return true;
-    }
-   /* ********************************************************************** */
-    public static void main(String[] args) {
-        System.out.println(isIsomorphic(args[0], args[1]));
-        System.out.println(isIsomorphic2(args[0], args[1]));
     }
 }

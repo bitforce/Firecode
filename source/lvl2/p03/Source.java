@@ -1,24 +1,15 @@
 package source.lvl2.p03;
-import source.support.datastructure.tree.BinaryTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.ArrayList;
+
 class Source {
-    /* ********************************************************************* */
-    private ArrayList<Integer> preorderedList = new ArrayList<>();
-    private void preorder(TreeNode root) {
+    final ArrayList<Integer> preorderedList = new ArrayList<>();
+    void preorder(final TreeNode root) {
         if(root == null) return;
         preorderedList.add(root.data);
         preorder(root.left);
         preorder(root.right);
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        for(int i = 0; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        Source obj = new Source();
-        tree.print();
-        obj.preorder(tree.root);
-        System.out.println(obj.preorderedList);
     }
 }

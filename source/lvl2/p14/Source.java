@@ -1,16 +1,16 @@
 package source.lvl2.p14;
+
 class Source {
-   /* ********************************************************************** */ 
-    private static String compressString(String text) {
+    static String compressString(String text) {
         int count = 1;
         String compressed = "";
         while(text.length() > 1) {
             if(text.charAt(0) == text.charAt(1)) {
-                text = text.substring(1, text.length());
+                text = text.substring(1);
                 count++;
             } else {
                 compressed += text.charAt(0) + "" + count;
-                text = text.substring(1, text.length());
+                text = text.substring(1);
                 count = 1;
             }
         }
@@ -18,7 +18,7 @@ class Source {
         return x.replaceAll("1", "");
     }
    /* ********************************************************************** */ 
-    private static String compressString2(String text) {
+    static String compressString2(String text) {
         int count = 0;
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
@@ -33,7 +33,7 @@ class Source {
         return builder.toString();
     }
    /* ********************************************************************** */ 
-    private static String compressString3(String text) {
+    static String compressString3(String text) {
         if (text == null || text.length() < 2) return text;
         String head = text.substring(0, 1);
         String tail = text.substring(1);
@@ -45,11 +45,5 @@ class Source {
         return count > 1 
             ? head + Integer.toString(count) + compressString3(tail)
             : head + compressString3(tail);
-    }
-   /* ********************************************************************** */ 
-    public static void main(String[] args) {
-        System.out.println(compressString(args[0]));
-        System.out.println(compressString2(args[0]));
-        System.out.println(compressString3(args[0]));
     }
 }
