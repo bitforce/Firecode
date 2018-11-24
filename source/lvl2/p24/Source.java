@@ -1,7 +1,7 @@
 package source.lvl2.p24;
+
 class Source {
-   /* ********************************************************************** */ 
-    private static boolean permutation(String a, String b) {
+    static boolean permutation(String a, String b) {
         if(a != null && b != null)
             if(a.length() == b.length()) {
                 int asum = 0;
@@ -15,7 +15,7 @@ class Source {
         return false;
     }
    /* ********************************************************************** */ 
-    public static boolean permutation2(String a, String b) {
+    static boolean permutation2(String a, String b) {
         if(a == null || b == null || a.length() != b.length()) 
             return false;
         if(a.equals(b)) return true;
@@ -29,10 +29,5 @@ class Source {
                 return false;
         }
         return true;
-    }
-   /* ********************************************************************** */ 
-    public static void main(String[] args) {
-        System.out.println(permutation(args[0], args[1]));
-        System.out.println(permutation2(args[0], args[1]));
     }
 }

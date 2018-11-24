@@ -1,12 +1,14 @@
 package source.lvl3.p24;
-import source.support.datastructure.tree.BinarySearchTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.Stack;
+
 class Source {
     /* ********************************************************************* */
-    private TreeNode findMax(TreeNode root) {
+    TreeNode findMax(final TreeNode root) {
         if(root == null || root.right == null && root.left == null) return root;
-        Stack<TreeNode> stack = new Stack<>();
+        final Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         int max = root.data;
         TreeNode node = root;
@@ -22,25 +24,15 @@ class Source {
         return node;
     }
     /* ********************************************************************* */
-    private TreeNode findMax2(TreeNode root) {
+    TreeNode findMax2(final TreeNode root) {
         if(root == null) return null;
         if(root.right == null) return root;
         return findMax2(root.right);
     }
     /* ********************************************************************* */
-    private TreeNode findMax3(TreeNode root) {
+    TreeNode findMax3(TreeNode root) {
         if(root == null) return null;
-        while(root.next != null) root = root.next;
+        while(root.right != null) root = root.right;
         return root;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
-        for(int i = 0; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        System.out.println(new Source().findMax(tree.root).data); 
-        System.out.println(new Source().findMax2(tree.root).data);
-        System.out.println(new Source().findMax3(tree.root).data); 
     }
 }

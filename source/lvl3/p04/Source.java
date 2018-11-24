@@ -1,11 +1,12 @@
 package source.lvl3.p04;
-import source.support.datastructure.tree.BinarySearchTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.Stack;
+
 class Source {
-    /* ********************************************************************* */
     private int counter;
-    private TreeNode findKthLargest(TreeNode root, int k) {
+    TreeNode findKthLargest(final TreeNode root, final int k) {
         if (root == null) return null;
         TreeNode node = findKthLargest(root.right, k);
         if (counter != k) {
@@ -16,9 +17,9 @@ class Source {
         return findKthLargest(root.left, k);
     }
     /* ********************************************************************* */
-    private TreeNode findKthLargest2(TreeNode root, int k) {
+    TreeNode findKthLargest2(final TreeNode root, int k) {
         if (root == null) return null;
-        Stack<TreeNode> stack = new Stack<>();
+        final Stack<TreeNode> stack = new Stack<>();
         TreeNode node = root;
         while (!stack.isEmpty() || node != null) 
             if (node != null) {
@@ -30,16 +31,5 @@ class Source {
                 node = node.left;
             }
         return node;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
-        for(int i = 1; i < args.length; i++)
-           tree.add(Integer.parseInt(args[i]));
-        final int N = Integer.parseInt(args[0]);
-        Source obj = new Source();
-        tree.print();
-        System.out.println(obj.findKthLargest(tree.root, N).data);
-        System.out.println(obj.findKthLargest2(tree.root, N).data);
     }
 }

@@ -1,16 +1,18 @@
 package source.lvl3.p25;
-import source.support.datastructure.tree.BinaryTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.LinkedList;
+import java.util.Stack;
+
 class Source {
-    /* ********************************************************************* */
-    private int minTreeDepth(TreeNode root) {
+    int minTreeDepth(final TreeNode root) {
         if(root == null) return 0;
-        Stack<TreeNode> stack = new Stack<>();
+        final Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         int count = 0;
         while(!stack.isEmpty()) {
-            TreeNode node = stack.pop();
+            final TreeNode node = stack.pop();
             count++;
             if(node.left == null && node.right == null) break;
             if(node.left != null) stack.push(node.left);
@@ -19,11 +21,11 @@ class Source {
         return count;
     }
     /* ********************************************************************* */
-    private int minTreeDepth2(TreeNode root) {
+    int minTreeDepth2(final TreeNode root) {
         if(root == null) return 0;
         int depth = 1;
-        Queue<TreeNode> curr = new LinkedList<>();
-        Queue<TreeNode> next = new LinkedList<>();
+        LinkedList<TreeNode> curr = new LinkedList<>();
+        LinkedList<TreeNode> next = new LinkedList<>();
         curr.add(root);
         while(!curr.isEmpty()) {
             TreeNode node = curr.poll();
@@ -39,15 +41,15 @@ class Source {
         }
         return depth;
     }
-    /* ********************************************************************* */ 
-    private int minTreeDepth3(TreeNode root) {
-        Stack<TreeNode> tstack = new Stack<>();
-        Stack<Integer> istack = new Stack<>();
+    /* ********************************************************************* */
+    int minTreeDepth3(final TreeNode root) {
+        final Stack<TreeNode> tstack = new Stack<>();
+        final Stack<Integer> istack = new Stack<>();
         tstack.push(root);
         istack.push(0);
         int min = Integer.MAX_VALUE;
         while(!tstack.isEmpty()) {
-            TreeNode node = tstack.pop();
+            final TreeNode node = tstack.pop();
             Integer depth = istack.pop();
             if(depth >= min) continue;
             if(node == null) {
@@ -60,15 +62,5 @@ class Source {
             tstack.push(node.right);
         }
         return min;
-    } 
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        for(int i = 0; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        System.out.println(new Source().minTreeDepth(tree.root));
-        System.out.println(new Source().minTreeDepth2(tree.root)); 
-        System.out.println(new Source().minTreeDepth3(tree.root)); 
     }
 }

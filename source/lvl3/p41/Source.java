@@ -1,8 +1,12 @@
 package source.lvl3.p41;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 class Source {
     /* ********************************************************************* */
-    private static class Interval {
+    static class Interval {
         int start;
         int end;
         Interval(int start, int end) {
@@ -11,11 +15,10 @@ class Source {
         }
     }
     /* ********************************************************************* */
-    private static ArrayList<Interval> mergeIntervals(ArrayList<Interval> intervalsList) {
+    private static ArrayList<Interval> mergeIntervals(final ArrayList<Interval> intervalsList) {
         if(intervalsList.isEmpty()) return intervalsList;
-        ArrayList<Interval> list = new ArrayList<>();
-        ArrayList<Interval> il = intervalsList;
-        int start = Integer.MIN_VALUE;
+        final ArrayList<Interval> list = new ArrayList<>();
+        final ArrayList<Interval> il = intervalsList;
         int t = 0;
         for(int i = 0; i < il.size(); i++) {
             t = i;

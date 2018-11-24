@@ -1,11 +1,14 @@
 package source.lvl3.p02;
-import source.support.datastructure.tree.BinaryTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 class Source {
-    /* ********************************************************************* */
-    private ArrayList<ArrayList<Integer>> printLevelByLevel(TreeNode root) {
-        ArrayList<ArrayList<Integer>> levels = new ArrayList<>();
+    ArrayList<ArrayList<Integer>> printLevelByLevel(TreeNode root) {
+        final ArrayList<ArrayList<Integer>> levels = new ArrayList<>();
         if(root == null) return levels;
         ArrayList<Integer> values = new ArrayList<>();
         LinkedList<TreeNode> curr = new LinkedList<>();
@@ -26,10 +29,10 @@ class Source {
         return levels;
     }
     /* ********************************************************************* */
-    public ArrayList<ArrayList<Integer>> printLevelByLevel2(TreeNode root) {
-        ArrayList<ArrayList<Integer>> solution = new ArrayList<>();
+    ArrayList<ArrayList<Integer>> printLevelByLevel2(TreeNode root) {
+        final ArrayList<ArrayList<Integer>> solution = new ArrayList<>();
         if (root == null) return solution;
-        Queue<TreeNode> queue = new LinkedList<>();
+        final Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {        
             ArrayList<Integer> level = new ArrayList<>();
@@ -43,16 +46,5 @@ class Source {
             solution.add(level);
         }
         return solution;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        for(int i = 0; i < args.length; i++)
-           tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        System.out.println();
-        Source obj = new Source();
-        System.out.println(obj.printLevelByLevel(tree.root));
-        System.out.println(obj.printLevelByLevel2(tree.root));
     }
 }

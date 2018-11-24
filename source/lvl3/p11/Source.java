@@ -1,13 +1,15 @@
 package source.lvl3.p11;
-import source.support.datastructure.tree.BinaryTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Stack;
+
 class Source {
-    /* ********************************************************************* */
-    private ArrayList<Integer> inOrderItr(TreeNode root) {
-        ArrayList<Integer> list = new ArrayList<>();
+    ArrayList<Integer> inOrderItr(final TreeNode root) {
+        final ArrayList<Integer> list = new ArrayList<>();
         if(root == null) return list;
-        Stack<TreeNode> stack = new Stack<>();
+        final Stack<TreeNode> stack = new Stack<>();
         TreeNode node = root;
         while(node != null || !stack.empty()) {
             while(node != null) {
@@ -20,12 +22,4 @@ class Source {
         }
         return list;
     }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        for (int i = 0; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        System.out.println(new Source().inOrderItr(tree.root).toString()); 
-    } 
 }

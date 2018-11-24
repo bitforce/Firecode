@@ -8,7 +8,7 @@ public class SourceMain {
         for(int i = 1; i < args.length; i++)
             tree.add(Integer.parseInt(args[i]));
         final int N = Integer.parseInt(args[0]);
-        Source obj = new Source();
+        final Source obj = new Source();
         tree.print();
         System.out.println(obj.findNode(tree.root, N).data);
         System.out.println(obj.findNode2(tree.root, N).data);

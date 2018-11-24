@@ -1,7 +1,7 @@
 package source.lvl2.p23;
+
 class Source {
-   /* ********************************************************************** */ 
-    private static int betterFibonacci(int n) {
+    static int betterFibonacci(int n) {
         int x = 0;
         int y = 1;
         int z = 1;
@@ -13,7 +13,7 @@ class Source {
         return x;
     }
    /* ********************************************************************** */ 
-    private static int betterFibonacci2(int n) {
+    static int betterFibonacci2(int n) {
         if(n < 1) return 0;
         if(n < 3) return 1;
         int x = 1;
@@ -26,9 +26,4 @@ class Source {
         } 
         return z;
     }
-   /* ********************************************************************** */ 
-    public static void main(String[] args) {
-        System.out.println(betterFibonacci(Integer.parseInt(args[0])));
-        System.out.println(betterFibonacci2(Integer.parseInt(args[0])));
-    } 
 }

@@ -1,11 +1,12 @@
 package source.lvl3.p36;
-import source.support.datastructure.tree.BinarySearchTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.Stack;
+
 class Source {
-    /* ********************************************************************* */
     int count = 0;
-    private TreeNode findKthSmallest(TreeNode root, int k) {
+    TreeNode findKthSmallest(final TreeNode root, final int k) {
         if(root == null || k < 1) return null;
         TreeNode node = findKthSmallest(root.left, k);
         if(count != k) {
@@ -16,9 +17,9 @@ class Source {
         return findKthSmallest(node.right, k);
     }
     /* ********************************************************************* */
-    private TreeNode findKthSmallest2(TreeNode root, int k) {
+    TreeNode findKthSmallest2(TreeNode root, int k) {
         if(root == null) return null;
-        Stack<TreeNode> stack = new Stack<>();
+        final Stack<TreeNode> stack = new Stack<>();
         TreeNode node = root;
         while(node != null || !stack.isEmpty()) {
             if(node == null) {
@@ -31,15 +32,5 @@ class Source {
             }
         }
         return null;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
-        final int K = Integer.parseInt(args[0]);
-        for(int i = 1; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        System.out.println(new Source().findKthSmallest(tree.root, K).data);
-        System.out.println(new Source().findKthSmallest2(tree.root, K).data);
     }
 }

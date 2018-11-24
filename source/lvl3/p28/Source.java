@@ -1,10 +1,9 @@
 package source.lvl3.p28;
-import source.support.datastructure.tree.BinaryTree;
+
 import source.support.datastructure.node.TreeNode;
 
 class Source {
-    /* ********************************************************************* */
-    private static int maxSumPath(TreeNode root) {
+    static int maxSumPath(TreeNode root) {
         if(root == null) return 0;
         int max[] = new int[1];
         max[0] = Integer.MIN_VALUE;
@@ -18,13 +17,5 @@ class Source {
         int current = Math.max(root.data, Math.max(root.data + left, root.data + right));
         max[0] = Math.max(max[0], Math.max(current, left + root.data + right));
         return current;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        for(int i = 0; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        System.out.println(maxSumPath(tree.root));
     }
 }

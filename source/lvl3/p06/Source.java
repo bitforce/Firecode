@@ -1,10 +1,10 @@
 package source.lvl3.p06;
-import java.util.*;
+
+import java.util.ArrayList;
 
 class Source {
-    /* ********************************************************************* */
-    private static ArrayList<String> combParenthesis(int pairs) {
-        ArrayList<String> list = new ArrayList<>();
+    static ArrayList<String> combParenthesis(final int pairs) {
+        final ArrayList<String> list = new ArrayList<>();
         if(pairs == 1) list.add("()");
         else {
             for(String s : combParenthesis(pairs-1)) {
@@ -15,9 +15,5 @@ class Source {
             }
         }
         return list;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        System.out.println(combParenthesis(Integer.parseInt(args[0])));
     }
 }

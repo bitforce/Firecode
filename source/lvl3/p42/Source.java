@@ -1,12 +1,14 @@
 package source.lvl3.p42;
-import source.support.datastructure.tree.BinaryTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.LinkedList;
+import java.util.Stack;
+
 class Source {
-    /* ********************************************************************* */
-    private int sumItr(TreeNode root) {
+    int sumItr(final TreeNode root) {
         if(root == null) return 0;
-        Stack<TreeNode> stack = new Stack<>();
+        final Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         int sum = 0;
         while(!stack.isEmpty()) {
@@ -18,10 +20,10 @@ class Source {
         return sum;
     }
     /* ********************************************************************* */
-    public int sumItr2(TreeNode root) { 
+    int sumItr2(final TreeNode root) {
         if (root == null) return 0; 
         TreeNode curr = root;
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        LinkedList<TreeNode> q = new LinkedList<>();
         q.add(curr); 
         int sum = 0;
         while (!q.isEmpty()) {
@@ -33,14 +35,5 @@ class Source {
                 q.add(curr.right);
         }
         return sum;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        for(int i = 0; i <  args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        System.out.println(new Source().sumItr(tree.root));
-        System.out.println(new Source().sumItr2(tree.root));
     }
 }

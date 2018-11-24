@@ -1,13 +1,15 @@
 package source.lvl3.p39;
-import source.support.datastructure.tree.BinaryTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 class Source {
-    /* ********************************************************************* */
-    ArrayList<Integer> list = new ArrayList<>();
-    private ArrayList<Integer> levelorder(TreeNode root) {
+    private ArrayList<Integer> list = new ArrayList<>();
+    ArrayList<Integer> levelorder(TreeNode root) {
         if(root == null) return list;
-        Queue<TreeNode> q = new LinkedList<>();
+        final LinkedList<TreeNode> q = new LinkedList<>();
         q.add(root);
         while(!q.isEmpty()) {
             TreeNode node = q.poll();
@@ -18,27 +20,18 @@ class Source {
         return list;
     }
     /* ********************************************************************* */
-    private ArrayList<Integer> levelorder2(TreeNode root) {
-        ArrayList<Integer> list = new ArrayList<>();
-        Queue<TreeNode> q = new LinkedList<>();
+    ArrayList<Integer> levelorder2(TreeNode root) {
+        final ArrayList<Integer> list = new ArrayList<>();
+        final LinkedList<TreeNode> q = new LinkedList<>();
         if(root == null) return null;
-        TreeNode node = null;
+        TreeNode node;
         q.add(root);
         while(!q.isEmpty()) {
-            node = (TreeNode) q.remove();
+            node = q.remove();
             list.add(node.data);
             if(node.left != null) q.add(node.left);
             if(node.right != null) q.add(node.right);
         }
         return list;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        for(int i = 0; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        System.out.println(new Source().levelorder(tree.root));
-        System.out.println(new Source().levelorder2(tree.root));
     }
 }

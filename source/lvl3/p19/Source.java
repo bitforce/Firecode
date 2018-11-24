@@ -1,39 +1,38 @@
 package source.lvl3.p19;
-import source.support.datastructure.tree.BinarySearchTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.LinkedList;
+
 class Source {
-    /* ********************************************************************* */
-    private TreeNode mirror(TreeNode root) {
+    TreeNode mirror(final TreeNode root) {
         if(root == null) return null;
         mirror(root.left);
         mirror(root.right);
-        TreeNode node = root.left;
+        final TreeNode node = root.left;
         root.left = root.right;
         root.right = node;
         return root; 
     }
     /* ********************************************************************* */
-    private TreeNode mirror2(TreeNode root) {
+    TreeNode mirror2(final TreeNode root) {
         if(root == null) return null;
-        TreeNode left = root.left;
+        final TreeNode left = root.left;
         root.left = mirror2(root.right);
         root.right = mirror2(left);
         return root;
     }
     /* ********************************************************************* */
-    private TreeNode mirror3(TreeNode root) {
-        if(root == null){
-            return null;
-        }
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
-        Queue<TreeNode> m = new LinkedList<TreeNode>();
-        TreeNode node = new TreeNode(root.data, null, null);
+    TreeNode mirror3(final TreeNode root) {
+        if(root == null) return null;
+        final LinkedList<TreeNode> q = new LinkedList<>();
+        final LinkedList<TreeNode> m = new LinkedList<>();
+        final TreeNode node = new TreeNode(root.data, null, null);
         q.add(root);
         m.add(node);
         while(!q.isEmpty()){
-            TreeNode temp = q.poll();
-            TreeNode curr = m.poll();
+            final TreeNode temp = q.poll();
+            final TreeNode curr = m.poll();
             if(temp == null || curr == null) continue;
             if(temp.left == null) curr.right = null;
             else curr.right = new TreeNode(temp.left.data, null, null);
@@ -45,17 +44,5 @@ class Source {
             m.add(curr.right);
         }
         return node;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
-        for(int i = 0; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        tree.root = new Source().mirror(tree.root);
-        tree.print();
-        tree.root = new Source().mirror2(tree.root);
-        tree.print();
-        tree.root = new Source().mirror3(tree.root);
     }
 }

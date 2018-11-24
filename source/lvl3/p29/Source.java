@@ -1,12 +1,13 @@
 package source.lvl3.p29;
-import source.support.datastructure.list.SinglyLinkedList;
+
 import source.support.datastructure.node.ListNode;
-import java.util.*;
+
+import java.util.Stack;
+
 class Source {
-    /* ********************************************************************* */
-    private boolean isListPalindrome(ListNode head) {
+    boolean isListPalindrome(ListNode head) {
         if(head == null || head.next == null) return true;
-        Stack<Integer> stack = new Stack<>();
+        final Stack<Integer> stack = new Stack<>();
         ListNode temp = head;
         while(temp != null) {
             stack.push(temp.data);
@@ -18,9 +19,10 @@ class Source {
         }
         return true;
     }
-    private boolean isListPalindrome2(ListNode head) {
-        StringBuilder a = new StringBuilder();
-        StringBuilder b = new StringBuilder();
+    /* ********************************************************************* */
+    boolean isListPalindrome2(ListNode head) {
+        final StringBuilder a = new StringBuilder();
+        final StringBuilder b = new StringBuilder();
         while(head != null) {
             a.append(head.data);
             b.insert(0, head.data);
@@ -28,7 +30,8 @@ class Source {
         }
         return a.toString().equals(b.toString());
     }
-    private boolean isListPalindrome3(ListNode head) {
+     /* ********************************************************************* */
+    boolean isListPalindrome3(final ListNode head) {
         if(head == null || head.next == null) return true;
         int len = 0;
         ListNode curr = head;
@@ -44,17 +47,17 @@ class Source {
             curr = curr.next;
             count++;
         }
-        ListNode midl = curr;
+        final ListNode midl = curr;
         ListNode m = midl;
         ListNode n = m.next;
-        while(m != null && n != null) {
+        while(n != null) {
             ListNode t = n.next;
             n.next = m;
             m = n;
             n = t;
         }
         midl.next = null;
-        ListNode p = n == null ? m : n;
+        ListNode p = m;
         ListNode q = head;
         while(p != null) {
             if(p.data != q.data) return false;
@@ -62,15 +65,5 @@ class Source {
             q = q.next;
         }
         return true;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        SinglyLinkedList list = new SinglyLinkedList();
-        for(int i = 0; i < args.length; i++)
-            list.append(Integer.parseInt(args[i]));
-        list.print();
-        System.out.println(new Source().isListPalindrome(list.head));
-        System.out.println(new Source().isListPalindrome2(list.head));
-        System.out.println(new Source().isListPalindrome3(list.head));
     }
 }

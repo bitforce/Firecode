@@ -1,25 +1,24 @@
 package source.lvl3.p37;
-import source.support.datastructure.list.CircularlyLinkedList;
+
 import source.support.datastructure.node.ListNode;
 
 class Source {
-    /* ********************************************************************* */
-    private ListNode insertAtTail(ListNode head, int data) {
+    ListNode insertAtTail(ListNode head, final int DATA) {
         if(head == null) {
-            head = new ListNode(data);
+            head = new ListNode(DATA);
             return head.next = head;
         }
         ListNode node = head;
         while(node.next != null && node.next != head)
             node = node.next;
-        ListNode temp = new ListNode(data);
+        final ListNode temp = new ListNode(DATA);
         node.next = temp;
         temp.next = head;
         return head;
     }
     /* ********************************************************************* */
-    private ListNode insertAtTail2(ListNode head, int data) {
-        ListNode node = new ListNode(data);
+    ListNode insertAtTail2(ListNode head, final int DATA) {
+        ListNode node = new ListNode(DATA);
         ListNode curr = head;
         if(head == null) {
             head = node;
@@ -30,15 +29,5 @@ class Source {
             curr.next = node;
         }
         return head;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        CircularlyLinkedList list = new CircularlyLinkedList();
-        for(int i = 1; i < args.length; i++)
-            list.append(Integer.parseInt(args[i]));
-        list.print();
-        final int DATA = Integer.parseInt(args[0]);
-        list.head = new Source().insertAtTail(list.head, DATA);
-        list.print();
     }
 }

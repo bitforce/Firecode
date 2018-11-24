@@ -1,8 +1,7 @@
 package source.lvl3.p17;
-import source.support.print.MatrixPrinter;
 
 class Source {
-    private static void rotateSquareImageCW(int[][] matrix) {
+    static void rotateSquareImageCW(final int[][] matrix) {
         if(matrix == null) return;
         final int LEN = matrix.length;
         int temp1;
@@ -21,7 +20,7 @@ class Source {
             }
     }
     /* ********************************************************************* */
-    public static void rotateSquareImageCW2(int[][] mat) {
+    static void rotateSquareImageCW2(final int[][] mat) {
         final int N = mat.length;
         for (int x = 0; x < N / 2; x++) {
             for (int y = x; y < N-x-1; y++){
@@ -32,23 +31,5 @@ class Source {
                 mat[y][N-x-1] = temp;
             }
         }
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        int[] array = new int[args.length];
-        for(int i = 0; i < array.length; i++) 
-            array[i] = Integer.parseInt(args[i]);
-        int length = Integer.parseInt(args[array.length-1]);
-        int[][] matrix = new int[length][length];
-        for(int r = 0; r < length; r++)
-            for(int c = 0; c < length; c++)
-                matrix[r][c] = array[c % matrix[0].length + (r * matrix[0].length)];
-        MatrixPrinter.print(matrix);
-        rotateSquareImageCW(matrix);
-        System.out.println(); 
-        MatrixPrinter.print(matrix);
-        System.out.println();
-        rotateSquareImageCW2(matrix);
-        MatrixPrinter.print(matrix);
     }
 }

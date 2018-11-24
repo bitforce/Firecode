@@ -1,11 +1,14 @@
 package source.lvl3.p20;
+
 import source.support.datastructure.tree.BinarySearchTree;
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.LinkedList;
+import java.util.Stack;
+
 class Source {
-    /* ********************************************************************* */
-    private int findMaxItr(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<>();
+    int findMaxItr(final TreeNode root) {
+        final Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         int max = root.data;
         while(!stack.isEmpty()) {
@@ -17,12 +20,12 @@ class Source {
         return max;
     }
     /* ********************************************************************* */
-    private int findMaxItr2(TreeNode root) {                         
-        int max = Integer.MIN_VALUE; 
+    int findMaxItr2(final TreeNode root) {
+        int max = Integer.MIN_VALUE;
         if(root != null) {
-            Queue<TreeNode> q = new LinkedList<TreeNode>();
+            final LinkedList<TreeNode> q = new LinkedList<>();
             q.add(root);
-            TreeNode curr = null;
+            TreeNode curr;
             while(!q.isEmpty()) {
                 curr = q.remove();
                 if(max < curr.data) max = curr.data;
@@ -33,27 +36,17 @@ class Source {
         return max;
     }
     /* ********************************************************************* */
-    private int findMaxItr3(TreeNode root) {
+    int findMaxItr3(final TreeNode root) {
         int max = Integer.MIN_VALUE;
-        Stack<TreeNode> stack = new Stack<>();
+        final Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         while(!stack.isEmpty()) {
-            TreeNode node = stack.pop();
+            final TreeNode node = stack.pop();
             if(node == null) continue;
             max = Math.max(max, node.data);
             stack.push(node.left);
             stack.push(node.right);
         }
         return max;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
-        for(int i = 0; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        System.out.println(new Source().findMaxItr(tree.root));
-        System.out.println(new Source().findMaxItr2(tree.root));
-        System.out.println(new Source().findMaxItr3(tree.root));
     }
 }

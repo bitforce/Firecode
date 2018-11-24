@@ -1,9 +1,10 @@
 package source.lvl2.p26;
+
 import source.support.datastructure.list.SinglyLinkedList;
 import source.support.datastructure.node.ListNode;
+
 class Source {
-    /* ********************************************************************* */
-    private ListNode deleteAtMiddle(ListNode head, int position) {  // N.1
+    ListNode deleteAtMiddle(ListNode head, int position) {  // N.1
         if(head == null || position < 1) return head;
         if(position == 1) return head.next;
         ListNode node = head;
@@ -20,7 +21,7 @@ class Source {
         return head;
     }
     /* ********************************************************************* */
-    private ListNode deleteAtMiddle2(ListNode head, int position) { // N.2
+    ListNode deleteAtMiddle2(ListNode head, int position) { // N.2
         if (position == 1)
             return head == null ? head : head.next;
         ListNode curr = head;
@@ -40,26 +41,11 @@ class Source {
         return head;
     }
     /* ********************************************************************* */
-    private ListNode deleteAtMiddle3(ListNode head, int position) { // N.3
+    ListNode deleteAtMiddle3(ListNode head, int position) { // N.3
         if (head == null) {return null;}
         if (position == 1) {return head.next;}
         ListNode node = new ListNode(head.data);
         node.next = deleteAtMiddle(head.next, position-1);
         return node;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        SinglyLinkedList list = new SinglyLinkedList();
-        for(int i = 1; i < args.length; i++)
-            list.append(Integer.parseInt(args[i]));
-        final int N = Integer.parseInt(args[0]);
-        Source obj = new Source();
-        list.print();
-        list.head = obj.deleteAtMiddle(list.head, N);
-        list.print();
-        list.head = obj.deleteAtMiddle2(list.head, N);
-        list.print();
-        list.head = obj.deleteAtMiddle3(list.head, N);
-        list.print();
     }
 }

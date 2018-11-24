@@ -1,11 +1,10 @@
 package source.lvl3.p22;
-import source.support.datastructure.list.DoublyLinkedList;
+
 import source.support.datastructure.node.DoublyListNode;
 
 class Source {
-    /* ********************************************************************* */
-    private DoublyListNode insertAtPos(DoublyListNode head, int data, int pos) {
-        DoublyListNode node = new DoublyListNode(data);
+    DoublyListNode insertAtPos(final DoublyListNode head, final int data, final int pos) {
+        final DoublyListNode node = new DoublyListNode(data);
         if(head == null && pos < 1) return node;
         if(pos == 1) {
             node.next = head;
@@ -20,8 +19,8 @@ class Source {
         return head;
     }
     /* ********************************************************************* */
-    private DoublyListNode insertAtPos2(DoublyListNode head, int data, int pos) {
-        DoublyListNode node = new DoublyListNode(data);
+    DoublyListNode insertAtPos2(DoublyListNode head, final int data, final int pos) {
+        final DoublyListNode node = new DoublyListNode(data);
         if(head == null && pos == 1) head = node;
         else {
             DoublyListNode curr = head;
@@ -53,9 +52,9 @@ class Source {
         return head;
     }
     /* ********************************************************************* */
-    private DoublyListNode insertAtPos3(DoublyListNode head, int data, int pos) {
+    DoublyListNode insertAtPos3(DoublyListNode head, final int data, final int pos) {
         if(pos <= 1) {
-            DoublyListNode node = new DoublyListNode(data);
+            final DoublyListNode node = new DoublyListNode(data);
             if(head != null) {
                 node.next = head;
                 node.prev = head.prev;
@@ -64,20 +63,5 @@ class Source {
             head = node;
         } else if(head != null) head.next = insertAtPos3(head.next, data, pos-1);
         return head;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        DoublyLinkedList list = new DoublyLinkedList();
-        for(int i = 2; i < args.length; i++)
-            list.append(Integer.parseInt(args[i]));
-        int data = Integer.parseInt(args[0]);
-        int pos = Integer.parseInt(args[1]);
-        list.print();
-        list.head = new Source().insertAtPos(list.head, data, pos);
-        list.print();
-        list.head = new Source().insertAtPos2(list.head, data, pos);
-        list.print();
-        list.head = new Source().insertAtPos3(list.head, data, pos);
-        list.print();
     }
 }

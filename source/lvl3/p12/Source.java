@@ -1,12 +1,13 @@
 package source.lvl3.p12;
+
 import source.support.datastructure.tree.BinaryTree;
 import source.support.datastructure.node.TreeNode;
 import java.util.*;
+
 class Source {
-    /* ********************************************************************* */
-    private static boolean validateBSTItr(TreeNode root) {
+    static boolean validateBSTItr(TreeNode root) {
         if(root == null) return true;
-        Stack<TreeNode> stack = new Stack<>();
+        final Stack<TreeNode> stack = new Stack<>();
         TreeNode node = null;
         while(!stack.isEmpty() || root != null)
             if(root != null) {
@@ -22,7 +23,7 @@ class Source {
         return true;
     }
     /* ********************************************************************* */
-    private static boolean validateBSTItr2(TreeNode root) {
+    static boolean validateBSTItr2(final TreeNode root) {
         class Data {
             TreeNode node;
             int min;
@@ -34,7 +35,7 @@ class Source {
             }
         }
         if(root == null) return true;
-        Queue<Data> q = new LinkedList<>();
+        final Queue<Data> q = new LinkedList<>();
         q.offer(new Data(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
         while(!q.isEmpty()) {
             Data store = q.poll();
@@ -48,7 +49,7 @@ class Source {
         return true;
     }
     /* ********************************************************************* */
-    private static boolean validateBSTItr3(TreeNode root) {
+    static boolean validateBSTItr3(TreeNode root) {
         class Boundary {
             TreeNode node;
             int lBoundary;
@@ -60,7 +61,7 @@ class Source {
             }
         }
         if(root == null || root.left == null && root.right == null) return true;
-        Queue<Boundary> q = new LinkedList<>();
+        final Queue<Boundary> q = new LinkedList<>();
         q.add(new Boundary(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
         while(!q.isEmpty()) {
             Boundary bound = q.poll();
@@ -70,15 +71,5 @@ class Source {
             if(node.right != null) q.add(new Boundary(node.right, node.data, bound.rBoundary));
         }
         return true;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        for(int i = 0; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        System.out.println(validateBSTItr(tree.root));
-        System.out.println(validateBSTItr2(tree.root)); 
-        System.out.println(validateBSTItr3(tree.root)); 
     }
 }

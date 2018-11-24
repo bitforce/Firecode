@@ -1,12 +1,15 @@
 package source.lvl2.p25;
-import source.support.datastructure.tree.BinarySearchTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 class Source {
-    /* ********************************************************************* */
-    private TreeNode findNode(TreeNode root, int val) {
+    TreeNode findNode(TreeNode root, int val) {
         if(root == null) return null;
-        Stack<TreeNode> stack = new Stack<>();
+        final Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         while(!stack.empty()) {
             TreeNode node = stack.pop();
@@ -20,8 +23,8 @@ class Source {
 
     }
     /* ********************************************************************* */
-    private TreeNode findNode2(TreeNode root, int val) {
-        Stack<TreeNode> stack = new Stack<>();
+    TreeNode findNode2(TreeNode root, int val) {
+        final Stack<TreeNode> stack = new Stack<>();
         while(!stack.isEmpty() || root!=null) {
             if(root != null) {
                 stack.push(root);
@@ -35,8 +38,8 @@ class Source {
         return null;
     }
     /* ********************************************************************* */
-    private TreeNode findNode3(TreeNode root, int val) {
-        Queue<TreeNode> queue = new LinkedList<>();
+    TreeNode findNode3(TreeNode root, int val) {
+        final Queue<TreeNode> queue = new LinkedList<>();
         if (root == null) return null;
         queue.add(root);
         while (queue.peek() != null) {
@@ -46,17 +49,5 @@ class Source {
             if (currNode.right != null) queue.add(currNode.right);
         }
         return null;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
-        for(int i = 1; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        final int N = Integer.parseInt(args[0]);
-        Source obj = new Source();
-        tree.print();
-        System.out.println(obj.findNode(tree.root, N).data);
-        System.out.println(obj.findNode2(tree.root, N).data);
-        System.out.println(obj.findNode3(tree.root, N).data);
     }
 }

@@ -1,10 +1,10 @@
 package source.lvl3.p38;
+
 import source.support.datastructure.list.SinglyLinkedList;
 import source.support.datastructure.node.ListNode;
 
 class Source {
-    /* ********************************************************************* */
-    private ListNode findNthNodeFromEnd(ListNode head, int n) {
+    ListNode findNthNodeFromEnd(final ListNode head, final int n) {
         if(head == null || n < 1) return null;
         int len = 0;
         ListNode temp = head;
@@ -20,7 +20,7 @@ class Source {
         return temp;
     }
     /* ********************************************************************* */
-    private ListNode findNthNodeFromEnd2(ListNode head, int n) {
+    ListNode findNthNodeFromEnd2(ListNode head, int n) {
         ListNode node = head;
         int len = 0;
         while(node != null) {
@@ -39,7 +39,7 @@ class Source {
         return node;
     }
     /* ********************************************************************* */
-    private ListNode findNthNodeFromEnd3(ListNode head, int n) {
+    ListNode findNthNodeFromEnd3(final ListNode head, int n) {
         if(head == null || n <= 0) return null;
         ListNode fast = head;
         ListNode slow = null;
@@ -50,18 +50,11 @@ class Source {
             } else if(n == 1) {
                 slow = head;
                 n -= 1;
-            } else slow = slow.next;
+            } else {
+                assert slow != null;
+                slow = slow.next;
+            }
         }
         return slow;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        SinglyLinkedList list = new SinglyLinkedList();
-        for(int i = 1; i < args.length; i++)
-            list.append(Integer.parseInt(args[i]));
-        final int N = Integer.parseInt(args[0]);
-        System.out.println(new Source().findNthNodeFromEnd(list.head, N).data);
-        System.out.println(new Source().findNthNodeFromEnd2(list.head, N).data);
-        System.out.println(new Source().findNthNodeFromEnd3(list.head, N).data);
     }
 }

@@ -1,11 +1,13 @@
 package source.lvl3.p14;
+
 import source.support.datastructure.node.TrieNode;
-import java.util.*;
+
+import java.util.HashMap;
+
 class Source {
     /* ********************************************************************* */
-    private TrieNode root;
-    private Source() {this.root = new TrieNode();}
-    private void insertWord(String word) {
+    private TrieNode root = new TrieNode();
+    void insertWord(final String word) {
         if(word == null) return;
         HashMap<Character, TrieNode> map = root.children;
         for(int i = 0; i < word.length(); i++) {
@@ -20,16 +22,16 @@ class Source {
             if(i == word.length()-1) node.isLeaf = true;
         }
     }
-    private boolean searchWord(String word) {
-        TrieNode node = searchNode(word);
+    boolean searchWord(final String word) {
+        final TrieNode node = searchNode(word);
         return node != null && node.isLeaf;
     }
-    private boolean searchPrefix(String word) {
+    boolean searchPrefix(final String word) {
         return searchNode(word) != null;
     }
-    private TrieNode searchNode(String word) {
+    private TrieNode searchNode(final String word) {
         if(word == null) return null;
-        Map<Character, TrieNode> map = root.children;
+        HashMap<Character, TrieNode> map = root.children;
         TrieNode node = null;
         for(int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
@@ -41,7 +43,7 @@ class Source {
         return node;
     }
     /* ********************************************************************* */
-    public void insertWord2(String word) {
+    void insertWord2(final String word) {
         if(word == null || word.length() < 1) return;
         TrieNode cur = root;
         HashMap<Character, TrieNode> children = cur.children;
@@ -55,14 +57,13 @@ class Source {
                 cur = n;
             }
             children = cur.children;
-
             if (i == word.length() - 1) {
                 cur.isLeaf = true;
             }
         }
     }
 
-    public boolean searchWord2(String word) {
+    boolean searchWord2(final String word) {
         TrieNode cur = root;
         HashMap<Character, TrieNode> children = cur.children;
         for (int i = 0; i < word.length(); i++) {
@@ -77,7 +78,7 @@ class Source {
         return cur.isLeaf;
     }
 
-    public boolean searchPrefix2(String word) {
+    boolean searchPrefix2(final String word) {
         TrieNode cur = root;
         HashMap<Character, TrieNode> children = cur.children;
         for (int i = 0; i < word.length(); i++) {
@@ -85,20 +86,16 @@ class Source {
             if (children.containsKey(c)) {
                 cur = children.get(c);
                 children = cur.children;
-            } else {
-                return false;
-            }
+            } else return false;
         }
         return true;
     }
     /* ********************************************************************* */
-    public void insertWord3(String word) {
-        if (word != null && word.length() > 0) {
+    void insertWord3(final String word) {
+        if (word != null && word.length() > 0)
             insertWord3(root, word, 0);
-        }
     }
-
-    private void insertWord3(TrieNode currentNode, String word, int index) {
+    private void insertWord3(final TrieNode currentNode, final String word, final int index) {
         char c = word.charAt(index);
         TrieNode node = currentNode.children.getOrDefault(c, new TrieNode(c));
         currentNode.children.put(c, node);
@@ -109,44 +106,27 @@ class Source {
         insertWord3(node, word, index + 1);
     }
 
-    public boolean searchWord3(String word) {
+    boolean searchWord3(final String word) {
         if (word != null && word.length() > 0)
             return search(root, word, 0, true);
         return false;
     }
 
-    public boolean searchPrefix3(String word) {
+    boolean searchPrefix3(final String word) {
         if (word != null && word.length() > 0)
             return search(root, word, 0, false);
         return false;
     }
 
-    private boolean search(TrieNode curr, String word, int index, boolean searching) {
-        char c = word.charAt(index);
+    private boolean search(final TrieNode curr, final String word, final int index, boolean searching) {
+        final char c = word.charAt(index);
         TrieNode node = curr.children.get(c);
-        if (node == null) {
-            return false;
-        }
-
+        if (node == null) return false;
         if (index == word.length() - 1) {
-            if (searching) {
+            if (searching)
                 return node.isLeaf;
-            }
             return true;
         }
-
         return search(node, word, index + 1, searching);
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        Source trie = new Source();
-        for(int i = 2; i < args.length; i++)
-            trie.insertWord(args[i]);
-        System.out.println(trie.searchWord(args[0]));
-        System.out.println(trie.searchWord2(args[0]));
-        System.out.println(trie.searchWord3(args[0]));
-        System.out.println(trie.searchPrefix(args[1]));
-        System.out.println(trie.searchPrefix2(args[1]));
-        System.out.println(trie.searchPrefix3(args[1]));
     }
 }
