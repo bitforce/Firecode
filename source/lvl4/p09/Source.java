@@ -1,17 +1,15 @@
 package source.lvl4.p09;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+
 class Source {
-    /* ********************************************************************* */
-    /*
-     * Note that if the digits in the string are unique, you should have a 
-     * returned array of 3^N, where N is the number of digits; however, 
-     * if the string contains same numbers, you may want to watch out 
-     * and use a Set<> approach.
-     */
-    private static ArrayList<String> getStringsFromNums(String digits) {
+    static ArrayList<String> getStringsFromNums(final String digits) {
         if(digits == null || digits.length() == 0) return new ArrayList<>();
-        HashMap<Integer, String> map = new HashMap<>();
-        ArrayList<String> list = new ArrayList<>();
+        final HashMap<Integer, String> map = new HashMap<>();
+        final ArrayList<String> list = new ArrayList<>();
         map.put(2, "abc");
         map.put(3, "def");
         map.put(4, "ghi");
@@ -20,11 +18,14 @@ class Source {
         map.put(7, "pqrs");
         map.put(8, "tuv");
         map.put(9, "wxyz");
-        assist(new ArrayList<Character>(), digits, map, list);
+        assist(new ArrayList<>(), digits, map, list);
         return list;
     }
-    private static void assist(ArrayList<Character> temp, String digits, 
-                        HashMap<Integer, String> map, ArrayList<String> list) {
+    private static void assist(
+            final ArrayList<Character> temp,
+            final String digits,
+            final HashMap<Integer, String> map,
+            final ArrayList<String> list) {
         if(digits.length() == 0) {
             char[] carr = new char[temp.size()];
             for(int i = 0; i < temp.size(); i++)
@@ -32,8 +33,8 @@ class Source {
             list.add(String.valueOf(carr));
             return;
         }
-        Integer curr = Integer.valueOf(digits.substring(0, 1));
-        String letters = map.get(curr);
+        final Integer curr = Integer.valueOf(digits.substring(0, 1));
+        final String letters = map.get(curr);
         for(int i = 0; i < letters.length(); i++) {
             temp.add(letters.charAt(i));
             assist(temp, digits.substring(1), map, list);
@@ -41,7 +42,7 @@ class Source {
         }
     }
     /* ********************************************************************* */
-    public static ArrayList<String> getStringsFromNums2(String digits) {
+    static ArrayList<String> getStringsFromNums2(String digits) {
         HashMap<Character, String> map = new HashMap<>();
         map.put('2', "abc");
         map.put('3', "def");
@@ -71,10 +72,5 @@ class Source {
                     stack.addFirst(new PhoneNode(node.word + c, node.count+1));
         }
         return out;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        System.out.println(Source.getStringsFromNums(args[0]));
-        System.out.println(Source.getStringsFromNums2(args[0]));
     }
 }

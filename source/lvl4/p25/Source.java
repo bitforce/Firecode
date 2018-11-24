@@ -1,13 +1,14 @@
 package source.lvl4.p25;
-import source.support.datastructure.tree.BinarySearchTree;
+
 import source.support.datastructure.node.TreeNode;
-import java.util.*;
+
+import java.util.ArrayList;
+
 class Source {
-    /* ********************************************************************* */
-    private TreeNode delete(TreeNode root, int data) {
+    TreeNode delete(TreeNode root, final int DATA) {
         if(root == null) return null;
-        if(data < root.data) root.left = delete(root.left, data);
-        else if(data > root.data) root.right = delete(root.right, data);
+        if(DATA < root.data) root.left = delete(root.left, DATA);
+        else if(DATA > root.data) root.right = delete(root.right, DATA);
         else {
             if(root.left != null && root.right != null) {
                 TreeNode node = root;
@@ -24,22 +25,22 @@ class Source {
         return min(root.left);
     }
     /* ********************************************************************* */
-    public TreeNode delete2(TreeNode root, int data) { 
+    TreeNode delete2(TreeNode root, final int DATA) {
         if (root == null) return null;
         ArrayList<TreeNode> currNodes = new ArrayList<>();
         currNodes.add(root);
         ArrayList<TreeNode> nextNodes = new ArrayList<>();
         TreeNode parent = null;
         TreeNode nodeForData = null;
-        Boolean isLeft = false;
+        boolean isLeft = false;
         while(!currNodes.isEmpty()){
             for (TreeNode n : currNodes){
-                if (n.data == data){
+                if (n.data == DATA){
                     nodeForData = n;
                     break;
                 } 
                 if (n.left != null){
-                    if (n.left.data == data){
+                    if (n.left.data == DATA){
                         nodeForData = n.left;
                         parent = n;
                         isLeft = true;
@@ -48,7 +49,7 @@ class Source {
                     nextNodes.add(n.left);
                 }
                 if (n.right != null){
-                    if (n.right.data == data){
+                    if (n.right.data == DATA){
                         nodeForData = n.right;
                         parent = n;
                         break;
@@ -93,16 +94,5 @@ class Source {
         }
         return root;
         
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
-        for(int i = 1; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        new Source().delete(tree.root, Integer.parseInt(args[0]));
-        tree.print();
-        new Source().delete2(tree.root, Integer.parseInt(args[args.length-1]));
-        tree.print();
     }
 }

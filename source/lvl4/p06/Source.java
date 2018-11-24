@@ -1,9 +1,8 @@
 package source.lvl4.p06;
-import java.util.*;
+
 class Source {
-    /* ********************************************************************* */
-    private int editDistance(String a, String b) {
-        int edit[][] = new int[a.length()+1][b.length()+1];
+    int editDistance(final String a, final String b) {
+        final int edit[][] = new int[a.length()+1][b.length()+1];
         for(int i = 0; i < a.length(); i++) edit[i][0] = i;
         for(int j = 0; j < b.length(); j++) edit[0][j] = j;
         for(int i = 0; i < a.length(); i++) {
@@ -22,9 +21,5 @@ class Source {
             }
         }
         return edit[a.length()][b.length()];
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        System.out.println(new Source().editDistance(args[0], args[1]));
     }
 }

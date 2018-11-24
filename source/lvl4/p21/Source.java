@@ -1,11 +1,9 @@
 package source.lvl4.p21;
-import source.support.datastructure.list.CircularlyLinkedList;
-import source.support.datastructure.list.SinglyLinkedList;
+
 import source.support.datastructure.node.ListNode;
 
 class Source {
-    /* ********************************************************************* */
-    private boolean isCyclic(ListNode head) {
+    boolean isCyclic(final ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
         while(fast != null && fast.next != null) {
@@ -14,18 +12,5 @@ class Source {
             if(slow == fast) return true;
         }
         return false;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        CircularlyLinkedList clist = new CircularlyLinkedList();
-        SinglyLinkedList slist = new SinglyLinkedList();
-        for(int i = 0; i < args.length; i++) {
-            clist.append(Integer.parseInt(args[i]));
-            slist.append(Integer.parseInt(args[i]));
-        }
-        clist.print();
-        slist.print();
-        System.out.println(new Source().isCyclic(clist.head));
-        System.out.println(new Source().isCyclic(slist.head));
     }
 }

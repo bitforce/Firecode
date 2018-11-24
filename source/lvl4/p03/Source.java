@@ -1,10 +1,11 @@
 package source.lvl4.p03;
-import java.util.*;
+
+import java.util.HashMap;
+
 class Source {
-    /* ********************************************************************* */
-    private static int longestNRSubstringLen(String input) {
+    static int longestNRSubstringLen(final String input) {
         if(input == null || input.equals("")) return 0;
-        int[] visited = new int[256];
+        final int[] visited = new int[256];
         int max = 1;
         int cur = 1;
         int prev;
@@ -20,13 +21,12 @@ class Source {
             }
             visited[input.charAt(i)] = i;
         }
-        if(cur > max) max = cur;
-        return cur;
+        return cur > max ? cur : max;
     }
     /* ********************************************************************* */
-    private static int longestNRSubstringLen2(String input) {
+    static int longestNRSubstringLen2(String input) {
         if(input == null) return 0;
-        HashMap<Character, Integer> map = new HashMap<>();
+        final HashMap<Character, Integer> map = new HashMap<>();
         char[] arr = input.toCharArray();
         int prev = 0;
         for(int i = 0; i < arr.length; i++) {
@@ -41,7 +41,7 @@ class Source {
         return Math.max(prev, map.size());
     }
     /* ********************************************************************* */
-    public static int longestNRSubstringLen3(String input) {
+    static int longestNRSubstringLen3(String input) {
         if(input == null) return 0;
         int[] count = new int[256];
         int length = 0;
@@ -56,11 +56,5 @@ class Source {
                 length--;
         }
         return max;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        System.out.println(longestNRSubstringLen(args[0]));
-        System.out.println(longestNRSubstringLen2(args[0]));
-        System.out.println(longestNRSubstringLen3(args[0]));
     }
 }

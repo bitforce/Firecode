@@ -1,12 +1,13 @@
 package source.lvl4.p19;
-import source.support.print.MatrixPrinter;
-import java.util.*;
+
+import java.util.Deque;
+import java.util.LinkedList;
+
 class Source {
-    /* ********************************************************************* */
-    private static int matrixMaxSumDfs(int[][] grid) {
+    static int matrixMaxSumDfs(final int[][] grid) {
         return matrixMaxSumDfs(grid, 0, 0) + grid[0][0];
     }
-    private static int matrixMaxSumDfs(int[][] grid, int r, int c) {
+    private static int matrixMaxSumDfs(final int[][] grid, final int r, final int c) {
         if(r+1 >= grid.length && c+1 >= grid[0].length) return 0;
         if(r+1 >= grid.length) return grid[r][c+1] + matrixMaxSumDfs(grid, r, c+1);
         if(c+1 >= grid[0].length) return grid[r+1][c] + matrixMaxSumDfs(grid, r+1, c);
@@ -14,12 +15,12 @@ class Source {
         return grid[r][c+1] + matrixMaxSumDfs(grid, r, c+1);
     }
     /* ********************************************************************* */
-    public static int matrixMaxSumDfs2(int[][] grid) {
+    static int matrixMaxSumDfs2(final int[][] grid) {
         class TravelNode {
-            int row;
-            int col;
-            int nodeSum;
-            TravelNode(int r, int c, int sum, int[][] grid) {
+            private int row;
+            private int col;
+            private int nodeSum;
+            private TravelNode(int r, int c, int sum, int[][] grid) {
                 row = r;
                 col = c;
                 sum += grid[r][c];
@@ -27,11 +28,11 @@ class Source {
             }
         }
         int maxSum = Integer.MIN_VALUE;
-        int rows = grid.length;
-        int cols = grid[0].length;
+        final int rows = grid.length;
+        final int cols = grid[0].length;
         if(rows < 2 && cols < 2) return grid[0][0];
         else {
-            Deque<TravelNode> stack = new LinkedList<>();
+            final Deque<TravelNode> stack = new LinkedList<>();
             stack.addFirst(new TravelNode(0,0,0,grid));
             while(!stack.isEmpty()){
                 TravelNode t = stack.removeFirst();
@@ -48,24 +49,9 @@ class Source {
         return maxSum;
     }
     /* ********************************************************************* */
-    private static int matrixMaxSumDfs3(int[][] grid) {return matrixMaxSumDfs3(grid, 0, 0);}
-    private static int matrixMaxSumDfs3(int[][] grid, int r, int c) {
+    static int matrixMaxSumDfs3(final int[][] grid) {return matrixMaxSumDfs3(grid, 0, 0);}
+    private static int matrixMaxSumDfs3(final int[][] grid, final int r, final int c) {
         if(r >= grid.length || c >= grid[0].length) return 0;
         return grid[r][c] + Math.max(matrixMaxSumDfs3(grid, r+1, c), matrixMaxSumDfs3(grid, r, c+1));
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        final int M = Integer.parseInt(args[0]);
-        final int N = Integer.parseInt(args[1]);
-        int[][] matrix = new int[M][N];
-        int[] arr = new int[args.length-2];
-        for (int i = 0; i < args.length-2; i++)
-            arr[i] = Integer.parseInt(args[i+2]);
-        for(int i = 0; i < M; i++)
-            System.arraycopy(arr, i*N, matrix[i], 0, N);
-        MatrixPrinter.print(matrix);
-        System.out.println(matrixMaxSumDfs(matrix));
-        System.out.println(matrixMaxSumDfs2(matrix));
-        System.out.println(matrixMaxSumDfs3(matrix));
     }
 }

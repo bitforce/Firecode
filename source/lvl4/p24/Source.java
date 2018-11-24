@@ -1,10 +1,9 @@
 package source.lvl4.p24;
-import source.support.print.MatrixPrinter;
 
 import static java.lang.Math.max;
+
 class Source {
-    /* ********************************************************************* */
-    private static int matrixMaxSumDP(int[][] grid) {
+    static int matrixMaxSumDP(final int[][] grid) {
         if(grid == null || grid.length == 0) return 0;
         final int M = grid.length;
         final int N = grid[0].length;
@@ -17,28 +16,13 @@ class Source {
         return memo[M-1][N-1] + grid[0][0];
     }
     /* ********************************************************************* */
-    public static int matrixMaxSumDP2(int[][] grid) {
+    static int matrixMaxSumDP2(final int[][] grid) {
         if (grid == null || grid.length == 0) return 0;
-        final int M = grid.length;
         final int N = grid[0].length;
         int dp[] = new int[N+1];
-        for (int r = 0; r < M; r++)
+        for (int[] aGrid : grid)
             for (int c = 1; c <= N; c++)
-                dp[c] = Math.max(dp[c - 1], dp[c]) + grid[r][c - 1];
+                dp[c] = Math.max(dp[c - 1], dp[c]) + aGrid[c - 1];
         return dp[N];
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        final int M = Integer.parseInt(args[0]);
-        final int N = Integer.parseInt(args[1]);
-        int[][] matrix = new int[M][N];
-        int[] arr = new int[args.length-2];
-        for (int i = 0; i < args.length-2; i++)
-            arr[i] = Integer.parseInt(args[i+2]);
-        for(int i = 0; i < M; i++)
-            System.arraycopy(arr, i*N, matrix[i], 0, N);
-        MatrixPrinter.print(matrix);
-        System.out.println(matrixMaxSumDP(matrix));
-        System.out.println(matrixMaxSumDP2(matrix));
     }
 }

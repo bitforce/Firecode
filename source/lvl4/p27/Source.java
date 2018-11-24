@@ -1,13 +1,20 @@
 package source.lvl4.p27;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
 class Source {
-    /* ********************************************************************* */
-    private static ArrayList<String> getPermutations(String s) {
+    static ArrayList<String> getPermutations(final String s) {
         if(s == null) return null;
-        if(s == "") return new ArrayList<>();
-        return permute(new ArrayList<String>(), s, 0, s.length()-1);
+        if(s.equals("")) return new ArrayList<>();
+        return permute(new ArrayList<>(), s, 0, s.length()-1);
     }
-    private static ArrayList<String> permute(ArrayList<String> list, String string, int left, int right) {
+    private static ArrayList<String> permute(
+            final ArrayList<String> list,
+            String string,
+            final int left,
+            final int right) {
         if(left != right) {
             for(int i = left; i <= right; i++) {
                 string = swap(string, left, i);
@@ -17,24 +24,24 @@ class Source {
         } else list.add(string);
         return list;
     }
-    private static String swap(String string, int i, int j) {
+    private static String swap(final String string, final int I, final int J) {
         char[] charr = string.toCharArray();
-        char c = charr[i];
-        charr[i] = charr[j];
-        charr[j] = c;
+        char c = charr[I];
+        charr[I] = charr[J];
+        charr[J] = c;
         return String.valueOf(charr);
     }
     /* ********************************************************************* */
-    private static ArrayList<String> getPermutations2(String s) {
+    static ArrayList<String> getPermutations2(final String s) {
         if(s == null) return null;
-        ArrayList<String> permutations = new ArrayList<>();
+        final ArrayList<String> permutations = new ArrayList<>();
         if(s.length() == 0) {
             permutations.add("");
             return permutations;
         }
-        char c = s.charAt(0);
-        String remainder = s.substring(1);
-        ArrayList<String> words = getPermutations2(remainder);
+        final char c = s.charAt(0);
+        final String remainder = s.substring(1);
+        final ArrayList<String> words = getPermutations2(remainder);
         for(String word : words)
             for(int i = 0; i <= word.length(); i++)
                 permutations.add(insertCharAt(word, c, i));
@@ -45,8 +52,8 @@ class Source {
     }
     /* ********************************************************************* */
     private static HashMap<String,ArrayList<String>> memo = new HashMap<String,ArrayList<String>>();
-    public static ArrayList<String> getPermutations3(String s) {
-        ArrayList<String> res= new ArrayList<String>();
+    static ArrayList<String> getPermutations3(String s) {
+        final ArrayList<String> res= new ArrayList<>();
         if(s==null ) return null;
         if(s.isEmpty()) return res;
         if(s.length()==1){
@@ -61,11 +68,11 @@ class Source {
             return res;
         }
         if(memo.containsKey(s)) return memo.get(s);
-        HashSet<String> visited = new HashSet<String>();
+        final HashSet<String> visited = new HashSet<String>();
         for(int i=0;i<s.length();i++){
             StringBuilder subString=new StringBuilder("");
             int indexOfChar=s.indexOf(s.charAt(i));
-            subString.append(s.substring(0,indexOfChar));
+            subString.append(s, 0, indexOfChar);
             subString.append(s.substring(indexOfChar+1));
             for(String sub: getPermutations(subString.toString())){
                 if(!visited.contains(sub+s.charAt(i))){
@@ -80,11 +87,5 @@ class Source {
             memo.put(s,res);
         }
         return res;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        System.out.println(getPermutations(args[0]));
-        System.out.println(getPermutations2(args[0]));
-        System.out.println(getPermutations3(args[0]));
     }
 }

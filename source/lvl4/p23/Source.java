@@ -1,10 +1,13 @@
 package source.lvl4.p23;
-import java.util.*;
+
+import java.util.ArrayList;
+
 class Source {
-    private static class Interval {
+    /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+    static class Interval {
         int start;
         int end;
-        Interval(int start, int end) {
+        Interval(final int start, final int end) {
             this.start = start;
             this.end = end;
         }
@@ -12,7 +15,7 @@ class Source {
         public String toString() {return "[" + start + ", " + end + "]";}
     }
     /* ********************************************************************* */
-    private static ArrayList<Interval> insertRange(ArrayList<Interval> intervalsList, Interval insert) {
+    static ArrayList<Interval> insertRange(final ArrayList<Interval> intervalsList, final Interval insert) {
         if (intervalsList == null || intervalsList.size() == 0 || insert == null) {
             if (insert != null) intervalsList.add(insert);
             return intervalsList;
@@ -37,8 +40,8 @@ class Source {
         return intervalsList;
     }
     /* ********************************************************************* */
-    public static ArrayList<Interval> insertRange2(ArrayList<Interval> intervalsList, Interval insert) {
-        ArrayList<Interval> out = new ArrayList<>();
+    static ArrayList<Interval> insertRange2(final ArrayList<Interval> intervalsList,  Interval insert) {
+        final ArrayList<Interval> out = new ArrayList<>();
         for(Interval i: intervalsList){
             if(i.end < insert.start) {
                 out.add(i);
@@ -47,7 +50,7 @@ class Source {
                 out.add(insert);
                 insert = i;
             }
-            else if(i.start <= insert.end || i.end >= insert.start){
+            else {
                 int newStart = Math.min(i.start, insert.start);
                 int newEnd = Math.max(i.end, insert.end);
                 insert = new Interval(newStart, newEnd);
@@ -55,18 +58,5 @@ class Source {
         }
         out.add(insert);
         return out;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        ArrayList<Interval> intervals = new ArrayList<>();
-        for(int i = 2; i < args.length; i+=2) {
-            int start = Integer.parseInt(args[i]);
-            int end = Integer.parseInt(args[i+1]);
-            intervals.add(new Interval(start, end));
-        }
-        int start = Integer.parseInt(args[0]);
-        int end = Integer.parseInt(args[1]);
-        System.out.println(insertRange(intervals, new Interval(start, end)));
-        System.out.println(insertRange2(intervals, new Interval(start, end)));
     }
 }

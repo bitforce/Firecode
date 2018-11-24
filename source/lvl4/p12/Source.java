@@ -1,57 +1,56 @@
 package source.lvl4.p12;
-import source.support.datastructure.tree.BinaryTree;
+
 import source.support.datastructure.node.TreeNode;
 
 class Source {
-    /* ********************************************************************* */
-    private int getNodeDistance(TreeNode root, int n1, int n2) { 
-        return (length(root, n1) + length(root, n2) - 1) - (2 * 
-               length(root, lca(root, n1, n2).data) - 1); 
+    int getNodeDistance(final TreeNode root, final int N1, final int N2) {
+        return (length(root, N1) + length(root, N2) - 1) - (2 *
+               length(root, lca(root, N1, N2).data) - 1);
     }
-    private TreeNode lca(TreeNode root, int n1, int n2) {
+    private TreeNode lca(TreeNode root, int N1, int N2) {
         if(root == null) return null;
-        if(root.data == n1 || root.data == n2) return root;
-        TreeNode left = lca(root.left, n1, n2);
-        TreeNode right = lca(root.right, n1, n2);
+        if(root.data == N1 || root.data == N2) return root;
+        final TreeNode left = lca(root.left, N1, N2);
+        final TreeNode right = lca(root.right, N1, N2);
         if(left != null && right != null) return root;
         if(left != null) return left;
         return right;
     }
-    private int length(TreeNode root, int n) {
+    int length(final TreeNode root, final int N) {
         if(root == null) return 0;
         int x = 0;
-        if(root.data == n
-           || (x = length(root.left, n)) > 0 
-           || (x = length(root.right, n)) > 0) return x + 1;
+        if(root.data == N
+           || (x = length(root.left, N)) > 0
+           || (x = length(root.right, N)) > 0) return x + 1;
         return 0;
     }
     /* ********************************************************************* */
-    private int getNodeDistance2(TreeNode root, int n1, int n2) {
-        return -assist(root, n1, n2);
+    int getNodeDistance2(final TreeNode root, final int N1, final int N2) {
+        return -assist(root, N1, N2);
     }
-    private int assist(TreeNode root, int n1, int n2) {
+    private int assist(final TreeNode root, final int N1, final int N2) {
             if (root == null) return 0;
-            int left = assist(root.left, n1, n2);
-            int right = assist(root.right, n1, n2);
+            int left = assist(root.left, N1, N2);
+            int right = assist(root.right, N1, N2);
             if (left > 0 && right > 0) return -left - right;
-            if (left > 0 && (root.data == n1 || root.data == n2)) return -left;
-            if (right > 0 && (root.data == n1 || root.data == n2)) return -right;
+            if (left > 0 && (root.data == N1 || root.data == N2)) return -left;
+            if (right > 0 && (root.data == N1 || root.data == N2)) return -right;
             if (left > 0) return left + 1;
             if (left < 0) return left;
             if (right > 0) return right + 1;
             if (right < 0) return right;
-            if (root.data == n1 || root.data == n2) return 1;
+            if (root.data == N1 || root.data == N2) return 1;
             return 0;
     }
     /* ********************************************************************* */
-    private int getNodeDistance3(TreeNode root, int n1, int n2) {
-        return assist(root, n1, n2, 0)[1];
+    int getNodeDistance3(final TreeNode root, final int N1, final int N2) {
+        return assist(root, N1, N2, 0)[1];
     }
-    private int[] assist(TreeNode root, int n1, int n2, int level) {
+    private int[] assist(final TreeNode root, final int N1, final int N2, final int level) {
         if (root == null) return new int[] {0, -1};
-        int[] left = assist(root.left, n1, n2, level + 1);
-        int[] right = assist(root.right, n1, n2, level + 1);
-        if (root.data == n1 || root.data == n2) {
+        final int[] left = assist(root.left, N1, N2, level + 1);
+        final int[] right = assist(root.right, N1, N2, level + 1);
+        if (root.data == N1 || root.data == N2) {
             if (left[1] > -1) return new int[] {1, 1 + left[1]};
             if (right[1] > -1) return new int[] {1, 1 + right[1]};
             return new int[] {0, 0};
@@ -67,17 +66,5 @@ class Source {
                 return new int[] {0, (right[1] > -1) ? (1 + right[1]) : -1};
             else return new int[] {1, right[1]};
         }
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        for(int i = 2; i < args.length; i++)
-            tree.add(Integer.parseInt(args[i]));
-        tree.print();
-        int n1 = Integer.parseInt(args[0]);
-        int n2 = Integer.parseInt(args[1]);
-        System.out.println(new Source().getNodeDistance(tree.root, n1, n2));
-        System.out.println(new Source().getNodeDistance2(tree.root, n1, n2));
-        System.out.println(new Source().getNodeDistance3(tree.root, n1, n2));
     }
 }

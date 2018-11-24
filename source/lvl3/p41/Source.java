@@ -1,11 +1,10 @@
 package source.lvl3.p41;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 class Source {
-    /* ********************************************************************* */
+    /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
     static class Interval {
         int start;
         int end;
@@ -15,7 +14,7 @@ class Source {
         }
     }
     /* ********************************************************************* */
-    private static ArrayList<Interval> mergeIntervals(final ArrayList<Interval> intervalsList) {
+    static ArrayList<Interval> mergeIntervals(final ArrayList<Interval> intervalsList) {
         if(intervalsList.isEmpty()) return intervalsList;
         final ArrayList<Interval> list = new ArrayList<>();
         final ArrayList<Interval> il = intervalsList;
@@ -29,15 +28,10 @@ class Source {
         return list;
     }
     /* ********************************************************************* */
-    private static ArrayList<Interval> mergeIntervals2(ArrayList<Interval> intervalsList) {
+    static ArrayList<Interval> mergeIntervals2(final ArrayList<Interval> intervalsList) {
         if (intervalsList == null || intervalsList.size() < 2) return intervalsList;
-        ArrayList<Interval> out = new ArrayList<>();
-        Collections.sort(intervalsList, new Comparator<Interval>() {
-            @Override
-            public int compare(Interval o1, Interval o2) {
-                return Integer.compare(o1.start, o2.start);
-            }
-        });
+        final ArrayList<Interval> out = new ArrayList<>();
+        intervalsList.sort(Comparator.comparingInt(o -> o.start));
         Interval prev = intervalsList.get(0);
         for (int i = 1; i < intervalsList.size(); i++) {
             Interval cur = intervalsList.get(i);
@@ -50,23 +44,5 @@ class Source {
         }
         out.add(prev);
         return out;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        ArrayList<Interval> list = new ArrayList<>();
-        int temp = Integer.MIN_VALUE;
-        for(int i = 0 ; i < args.length; i++) {
-            if(i % 2 != 0) list.add(new Interval(temp, Integer.parseInt(args[i])));
-            else temp = Integer.parseInt(args[i]);
-        }
-        for(Interval i : list)
-            System.out.print("[[" + i.start + "," + i.end + "]] ");
-        System.out.println(); 
-        for(Interval i : mergeIntervals(list))
-            System.out.print("[[" + i.start + "," + i.end + "]] "); 
-        System.out.println(); 
-        for(Interval i : mergeIntervals2(list))
-            System.out.print("[[" + i.start + "," + i.end + "]] "); 
-        System.out.println();
     }
 }
