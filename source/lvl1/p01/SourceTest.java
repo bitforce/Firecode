@@ -7,7 +7,9 @@ import java.util.logging.Logger;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import source.temp.help.MyFormatter;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 

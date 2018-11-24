@@ -1,0 +1,31 @@
+#!/usr/local/bin/bash
+
+# add function to convert p$? for any number between 1 and 9 to be 01,..,09
+
+edit() {
+    if [[ $2 == 'readme' ]] || [[ $2 == 'r' ]]; then
+        vim "source/lvl$3/p$4/README.md"
+    elif [[ $2 == 'source' ]] || [[ $2 == 's' ]]; then
+        vim "source/lvl$3/p$4/Source.java"
+    elif [[ $2 == 'main' ]] || [[ $2 == 'm' ]]; then
+        vim "source/lvl$3/p$4/SourceMain.java"
+    elif [[ $2 == 'test' ]] || [[ $2 == 't' ]]; then
+        vim "source/lvl$3/p$4/SourceTest.java"
+    fi
+}
+
+
+view() {
+    # add conditional to see if $2/$3 are actual directories/files
+    if [[ $3 == '' ]]; then
+        less "source/lvl$2/README"
+    else
+        less "source/lvl$2/p$3/README.md"
+    fi
+}
+
+if [ $1 == 'edit' ] || [ $1 == 'e' ]; then
+    edit $*
+elif [ $1 == 'view' ] || [ $1 == 'v' ]; then
+    view $*
+fi

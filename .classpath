@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-    <classpathentry kind="lib" path="archive/"/>
-    <classpathentry kind="lib" path="binary/"/>
-    <classpathentry kind="src" path="source/"/>
-    <classpathentry kind="output" path="binary"/>
-</classpath>
