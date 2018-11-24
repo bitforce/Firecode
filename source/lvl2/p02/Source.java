@@ -1,7 +1,7 @@
 package source.lvl2.p02;
-import source.temp.tree.BinaryTree;
-import source.temp.node.TreeNode;
-import java.util.*;
+import source.support.datastructure.tree.BinaryTree;
+import source.support.datastructure.node.TreeNode;
+
 class Source {
     /* ********************************************************************* */
     private int findMax(TreeNode root) {

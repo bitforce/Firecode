@@ -1,5 +1,5 @@
-package source.temp.help;
-import source.temp.node.TrieNode;
+package source.support.print;
+import source.support.datastructure.node.TrieNode;
 import java.util.ArrayList;
 public class TriePrinter {
     public static void print(TrieNode root) {

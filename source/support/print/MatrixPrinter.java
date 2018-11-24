@@ -1,4 +1,4 @@
-package source.temp.help;
+package source.support.print;
 public class MatrixPrinter {
     public static <T> void print(T[][] matrix) {
         for(T a[] : matrix) {

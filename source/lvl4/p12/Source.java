@@ -1,7 +1,7 @@
 package source.lvl4.p12;
-import source.temp.tree.BinaryTree;
-import source.temp.node.TreeNode;
-import java.util.*;
+import source.support.datastructure.tree.BinaryTree;
+import source.support.datastructure.node.TreeNode;
+
 class Source {
     /* ********************************************************************* */
     private int getNodeDistance(TreeNode root, int n1, int n2) { 

@@ -1,6 +1,6 @@
 package source.lvl2.p07;
-import source.temp.tree.BinaryTree;
-import source.temp.node.TreeNode;
+import source.support.datastructure.tree.BinaryTree;
+import source.support.datastructure.node.TreeNode;
 class Source {
     /* ********************************************************************* */
     private int findHeight(TreeNode root) {

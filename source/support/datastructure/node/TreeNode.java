@@ -1,4 +1,4 @@
-package source.temp.node;
+package source.support.datastructure.node;
 public class TreeNode {
     public int data;
     public TreeNode left;

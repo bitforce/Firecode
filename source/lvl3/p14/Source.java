@@ -1,5 +1,5 @@
 package source.lvl3.p14;
-import source.temp.node.TrieNode;
+import source.support.datastructure.node.TrieNode;
 import java.util.*;
 class Source {
     /* ********************************************************************* */

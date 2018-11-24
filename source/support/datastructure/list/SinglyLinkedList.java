@@ -1,5 +1,5 @@
-package source.temp.list;
-import source.temp.node.ListNode;
+package source.support.datastructure.list;
+import source.support.datastructure.node.ListNode;
 public class SinglyLinkedList {
     public ListNode head;
     public void append(int data) {

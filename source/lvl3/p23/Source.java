@@ -1,7 +1,7 @@
 package source.lvl3.p23;
-import source.temp.tree.BinarySearchTree;
-import source.temp.node.TreeNode;
-import java.util.*;
+import source.support.datastructure.tree.BinarySearchTree;
+import source.support.datastructure.node.TreeNode;
+
 class Source {
     /* ********************************************************************* */
     private int diameter(TreeNode root) {

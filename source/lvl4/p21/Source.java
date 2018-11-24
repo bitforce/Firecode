@@ -1,8 +1,8 @@
 package source.lvl4.p21;
-import source.temp.list.CircularlyLinkedList;
-import source.temp.list.SinglyLinkedList;
-import source.temp.node.ListNode;
-import java.util.*;
+import source.support.datastructure.list.CircularlyLinkedList;
+import source.support.datastructure.list.SinglyLinkedList;
+import source.support.datastructure.node.ListNode;
+
 class Source {
     /* ********************************************************************* */
     private boolean isCyclic(ListNode head) {

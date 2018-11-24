@@ -1,5 +1,5 @@
-package source.temp.tree;
-import source.temp.node.TrieNode;
+package source.support.datastructure.tree;
+import source.support.datastructure.node.TrieNode;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Stack;

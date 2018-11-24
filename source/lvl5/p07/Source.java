@@ -1,6 +1,6 @@
 package source.lvl5.p07;
-import source.temp.graph.Graph;
-import source.temp.node.GraphNode;
+import source.support.datastructure.graph.Graph;
+import source.support.datastructure.node.GraphNode;
 import java.util.*;
 class Source {
     /* ********************************************************************* */

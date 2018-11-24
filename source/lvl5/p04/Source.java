@@ -1,6 +1,6 @@
 package source.lvl5.p04;
-import source.temp.help.MatrixPrinter;
-import java.util.*;
+import source.support.print.MatrixPrinter;
+
 class Source {
     /* ********************************************************************* */
     private static int minWeightedPath(int[][] grid) { // BEST SOLUTION

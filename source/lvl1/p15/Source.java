@@ -1,6 +1,6 @@
 package source.lvl1.p15;
 
-import source.temp.node.ListNode;
+import source.support.datastructure.node.ListNode;
 
 class Source {
     ListNode insertAtHead(ListNode head, int data) {

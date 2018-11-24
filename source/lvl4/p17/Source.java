@@ -1,7 +1,6 @@
 package source.lvl4.p17;
-import source.temp.help.MatrixPrinter;
-import source.temp.node.TrieNode;
-import source.temp.tree.Trie;
+import source.support.print.MatrixPrinter;
+import source.support.datastructure.tree.Trie;
 import java.util.*;
 class Source {
     /* ********************************************************************* */

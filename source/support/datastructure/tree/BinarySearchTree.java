@@ -1,6 +1,6 @@
-package source.temp.tree;
-import source.temp.help.TreePrinter;
-import source.temp.node.TreeNode;
+package source.support.datastructure.tree;
+import source.support.print.TreePrinter;
+import source.support.datastructure.node.TreeNode;
 /**
  * This is your standard binary search tree which utilizes a ordering-insertion 
  * method to make sure that the tree's strucutre follows the the BST design 

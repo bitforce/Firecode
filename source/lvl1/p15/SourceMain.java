@@ -1,6 +1,6 @@
 package source.lvl1.p15;
 
-import source.temp.list.SinglyLinkedList;
+import source.support.datastructure.list.SinglyLinkedList;
 
 public class SourceMain {
      public static void main (String[] args) {

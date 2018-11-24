@@ -1,7 +1,7 @@
 package source.lvl3.p28;
-import source.temp.tree.BinaryTree;
-import source.temp.node.TreeNode;
-import java.util.*;
+import source.support.datastructure.tree.BinaryTree;
+import source.support.datastructure.node.TreeNode;
+
 class Source {
     /* ********************************************************************* */
     private static int maxSumPath(TreeNode root) {

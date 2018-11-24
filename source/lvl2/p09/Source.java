@@ -1,6 +1,6 @@
 package source.lvl2.p09;
-import source.temp.list.CircularlyLinkedList;
-import source.temp.node.ListNode;
+import source.support.datastructure.list.CircularlyLinkedList;
+import source.support.datastructure.node.ListNode;
 class Source {
    /* ********************************************************************** */ 
     private ListNode deleteAtHead(ListNode head) {

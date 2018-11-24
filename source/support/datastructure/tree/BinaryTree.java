@@ -1,6 +1,6 @@
-package source.temp.tree;
-import source.temp.help.TreePrinter;
-import source.temp.node.TreeNode;
+package source.support.datastructure.tree;
+import source.support.print.TreePrinter;
+import source.support.datastructure.node.TreeNode;
 import java.util.*;
 /**
  * This version of the binary tree implements a self-balancing insertion method 

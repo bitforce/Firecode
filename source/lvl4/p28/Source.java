@@ -1,6 +1,6 @@
 package source.lvl4.p28;
-import source.temp.help.MatrixPrinter;
-import java.util.*;
+import source.support.print.MatrixPrinter;
+
 class Source {
     /* ********************************************************************* */
     private static boolean boggleSearch(char[][] board, String word) {

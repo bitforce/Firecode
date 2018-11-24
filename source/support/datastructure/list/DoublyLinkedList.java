@@ -1,5 +1,5 @@
-package source.temp.list;
-import source.temp.node.DoublyListNode;
+package source.support.datastructure.list;
+import source.support.datastructure.node.DoublyListNode;
 public class DoublyLinkedList {
     public DoublyListNode head;
     public void clear() {head = null;}

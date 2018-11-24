@@ -1,5 +1,5 @@
 package source.lvl2.p19;
-import source.temp.help.MatrixPrinter;
+import source.support.print.MatrixPrinter;
 class Source {
    /* ********************************************************************** */ 
     private static void tranposeMatrix(int[][] matrix) {

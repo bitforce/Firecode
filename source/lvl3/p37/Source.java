@@ -1,7 +1,7 @@
 package source.lvl3.p37;
-import source.temp.list.CircularlyLinkedList;
-import source.temp.node.ListNode;
-import java.util.*;
+import source.support.datastructure.list.CircularlyLinkedList;
+import source.support.datastructure.node.ListNode;
+
 class Source {
     /* ********************************************************************* */
     private ListNode insertAtTail(ListNode head, int data) {

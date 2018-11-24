@@ -1,6 +1,6 @@
 package source.lvl4.p25;
-import source.temp.tree.BinarySearchTree;
-import source.temp.node.TreeNode;
+import source.support.datastructure.tree.BinarySearchTree;
+import source.support.datastructure.node.TreeNode;
 import java.util.*;
 class Source {
     /* ********************************************************************* */

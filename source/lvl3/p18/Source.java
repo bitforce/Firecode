@@ -1,7 +1,7 @@
 package source.lvl3.p18;
-import source.temp.tree.BinarySearchTree;
-import source.temp.node.TreeNode;
-import java.util.*;
+import source.support.datastructure.tree.BinarySearchTree;
+import source.support.datastructure.node.TreeNode;
+
 class Source {
     /* ********************************************************************* */
     private int numberOfHalfNodes(TreeNode root) {

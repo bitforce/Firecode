@@ -1,6 +1,6 @@
 package source.lvl3.p35;
-import source.temp.tree.BinaryTree;
-import source.temp.node.TreeNode;
+import source.support.datastructure.tree.BinaryTree;
+import source.support.datastructure.node.TreeNode;
 import java.util.*;
 class Source {
     /* ********************************************************************* */

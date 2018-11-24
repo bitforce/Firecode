@@ -1,7 +1,7 @@
 package source.lvl3.p27;
-import source.temp.list.DoublyLinkedList;
-import source.temp.node.DoublyListNode;
-import java.util.*;
+import source.support.datastructure.list.DoublyLinkedList;
+import source.support.datastructure.node.DoublyListNode;
+
 class Source {
     /* ********************************************************************* */
     private DoublyListNode deleteAtPos(DoublyListNode head, int pos) {

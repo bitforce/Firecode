@@ -1,7 +1,7 @@
 package source.lvl4.p07;
-import source.temp.node.TreeNode;
-import source.temp.tree.BinaryTree;
-import java.util.*;
+import source.support.datastructure.node.TreeNode;
+import source.support.datastructure.tree.BinaryTree;
+
 class Source {
     /* ********************************************************************* */
     private boolean isMirror(TreeNode root1, TreeNode root2) {

@@ -1,6 +1,6 @@
 package source.lvl3.p29;
-import source.temp.list.SinglyLinkedList;
-import source.temp.node.ListNode;
+import source.support.datastructure.list.SinglyLinkedList;
+import source.support.datastructure.node.ListNode;
 import java.util.*;
 class Source {
     /* ********************************************************************* */

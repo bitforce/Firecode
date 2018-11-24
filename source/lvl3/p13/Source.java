@@ -1,5 +1,5 @@
 package source.lvl3.p13;
-import source.temp.help.MatrixPrinter;
+import source.support.print.MatrixPrinter;
 import java.util.*;
 class Source {
     /* ********************************************************************* */

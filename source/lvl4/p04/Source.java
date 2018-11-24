@@ -1,7 +1,7 @@
 package source.lvl4.p04;
-import source.temp.list.SinglyLinkedList;
-import source.temp.node.ListNode;
-import java.util.*;
+import source.support.datastructure.list.SinglyLinkedList;
+import source.support.datastructure.node.ListNode;
+
 class Source {
     /* ********************************************************************* */
     private ListNode reverseInPairs(ListNode head) {

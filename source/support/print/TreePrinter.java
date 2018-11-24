@@ -1,5 +1,5 @@
-package source.temp.help;
-import source.temp.node.TreeNode;
+package source.support.print;
+import source.support.datastructure.node.TreeNode;
 import java.util.*;
 public class TreePrinter {
     public static void print(TreeNode root) {

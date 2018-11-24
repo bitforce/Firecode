@@ -1,6 +1,6 @@
 package source.lvl3.p44;
-import source.temp.tree.BinarySearchTree;
-import source.temp.node.TreeNode;
+import source.support.datastructure.tree.BinarySearchTree;
+import source.support.datastructure.node.TreeNode;
 import java.util.*;
 class Source {
     private ArrayList<Integer> rangeList = new ArrayList<Integer>();

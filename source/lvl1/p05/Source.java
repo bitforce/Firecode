@@ -1,6 +1,6 @@
 package source.lvl1.p05;
 
-import source.temp.node.ListNode;
+import source.support.datastructure.node.ListNode;
 
 class Source {
     ListNode findMiddleNode(ListNode head) {

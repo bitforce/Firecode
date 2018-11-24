@@ -1,7 +1,7 @@
 package source.lvl3.p32;
-import source.temp.list.CircularlyLinkedList;
-import source.temp.list.SinglyLinkedList;
-import source.temp.node.ListNode;
+import source.support.datastructure.list.CircularlyLinkedList;
+import source.support.datastructure.list.SinglyLinkedList;
+import source.support.datastructure.node.ListNode;
 import java.util.*;
 class Source {
     /* ********************************************************************* */

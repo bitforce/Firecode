@@ -1,7 +1,7 @@
 package source.lvl1.p01;
 
 import org.junit.Test;
-import source.temp.help.BaseTest;
+import source.support.test.BaseTest;
 
 import java.util.Arrays;
 

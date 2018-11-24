@@ -1,6 +1,6 @@
 package source.lvl1.p10;
 
-import source.temp.help.MatrixPrinter;
+import source.support.print.MatrixPrinter;
 
 import static source.lvl1.p10.Source.flipHorizontalAxis;
 

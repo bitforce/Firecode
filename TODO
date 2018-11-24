@@ -1,4 +1,4 @@
-CHANGE ALL "source.temp..."  to "source.libs..." and "temp" to "libs"
+CHANGE ALL "source.support..."  to "source.libs..." and "temp" to "libs"
 
 create command which opens up syntastic JavacEditClassPath and fills in the 
 appropriate current project root and from there allows you to fill in the 

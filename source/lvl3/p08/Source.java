@@ -1,6 +1,6 @@
 package source.lvl3.p08;
-import source.temp.list.DoublyLinkedList;
-import source.temp.node.DoublyListNode;
+import source.support.datastructure.list.DoublyLinkedList;
+import source.support.datastructure.node.DoublyListNode;
 class Source {
     /* ********************************************************************* */
     private DoublyListNode insertAtHead(DoublyListNode head, int data) {

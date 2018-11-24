@@ -1,6 +1,6 @@
 package source.lvl2.p26;
-import source.temp.list.SinglyLinkedList;
-import source.temp.node.ListNode;
+import source.support.datastructure.list.SinglyLinkedList;
+import source.support.datastructure.node.ListNode;
 class Source {
     /* ********************************************************************* */
     private ListNode deleteAtMiddle(ListNode head, int position) {  // N.1

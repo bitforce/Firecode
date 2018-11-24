@@ -1,7 +1,7 @@
 package source.lvl4.p01;
-import source.temp.list.SinglyLinkedList;
-import source.temp.node.ListNode;
-import java.util.*;
+import source.support.datastructure.list.SinglyLinkedList;
+import source.support.datastructure.node.ListNode;
+
 class Source {
     /* ********************************************************************* */
     public ListNode mergeTwoSortedList(ListNode l1, ListNode l2) {

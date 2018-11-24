@@ -1,6 +1,6 @@
 package source.lvl3.p34;
-import source.temp.help.MatrixPrinter;
-import java.util.*;
+import source.support.print.MatrixPrinter;
+
 class Source {
     /* ********************************************************************* */
     private static void rotateSquareImageCCW(int[][] matrix) {

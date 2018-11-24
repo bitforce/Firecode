@@ -1,6 +1,6 @@
 package source.lvl4.p24;
-import source.temp.help.MatrixPrinter;
-import java.util.*;
+import source.support.print.MatrixPrinter;
+
 import static java.lang.Math.max;
 class Source {
     /* ********************************************************************* */

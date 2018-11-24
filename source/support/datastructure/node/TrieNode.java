@@ -1,4 +1,4 @@
-package source.temp.node;
+package source.support.datastructure.node;
 import java.util.*;
 public class TrieNode {
     public char c;
