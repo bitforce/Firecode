@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * Dikjstra's Graph.
  */
-class Source {
+class Source { // UNFINISHED
     /* ********************************************************************* */
     /**
      * Custom graph class used to interact with Edge and Vertex.
@@ -149,7 +149,7 @@ class Source {
         private int size() {return graph.size();}
     }
     /* ********************************************************************* */
-    private class Vertex implements Comparable<Vertex> {
+    class Vertex implements Comparable<Vertex> {
         Vertex previous;
         Edge[] adjacencies;
         double minDistance = Double.POSITIVE_INFINITY;
@@ -163,7 +163,7 @@ class Source {
         }
     }
 
-    private class Edge {
+    class Edge {
         final Vertex target;
         final double weight;
         Edge(final Vertex argTarget, final double argWeight) { 
@@ -172,7 +172,7 @@ class Source {
         }
     }
     /* ********************************************************************* */
-    private static List<Vertex> getShortestPath(final Vertex source, final Vertex target) {
+    static List<Vertex> getShortestPath(final Vertex source, final Vertex target) {
         source.minDistance = 0.0;
         final PriorityQueue<Vertex> vertexQueue = new PriorityQueue<>();
         vertexQueue.add(source);
@@ -195,135 +195,5 @@ class Source {
             shortestPath.add(vertex);
         Collections.reverse(shortestPath);
         return shortestPath;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) { 
-        validateArgs(args);
-        final Graph graph = new Graph();
-        readInput(graph, args);
-        graph.truncateAdjacencies();
-        graph.print();
-        // ********************************************************************************
-
-        // ********************************************************************************
-        // VALIDATE SOURCE / TARGET VERTICES
-        final Vertex source = graph.findVertex(args[0]);
-        final Vertex target = graph.findVertex(args[1]);
-        if(source == null || target == null) {
-            System.out.println(source + " -|- " + target);
-            System.out.println("source / target graph not assigned");
-            System.exit(1);
-        }
-        // ********************************************************************************
-        final List<Vertex> shortestPath = getShortestPath(source, target);
-        final int SIZE_MIN_ONE = graph.size()-1;
-        for(int i = 0; i < SIZE_MIN_ONE; i++)
-            System.out.print(shortestPath.get(i) + " -> ");
-        System.out.print(shortestPath.get(SIZE_MIN_ONE) + "\n");
-    }
-
-    // ******************************************************************************** //
-    // HELPER METHODS
-    // ******************************************************************************** //
-    private static void readInput(final Graph graph, final String[] args) {
-        final HashMap<String, Integer> vertexIndexMap = new HashMap<>();
-        Vertex previousVertex = null;
-        boolean foundPrevious = false;
-        int vertexArgumentLimit = 0;
-        for(int i = 2; i < args.length; i++) {
-            try {
-                final double WEIGHT = Double.parseDouble(args[i]);
-                i++;
-                try {
-                    Double.parseDouble(args[i]);
-                    System.out.println("illegal input: continous weights " + WEIGHT  + " " + args[i]);
-                    System.exit(1);
-                } catch(NumberFormatException e) {/*silent*/}
-                if(args[i].equals(previousVertex.name)) {
-                    System.out.println("illegal input: vertex [" + args[i] + "] sequentially re-referenced");
-                    System.exit(1);
-                }
-
-                // ===================================================================================
-
-                /*
-                 * A ->
-                 * 1
-                 * B -> [0] 1--> A | <B, 1>
-                 *                -> [
-                 * 2
-                 * C
-                 */
-                final int PREV_VERT_INDEX = vertexIndexMap.get(previousVertex.name);
-                Vertex currentVertex = graph.findVertex(args[i]);
-                if(currentVertex == null) {
-                    currentVertex = new Source().new Vertex(args[i]);
-                    currentVertex.adjacencies = new Source.Edge[10];
-                    currentVertex.adjacencies[0] = new Source().new Edge(previousVertex, WEIGHT);
-                    vertexIndexMap.put(currentVertex.name, 1);
-                    previousVertex.adjacencies[PREV_VERT_INDEX] = new Source().new Edge(currentVertex, WEIGHT);
-                } else {
-                    final int CURR_VERT_INDEX = vertexIndexMap.get(currentVertex.name);
-                    currentVertex.adjacencies[CURR_VERT_INDEX] = new Source().new Edge(previousVertex, WEIGHT);
-                    vertexIndexMap.put(currentVertex.name, CURR_VERT_INDEX+1);
-                    previousVertex.adjacencies[PREV_VERT_INDEX] = new Source().new Edge(currentVertex, WEIGHT);
-                }
-                final String prev = previousVertex.name;
-                vertexIndexMap.put(previousVertex.name, PREV_VERT_INDEX+1);
-                previousVertex = currentVertex;
-                System.out.println(previousVertex + " attached to " + prev);
-                graph.add(previousVertex); // C added?
-                graph.print(previousVertex);
-                System.out.println();
-                // ===================================================================================
-
-                vertexArgumentLimit = 1;
-            } catch(NumberFormatException e) {
-                if(previousVertex != null && args[i].equals(previousVertex.name)) {
-                    vertexArgumentLimit++;
-                    continue;
-                }
-                System.out.println("CATCH = " + previousVertex);
-                // problem starts when we can't find C; however, it should've been added up there ^
-                // let's say this is true--in the case of C, well, what to we do with this info
-                previousVertex = graph.findVertex(args[i]);
-                System.out.println(args[i] + " | " + previousVertex); // DEL
-                if(previousVertex == null) {
-                    final Vertex currentVertex = new Source().new Vertex(args[i]);
-                    currentVertex.adjacencies = new Source.Edge[10];
-                    vertexIndexMap.put(currentVertex.name, 0);
-                    previousVertex = currentVertex;
-                    graph.add(previousVertex);
-                } else System.out.println("FOUUUUUUUNNNNND " + previousVertex);
-                vertexArgumentLimit++;
-            }
-            if(vertexArgumentLimit > 2) {
-                System.out.println("illegal input: too many continous vertices");
-                System.exit(1);
-            }
-        }
-    }
-    private static void validateArgs(String[] args) {
-        if(!argIsVertex(args, 2)) {
-            System.out.println("illegal input: vertex should be first argument");
-            System.exit(1);
-        }
-        if(!argIsVertex(args, args.length-1)) {
-            System.out.println("illegal input: last value cannot be integer");
-            System.exit(1);
-        }
-        if(argIsVertex(args, args.length-1) && argIsVertex(args, args.length-2)) {
-            System.out.println("illegal input: last two values cannot be vertices");
-            System.exit(1);
-        }
-    }
-
-    private static boolean argIsVertex(String[] args, final int INDEX) {
-         try {
-            Double.parseDouble(args[INDEX]);
-            return false;
-        } catch(NumberFormatException e) {
-            return true;
-        }
     }
 }

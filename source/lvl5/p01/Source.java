@@ -1,8 +1,7 @@
 package source.lvl5.p01;
-import java.util.*;
+
 class Source {
-    /* ********************************************************************* */
-    private String longestPalSubstr(String str) {
+    String longestPalSubstr(final String str) {
         if(str == null || str.length() < 2) return str;
         final int STRING_SIZE = str.length();
         final boolean[][] table = new boolean[STRING_SIZE][STRING_SIZE];
@@ -23,7 +22,7 @@ class Source {
         return longestSubstring;
     }
     /* ********************************************************************* */
-    private String longestPalSubstr2(String str){
+    String longestPalSubstr2(final String str) {
         int length = str.length();
         int max = 0;
         int start = -1;
@@ -62,11 +61,11 @@ class Source {
         return str.substring(start, start + max);
     }
     /* ********************************************************************* */
-    public String longestPalSubstr3(String str) {
-        int n = str.length();
+    String longestPalSubstr3(final String str) {
+        final int N = str.length();
         String longest = str.substring(0, 1);
 
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < N - 1; i++) {
             String s1 = expandAroundCentre(str, i, i);
             if (s1.length() > longest.length()) {
                 longest = s1;
@@ -80,19 +79,12 @@ class Source {
         return longest;
     }
 
-    private String expandAroundCentre(String str, int l, int r) {
-        int n = str.length();
-
-        while (l >= 0 && r < n && str.charAt(l) == str.charAt(r)) {
+    private String expandAroundCentre(final String str, int l, int r) {
+        final int N = str.length();
+        while (l >= 0 && r < N && str.charAt(l) == str.charAt(r)) {
             l--;
             r++;
         }
         return str.substring(l + 1, r);
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        System.out.println(new Source().longestPalSubstr(args[0]));
-        System.out.println(new Source().longestPalSubstr2(args[0]));
-        System.out.println(new Source().longestPalSubstr3(args[0]));
     }
 }
