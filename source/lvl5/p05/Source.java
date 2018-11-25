@@ -1,9 +1,7 @@
 package source.lvl5.p05;
-import source.support.print.MatrixPrinter;
 
 class Source {
-    /* ********************************************************************* */
-    private static int largestSquare(char[][] matrix) {
+    static int largestSquare(final char[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
             return 0;
         final int M = matrix.length;
@@ -28,9 +26,9 @@ class Source {
         return max * max;
     }
     /* ********************************************************************* */
-    private static int largestSquare2(char[][] matrix) {
+    static int largestSquare2(final char[][] matrix) {
         int temp = 0, upperLeft = 0, max = 0;
-        int[] curr = new int[matrix[0].length + 1];
+        final int[] curr = new int[matrix[0].length + 1];
         for(int i = 1; i <= matrix.length; i++)
             for(int j = 1; j <= matrix[0].length; j++) {
                 temp = curr[j];
@@ -42,20 +40,5 @@ class Source {
                 max = Math.max(max, curr[j]);
             }
         return max * max;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        final int M = Integer.parseInt(args[0]);
-        final int N = Integer.parseInt(args[1]);
-        final int L = args.length-2;
-        final char[][] matrix = new char[M][N];
-        final char[] arr = new char[L];
-        for(int i = 0; i < L; i++)
-            arr[i] = args[i+2].charAt(0);
-        for(int i = 0; i < M; i++)
-          System.arraycopy(arr, i*N, matrix[i], 0, N);
-        MatrixPrinter.print(matrix);
-        System.out.println(largestSquare(matrix));
-        System.out.println(largestSquare2(matrix));
     }
 }

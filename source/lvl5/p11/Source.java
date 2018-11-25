@@ -1,5 +1,8 @@
 package source.lvl5.p11;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
 class Source {
     static boolean splitArray(final int[] arr) {
         int sum = 0;
@@ -21,7 +24,7 @@ class Source {
         return !(new HashSet<>(addedSubsetVals).size() == addedSubsetVals.size());
     }
     /* ********************************************************************* */
-    private static boolean splitArray2(final int[] arr) {
+    static boolean splitArray2(final int[] arr) {
         if (arr.length == 0)
            return false;
         int arr_sum = 0;
@@ -31,7 +34,6 @@ class Source {
             return false;
         return groupSum(0, arr, arr_sum/2);
     }
-
     private static boolean groupSum(final int START_INDEX, final int[] arr, final int TARGET) {
         if (START_INDEX >= arr.length)
             return (TARGET == 0);
@@ -40,24 +42,13 @@ class Source {
         return groupSum(START_INDEX + 1, arr, TARGET);
     }
     /* ********************************************************************* */
-    private static boolean splitArray3(int[] arr) {
+    static boolean splitArray3(final int[] arr) {
         return arr.length != 0 && splitArray(arr, 0, 0, 0);
     }
-
-    private static boolean splitArray(int arr[], int leftVal, int rightVal, int position) {
-        if(position < arr.length)
-            return splitArray(arr, leftVal+arr[position], rightVal, position+1) 
-                || splitArray(arr, leftVal, rightVal+arr[position], position+1);
-        else if(position==arr.length && leftVal==rightVal) return true;
-        else return false;
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        final int[] ARR = new int[args.length];
-        for(int i = 0; i < args.length; i++)
-            ARR[i] = Integer.parseInt(args[i]);
-        System.out.println(splitArray(ARR));
-        System.out.println(splitArray2(ARR));
-        System.out.println(splitArray3(ARR));
+    private static boolean splitArray(final int arr[], final int LEFT_VAL, final int RIGHT_VAL, final int POSITION) {
+        if(POSITION < arr.length)
+            return splitArray(arr, LEFT_VAL+arr[POSITION], RIGHT_VAL, POSITION+1)
+                || splitArray(arr, LEFT_VAL, RIGHT_VAL+arr[POSITION], POSITION+1);
+        else return POSITION == arr.length && LEFT_VAL == RIGHT_VAL;
     }
 }

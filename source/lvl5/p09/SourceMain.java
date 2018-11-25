@@ -2,6 +2,7 @@ package source.lvl5.p09;
 
 import static source.lvl5.p09.Source.maxContSequence;
 import static source.lvl5.p09.Source.maxContSequence2;
+import static source.lvl5.p09.Source.maxContSequence3;
 
 public class SourceMain {
     public static void main(String[] args) {

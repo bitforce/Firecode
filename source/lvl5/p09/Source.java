@@ -1,11 +1,7 @@
 package source.lvl5.p09;
-import java.util.*;
-/**
- * Maxium Contiguous Subsequence: Kadane's Algorithm.
- */
+
 class Source {
-    /* ********************************************************************* */
-    private static int[] maxContSequence(int[] arr) {
+    static int[] maxContSequence(final int[] arr) {
         if(arr == null) return null;
         int max = arr.length == 0 ? 0 : Integer.MIN_VALUE;
         int startIndex = 0;
@@ -27,7 +23,7 @@ class Source {
         return new int[]{max, startIndex, endIndex};
     }
     /* ********************************************************************* */
-    public static int[] maxContSequence2(int[] arr) {
+    static int[] maxContSequence2(final int[] arr) {
         int curr_starting_index = 0;
         int curr_ending_index = 0;
         int curr_sum = 0;
@@ -58,7 +54,7 @@ class Source {
         return new int[]{max_sum, max_starting_index, max_ending_index};
     }
     /* ********************************************************************* */
-    public static int[] maxContSequence3(int[] arr) {
+    static int[] maxContSequence3(final int[] arr) {
         if(arr == null) return null;
         if(arr.length < 1) return new int[]{0,0,-1};
         int max = arr[0];
@@ -82,22 +78,5 @@ class Source {
             }
         }
         return new int[]{max, startIndex, endIndex};
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        final int[] ARR = new int[args.length];
-        for(int i = 0; i < ARR.length; i++)
-            ARR[i] = Integer.parseInt(args[i]);
-
-        for(int i : maxContSequence(ARR))
-            System.out.print(i + " ");
-        System.out.println();
-        for(int i : maxContSequence2(ARR))
-            System.out.print(i + " ");
-        System.out.println();
-        for(int i : maxContSequence2(ARR))
-            System.out.print(i + " ");
-        System.out.println();
-
     }
 }

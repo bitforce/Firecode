@@ -1,9 +1,12 @@
 package source.lvl5.p06;
-import source.support.print.MatrixPrinter;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.TreeSet;
+
 class Source {
     /* ********************************************************************* */
-    private ArrayList<String> boggleByot(final char[][] board, final ArrayList<String> dictionary) { 
+    ArrayList<String> boggleByot(final char[][] board, final ArrayList<String> dictionary) {
         final TreeSet<String> output = new TreeSet<>();
         final Trie trie = new Trie();
         for(String s : dictionary) trie.insertWord(s);
@@ -13,18 +16,24 @@ class Source {
         return new ArrayList<>(output);
     }
 
-    private void search(final int row, final int col, final char[][] board, final Trie dictionary,  String prefix, final TreeSet<String> output) {
-        if(row > board.length-1 || row < 0 || col > board[0].length-1 || col < 0 
-                || !dictionary.hasPrefix(prefix) || board[row][col] == '*') return;
+    private void search(
+            final int ROW,
+            final int COL,
+            final char[][] board,
+            final Trie dictionary,
+            String prefix,
+            final TreeSet<String> output) {
+        if(ROW > board.length-1 || ROW < 0 || COL > board[0].length-1 || COL < 0
+                || !dictionary.hasPrefix(prefix) || board[ROW][COL] == '*') return;
         if(dictionary.hasWord(prefix)) output.add(prefix);
-        final char c = board[row][col];
+        final char c = board[ROW][COL];
         prefix += c;
-        board[row][col] = '*';
-        search(row-1, col, board, dictionary, prefix, output);
-        search(row+1, col, board, dictionary, prefix, output);
-        search(row, col-1, board, dictionary, prefix, output);
-        search(row, col+1, board, dictionary, prefix, output);
-        board[row][col] = c;
+        board[ROW][COL] = '*';
+        search(ROW-1, COL, board, dictionary, prefix, output);
+        search(ROW+1, COL, board, dictionary, prefix, output);
+        search(ROW, COL-1, board, dictionary, prefix, output);
+        search(ROW, COL+1, board, dictionary, prefix, output);
+        board[ROW][COL] = c;
     }
     
     private class Trie {
@@ -76,22 +85,5 @@ class Source {
         final HashMap<Character, TrieNode> children = new HashMap<>();
         TrieNode(){}
         TrieNode(char c) {this.c = c;}
-    }
-    /* ********************************************************************* */
-    public static void main(String[] args) {
-        final int M = Integer.parseInt(args[0]);
-        final int N = Integer.parseInt(args[1]);
-        final char[][] board = new char[M][N];
-        final int BOARD_LEN = M*N;
-        final char[] temp = new char[BOARD_LEN];
-        for(int i = 0; i < BOARD_LEN; i++)
-            temp[i] = args[i+2].charAt(0);
-        for(int i = 0; i < M; i++)
-          System.arraycopy(temp, i*N, board[i], 0, N);
-        MatrixPrinter.print(board);
-        final ArrayList<String> dictionary = new ArrayList<>();
-        for(int i = BOARD_LEN+2; i < args.length; i++)
-            dictionary.add(args[i]);
-        System.out.println(new Source().boggleByot(board, dictionary));
     }
 }

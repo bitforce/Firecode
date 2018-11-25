@@ -4,7 +4,7 @@ class Source {
     static int[] bubbleSortArray(int[] arr) {
         if(arr == null) return null;
         final int LEN = arr.length;
-        int temp = Integer.MIN_VALUE;
+        int temp;
         for (int i = 0; i < LEN; i++)
             for (int j = 1; j < LEN-i; j++)
                 if (arr[j-1] > arr[j]) {
